@@ -68,6 +68,39 @@
 
     <main id="top">
       <section id="narrative" class="hero" aria-labelledby="site-title">
+        <svg
+          class="hero-surge"
+          viewBox="0 0 1200 620"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+          focusable="false">
+          <defs>
+            <filter id="hero-surge-glow" x="-10%" y="-80%" width="120%" height="260%">
+              <feGaussianBlur stdDeviation="7" result="blur"></feGaussianBlur>
+              <feColorMatrix
+                in="blur"
+                type="matrix"
+                values="0 0 0 0 0.13 0 0 0 0 0.77 0 0 0 0 0.37 0 0 0 0.46 0"
+                result="glow"></feColorMatrix>
+              <feMerge>
+                <feMergeNode in="glow"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+              </feMerge>
+            </filter>
+          </defs>
+          <path
+            class="hero-surge__glow"
+            pathLength="1"
+            d="M -60 438 C 70 438 148 442 224 420 C 282 403 300 363 344 346 C 374 334 392 354 416 341 C 442 326 414 307 450 296 C 484 286 466 340 504 309 C 542 278 556 218 616 190 C 696 153 764 118 840 86 C 930 48 1034 32 1260 -36">
+          </path>
+          <path
+            class="hero-surge__line"
+            pathLength="1"
+            d="M -60 438 C 70 438 148 442 224 420 C 282 403 300 363 344 346 C 374 334 392 354 416 341 C 442 326 414 307 450 296 C 484 286 466 340 504 309 C 542 278 556 218 616 190 C 696 153 764 118 840 86 C 930 48 1034 32 1260 -36">
+          </path>
+          <circle class="hero-surge__flash" cx="1038" cy="32" r="5"></circle>
+        </svg>
+
         <div class="hero__copy">
           <div class="hero__meta">
             <p class="ticker coin-symbol">Q U E S T</p>
@@ -87,7 +120,7 @@
             Bonk was the leverage.<br>
             Pump.fun was the trap door.<br>
             <br>
-            Now you&rsquo;re in the shitcoin loop.<br>
+            <span class="narrative__turn">Now you&rsquo;re in the shitcoin loop.</span><br>
             <br>
             Welcome to Side Quest.
           </p>
@@ -159,7 +192,7 @@
           <div class="terminal-panel__header">
             <div>
               <span class="terminal-kicker">SIDE QUEST / Q U E S T</span>
-              <strong>On-chain status</strong>
+              <strong>Coin status</strong>
             </div>
             <span class="terminal-status">Pre-launch</span>
           </div>
@@ -265,14 +298,14 @@
 
       <section class="onchain-log" aria-labelledby="onchain-log-title">
         <div class="onchain-log__copy">
-          <h2 id="onchain-log-title">ON-CHAIN QUEST LOG</h2>
+          <h2 id="onchain-log-title">SIDE QUEST LOG</h2>
 
           <div class="onchain-log__body">
             <p>Every side quest starts the same way: one small detour.</p>
 
             <p>
               The Side Quest Log is a simple Solana program concept for
-              writing short &ldquo;side quest&rdquo; confessions on-chain &mdash; tiny
+              writing short &ldquo;side quest&rdquo; confessions &mdash; tiny
               permanent notes from people who weren&rsquo;t supposed to stay this
               long.
             </p>
@@ -292,8 +325,32 @@
             <p><span>message:</span> &ldquo;I was stacking BTC. Then I opened pump.fun.&rdquo;</p>
           </div>
 
+          <form class="onchain-preview" aria-label="Side Quest Log concept preview">
+            <label for="quest-message">message</label>
+            <textarea
+              id="quest-message"
+              maxlength="120"
+              rows="3"
+              placeholder="Write the detour..."
+            ></textarea>
+
+            <div class="onchain-preview__bar">
+              <span id="quest-count">0/120</span>
+              <button id="quest-write" type="submit">write preview</button>
+            </div>
+
+            <p id="quest-preview-status" class="onchain-preview__status">
+              concept preview. write the detour.
+            </p>
+          </form>
+
+          <div class="onchain-receipt" aria-live="polite">
+            <p><span>receipt:</span> <strong id="quest-receipt">pending</strong></p>
+            <p><span>entry:</span> <strong id="quest-entry">no entry written</strong></p>
+          </div>
+
           <p class="onchain-module__action" aria-disabled="true">
-            leave your side quest on-chain
+            leave your side quest
           </p>
         </div>
       </section>

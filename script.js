@@ -3,6 +3,8 @@ const QUEST_TRADE_URL = "";
 const QUEST_X_URL = "";
 const QUEST_TELEGRAM_URL = "";
 const REQUEST_TIMEOUT_MS = 10000;
+const QUEST_LOG_STORAGE_KEY = "sidequest.log.preview";
+const QUEST_LOG_MAX_LENGTH = 120;
 
 const COPY = {
   mintNotLive: "Mint not live",
@@ -26,6 +28,13 @@ const fields = {
   launchTelegram: document.querySelector("#launch-telegram"),
   launchTrade: document.querySelector("#launch-trade"),
   launchX: document.querySelector("#launch-x"),
+  questCount: document.querySelector("#quest-count"),
+  questEntry: document.querySelector("#quest-entry"),
+  questForm: document.querySelector(".onchain-preview"),
+  questMessage: document.querySelector("#quest-message"),
+  questReceipt: document.querySelector("#quest-receipt"),
+  questWrite: document.querySelector("#quest-write"),
+  questStatus: document.querySelector("#quest-preview-status"),
 };
 
 const setText = (element, value) => {
@@ -277,4 +286,84 @@ fields.copyContract?.addEventListener("click", async () => {
   } catch {
     fields.copyContract.textContent = "Copy failed";
   }
+});
+
+const createLocalReceipt = (message) => {
+  let hash = 0x811c9dc5;
+  const input = `${message}:${Date.now()}`;
+
+  for (let index = 0; index < input.length; index += 1) {
+    hash ^= input.charCodeAt(index);
+    hash = Math.imul(hash, 0x01000193);
+  }
+
+  return `preview:${(hash >>> 0).toString(16).padStart(8, "0")}`;
+};
+
+const setQuestPreview = (entry) => {
+  if (!entry) {
+    setText(fields.questReceipt, "pending");
+    setText(fields.questEntry, "no entry written");
+    return;
+  }
+
+  setText(fields.questReceipt, entry.receipt);
+  setText(fields.questEntry, entry.message);
+  setText(fields.questStatus, "preview written.");
+};
+
+const updateQuestCount = () => {
+  if (!fields.questCount || !fields.questMessage) {
+    return;
+  }
+
+  fields.questCount.textContent = `${fields.questMessage.value.length}/${QUEST_LOG_MAX_LENGTH}`;
+};
+
+const readStoredQuest = () => {
+  try {
+    const value = window.localStorage.getItem(QUEST_LOG_STORAGE_KEY);
+    return value ? JSON.parse(value) : null;
+  } catch {
+    return null;
+  }
+};
+
+const writeStoredQuest = (entry) => {
+  try {
+    window.localStorage.setItem(QUEST_LOG_STORAGE_KEY, JSON.stringify(entry));
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+setQuestPreview(readStoredQuest());
+updateQuestCount();
+
+fields.questMessage?.addEventListener("input", updateQuestCount);
+
+fields.questForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const message = fields.questMessage?.value.trim() ?? "";
+
+  if (!message) {
+    setText(fields.questStatus, "write a short side quest first.");
+    fields.questMessage?.focus();
+    return;
+  }
+
+  const entry = {
+    message,
+    receipt: createLocalReceipt(message),
+  };
+
+  if (!writeStoredQuest(entry)) {
+    setText(fields.questStatus, "preview unavailable. entry not saved.");
+    return;
+  }
+
+  setQuestPreview(entry);
+  setText(fields.questWrite, "preview written");
 });
