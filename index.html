@@ -18,7 +18,8 @@
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./activity.css?v=20261023-visual1">
-  <script type="module" src="./app.js?v=20261023-visual1"></script>
+  <link rel="stylesheet" href="./temperature.css?v=20261023-temperature1">
+  <script type="module" src="./app.js?v=20261023-temperature1"></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to activity map</a>
@@ -28,11 +29,11 @@
   </header>
   <main id="main">
     <section class="intro">
-      <div><div class="eyebrow"><span></span> YOUR CRYPTO FIELD GUIDE</div><h1>See what changed<span>.</span><br><em>Follow the activity.</em></h1><p>Real trades. Clear comparisons. A little less guesswork.</p></div>
+      <div><div class="eyebrow"><span></span> YOUR CRYPTO FIELD GUIDE</div><h1>A clearer read <em>on crypto.</em></h1><p>Ten alts. One market temperature. The evidence behind every reading.</p></div>
       <div class="intro-actions"><div id="freshness" class="freshness"><i></i><span>Connecting to market data</span></div><button id="share-button" class="button-light"><span aria-hidden="true">↗</span> Share this view</button></div>
     </section>
     <div id="notice" class="notice" role="status" hidden></div>
-    <section id="overview" class="overview" aria-label="Market overview"></section>
+    <section id="temperature" class="temperature" aria-label="Market temperature and its altcoin inputs"></section>
     <section class="changes-section" aria-labelledby="changes-title"><div class="section-heading"><div><div class="section-number">01 / NOTICE THE CHANGE</div><h2 id="changes-title">What stands out</h2><p>Last hour vs the previous five hours · same markets, separate periods<br><span id="comparison-scope">Automatic source · all networks</span></p></div><span id="changes-status">Finding comparable activity</span></div><div id="changes-grid" class="changes-grid"></div></section>
     <section id="coin-picker" class="coin-picker" aria-labelledby="picker-title"><div class="section-heading"><div><div class="section-number">02 / FOLLOW A COIN</div><h2 id="picker-title">Choose your side quest</h2></div><span>Activity pace: <b>1× = unchanged</b> · price changes: 24h</span></div><div id="alt-picker" class="alt-picker"></div><div class="stable-label"><span>5 STABLECOINS</span><span>Dollar targets · different backing and redemption</span></div><div id="stable-picker" class="stable-picker"></div></section>
     <section class="workspace" aria-label="Explore trading activity">

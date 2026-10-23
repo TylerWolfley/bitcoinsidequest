@@ -32,6 +32,8 @@ jobs:
           path: |
             .cache
             data/snapshot.json
+            data/temperature.json
+            data/market-temperature.json
           key: sidequest-live-${{ github.run_id }}
           restore-keys: |
             sidequest-live-
@@ -42,22 +44,29 @@ jobs:
       - name: Keep cached data when an upstream feed is unavailable
         if: steps.refresh.outcome == 'failure'
         run: echo "::warning::Refresh failed. Publishing the last valid snapshot with its original timestamp."
+      - name: Collect daily sentiment and its recorded history
+        id: temperature
+        run: node scripts/collect-temperature.mjs
+      - name: Record the experimental altcoin temperature
+        run: node scripts/collect-risk-temperature.mjs
       - name: Verify data semantics
         run: node --test
       - name: Save the newest valid snapshot and discovery cache
-        if: steps.refresh.outcome == 'success'
+        if: steps.refresh.outcome == 'success' || steps.temperature.outcome == 'success'
         uses: actions/cache/save@v4
         with:
           path: |
             .cache
             data/snapshot.json
+            data/temperature.json
+            data/market-temperature.json
           key: sidequest-live-${{ github.run_id }}
       - name: Prepare public files
         run: |
           mkdir -p _site/lib _site/data
-          cp index.html styles.css activity.css activity-view.js app.js research-panel.js exchange-panel.js favicon.svg CNAME _site/
-          cp lib/model.js lib/activity.js lib/research.js lib/quality.js lib/exchanges.js _site/lib/
-          cp data/snapshot.json _site/data/
+          cp index.html styles.css activity.css activity-view.js temperature.css temperature-view.js app.js research-panel.js exchange-panel.js favicon.svg CNAME _site/
+          cp lib/model.js lib/activity.js lib/research.js lib/quality.js lib/exchanges.js lib/temperature.js lib/risk-temperature.js lib/market-context.js _site/lib/
+          cp data/snapshot.json data/temperature.json data/market-temperature.json _site/data/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

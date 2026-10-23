@@ -32,6 +32,14 @@ The checked-in snapshot contains real provider data normalized for this interfac
 
 The UI provides the coverage table, market links, retrieval times, source attribution, stale/offline notices, keyboard controls, reduced-motion support, mobile details access, and shareable source/coin/window/network/route state. Overview coverage counts coins with a sample across both source types and all networks, not a share of worldwide trading.
 
+## Market Temperature
+
+The opening calculator turns the top-ten altcoin sample into an **experimental** 0–100 reading: 40% price participation, 30% relative strength versus BTC, and 30% reported buy-side activity. Each component uses 24h evidence and needs at least seven fresh coins. Missing coverage never becomes fear. Click a coin inside a component to inspect its actual trading sample.
+
+An expandable chart records our own model's history from launch; it does not reuse another index's past. Changes in included coins or markets break comparisons. A separate, attributed Alternative.me daily Bitcoin Fear & Greed reading provides context and is never used in our calculation. A browser-local last-visit comparison adds continuity without accounts.
+
+See [the versioned formula, admission rules and limitations](docs/market-temperature.md). The weights are transparent design choices, not validated predictions. Run `node scripts/collect-temperature.mjs` for the reference and `node scripts/collect-risk-temperature.mjs` after collecting a fresh market snapshot. Both collectors run in the publishing workflow; its cache preserves the derived history.
+
 ## Investigate a selection
 
 Filter by network, then open **Understand this activity** for three optional views:
