@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {validSnapshot,poolURL,viewHealth} from '../lib/quality.js';
 const snapshot=JSON.parse(await readFile(new URL('../data/snapshot.json',import.meta.url),'utf8'));
+// Structural test fixture must also work when every DEX feed is temporarily down.
+snapshot.pools=[{id:'eth_0xfixture',network:'eth',address:'0xfixture',name:'Fixture pair',dex:'fixture',base:snapshot.assets[0].id,quote:snapshot.assets[10].id,liquidity:50000,checkedAt:snapshot.checkedAt,windows:{h24:{buy:40,sell:60,total:100}}}];
 
 test('snapshot rejects malformed amounts, unknown identities and duplicate pools',()=>{
   assert.equal(validSnapshot(snapshot),true);

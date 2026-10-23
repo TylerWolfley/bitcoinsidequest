@@ -12,7 +12,7 @@ test('saved live snapshot has unique identities and reproducible routes',async()
  assert.equal(s.assets.filter(a=>a.kind==='stable').length,5);
  assert.equal(new Set(s.assets.map(a=>a.id)).size,15);
  assert.equal(new Set(s.pools.map(a=>a.id)).size,s.pools.length);
- assert.ok(s.pools.length>0);
+ assert.ok(s.pools.length+(s.exchangeMarkets?.length??0)>0);
  assert.ok(Number.isFinite(Date.parse(s.checkedAt)));
  for(const p of s.pools){
    assert.ok(s.assets.some(a=>a.id===p.base));assert.ok(s.assets.some(a=>a.id===p.quote));

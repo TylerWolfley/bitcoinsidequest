@@ -1,5 +1,7 @@
 # Initial free-data coverage audit
 
+Historical baseline. For the later 9/10-alt coverage expansion and rules for future coins, see [Coverage system](coverage-system.md).
+
 Verified against live public responses on **23 October 2026**. This records a point-in-time check, not a promise of continuous or comprehensive coverage. The running page's coverage table is authoritative for its current snapshot.
 
 ## What worked

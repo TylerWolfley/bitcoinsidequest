@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { selectUniverse, identityRegistry, poolIdentity, normalizePool, addressKey, numberOrNull } from '../lib/model.js';
 import { validSnapshot } from '../lib/quality.js';
+import { collectExchanges } from './collect-exchanges.mjs';
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const SNAPSHOT = path.join(ROOT, 'data/snapshot.json');
 const CG = 'https://api.coingecko.com/api/v3', GT = 'https://api.geckoterminal.com/api/v2';
@@ -105,23 +106,27 @@ export async function collect({ log = console.log } = {}) {
     }
   }
   await writeFile(path.join(ROOT, '.cache/coverage-attempt.json'), JSON.stringify({ startedAt, candidates: candidates.size, diagnostics, poolErrors, pools: pools.length }, null, 2));
-  if (!pools.length) throw new Error('No validated pool dollar volumes available; previous snapshot retained');
+  const exchange = await collectExchanges(assets,json,{log});
+  if (!pools.length && !exchange.markets.length) throw new Error('No validated trading windows available; previous snapshot retained');
   const uniquePools = [...new Map(pools.map(p => [p.id, p])).values()];
   for (const asset of assets) {
     const covered = uniquePools.filter(p => p.base === asset.id || p.quote === asset.id);
     const attempted = discovery.filter(d => d.assetId === asset.id);
+    const exchangeCovered = exchange.markets.filter(m=>m.base===asset.id||m.quote===asset.id);
     asset.coverage = {
-      status: covered.length ? 'sample' : attempted.length ? 'no-pairs' : 'price-only',
+      status: covered.length || exchangeCovered.length ? 'sample' : attempted.length ? 'no-pairs' : 'price-only',
       pools: covered.length, networks: [...new Set(covered.map(p => p.network))],
-      reason: covered.length ? 'Selected DEX pools only; excludes centralized exchanges and untracked pairs.' : attempted.length
+      exchangeMarkets: exchangeCovered.length, venues: [...new Set(exchangeCovered.map(m=>m.venue))],
+      reason: covered.length ? 'Selected DEX pools; exchange activity is shown separately where available.' : exchangeCovered.length ? 'Selected exchange spot markets only. Other venues, pairs and on-chain activity are outside this sample.' : attempted.length
         ? 'No validated dollar-volume pools within this asset set were available in the sampled feeds.'
-        : 'Live market price available. Native trading flows are not covered by this version.',
+        : 'Live market price available. No eligible trading feed has been mapped for this asset.',
       discoveryFailed: attempted.length > 0 && !discoveredAssets.has(asset.id),
     };
   }
   const snapshot = {
     schemaVersion: 1, evidenceVersion: 1, checkedAt: new Date().toISOString(), startedAt, rankingCheckedAt, refreshMinutes: 15,
     assets, bitcoin: selected.bitcoin ? assetRecord(selected.bitcoin, 'reference') : null, pools: uniquePools, diagnostics, poolErrors,
+    exchangeMarkets:exchange.markets, exchangeDiagnostics:exchange.diagnostics,
     membershipChanged: previous ? assets.map(a => a.id).join() !== previous.assets.map(a => a.id).join() : false,
     policy: {
       ranking: 'CoinGecko circulating market capitalization',
@@ -129,17 +134,20 @@ export async function collect({ log = console.log } = {}) {
       exclusions: 'Bitcoin, classified stablecoins, known wrapped/staked/bridged duplicates are excluded from the ten alts. Other asset types are included.',
       poolSample: 'Up to four mapped pools per discovered contract, among the first twenty returned. Minimum $50,000 liquidity. Only pairs connecting displayed assets. No market-wide flow estimate.',
       semantics: 'Gross trader-side swaps in sampled pools. Buy refers to the pool base token. Net is buy dollars minus sell dollars, not new capital. Routes can include arbitrage or multi-hop legs.',
+      exchanges: 'Reviewed active spot pairs only. Binance completed 5-minute candles; Kraken paginated trades aggregated into 5-minute buckets. Full 1h/6h/24h windows ending at a completed UTC boundary. USDT quote units, never assumed equal to USD. Separate from DEX totals. Missing or failed markets are omitted, not filled with zero or silently retained.',
     },
     sources: [
       { name: 'CoinGecko', url: 'https://www.coingecko.com/en/api', use: 'Rankings, prices, contract identities' },
       { name: 'GeckoTerminal', url: 'https://www.geckoterminal.com/', use: 'Sampled pool buy/sell dollars and liquidity' },
       { name: 'DefiLlama', url: 'https://defillama.com/stablecoins', use: 'Stablecoin classification and circulating value' },
+      { name: 'Binance', url: 'https://developers.binance.com/en/docs/products/spot/faqs/market_data_only', use: 'Selected spot candles, USDT quote volume and taker buying' },
+      { name: 'Kraken', url: 'https://docs.kraken.com/api-reference/market-data/get-recent-trades', use: 'Paginated spot trades with reported buy/sell side' },
     ],
   };
   if (!validSnapshot(snapshot)) throw new Error('Collected data failed snapshot validation; previous snapshot retained');
   await writeFile(SNAPSHOT + '.tmp', JSON.stringify(snapshot, null, 2) + '\n');
   await rename(SNAPSHOT + '.tmp', SNAPSHOT);
-  log('Saved ' + uniquePools.length + ' unique pools; ' + assets.filter(a => a.coverage.pools).length + '/15 assets with sampled routes.');
+  log('Saved ' + uniquePools.length + ' pools + '+exchange.markets.length+' exchange markets; '+assets.filter(a=>a.kind==='alt'&&(a.coverage.pools||a.coverage.exchangeMarkets)).length+'/10 alts with observed activity.');
   return snapshot;
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
