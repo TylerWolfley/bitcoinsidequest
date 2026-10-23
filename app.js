@@ -1,6 +1,8 @@
 import { routesForAsset, summarizeRoutes, ageMinutes } from './lib/model.js';
 import { renderResearch } from './research-panel.js';
 import { validSnapshot, poolURL, SOURCES, viewHealth } from './lib/quality.js';
+import { activitySource, exchangeRoutes, venueName } from './lib/exchanges.js';
+import { exchangeDetails, renderExchangeResearch, quoteAmount } from './exchange-panel.js';
 const $ = selector => document.querySelector(selector);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const compact = n => n === null || !Number.isFinite(n) ? '—' : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 }).format(n);
@@ -14,7 +16,9 @@ const imageURL = a => { try { const u = new URL(a.image); return u.protocol === 
 const icon = (a, cls = '') => '<img class="' + cls + '" src="' + esc(imageURL(a)) + '" width="24" height="24" alt="" loading="lazy">';
 const positions = [[30,29],[50,15],[12,16],[51,44],[12,46],[31,61],[12,77],[51,77],[31,87],[66,62]];
 let snapshot = null, pending = null, currentRoutes = [], selected = 'ethereum', windowKey = 'h24', selectedRoute = null, btc = false, network = 'all';
+let source = 'auto', activeSource = 'dex';
 const inNetwork = () => snapshot.pools.filter(p => network === 'all' || p.network === network);
+const activityAmount = n => activeSource === 'exchange' ? quoteAmount(n) : compact(n);
 let offline = false, loading = false, mapInView = false, toastTimer;
 function readState() {
   const q = new URLSearchParams(location.search);
@@ -22,12 +26,14 @@ function readState() {
   windowKey = ['h1','h6','h24'].includes(q.get('window')) ? q.get('window') : 'h24';
   selectedRoute = q.get('route'); btc = q.get('btc') === '1';
   network = q.get('network') || 'all';
+  source = ['dex','exchange'].includes(q.get('source')) ? q.get('source') : 'auto';
 }
 function saveState(push = true) {
   const q = new URLSearchParams({ coin: selected, window: windowKey });
   if (selectedRoute) q.set('route', selectedRoute);
   if (btc) q.set('btc', '1');
   if (network !== 'all') q.set('network', network);
+  if (source !== 'auto') q.set('source', source);
   const url = location.pathname + '?' + q;
   if (location.pathname + location.search !== url) history[push ? 'pushState' : 'replaceState'](null, '', url);
 }
@@ -49,8 +55,8 @@ function renderNotice() {
   } else if (offline || ageMinutes(snapshot?.checkedAt) > 30) {
     notice.innerHTML = (offline ? 'The latest feed could not be reached. Showing the last available snapshot.' : 'This snapshot is over 30 minutes old. Trading amounts may have changed.') + ' <button id="retry-data">Check again</button>';
     notice.hidden = false; $('#retry-data').onclick = () => loadData(true);
-  } else if (snapshot?.poolErrors?.length || snapshot?.diagnostics?.some(d => d.status !== 'ok')) {
-    notice.textContent = 'Some pool feeds are unavailable. The map shows only the pools successfully checked.'; notice.hidden = false;
+  } else if (snapshot?.poolErrors?.length || snapshot?.diagnostics?.some(d => d.status !== 'ok') || snapshot?.exchangeDiagnostics?.some(d=>d.status!=='ok')) {
+    notice.textContent = 'Some trading feeds are unavailable. The map shows only the markets successfully checked. Check coverage for details.'; notice.hidden = false;
   } else notice.hidden = true;
 }
 async function loadData(manual = false) {
@@ -88,20 +94,22 @@ function freshness() {
   const text = minutes < 1 ? 'Snapshot checked just now' : minutes < 60 ? 'Snapshot checked ' + Math.floor(minutes) + 'm ago' : 'Snapshot checked ' + Math.floor(minutes / 60) + 'h ago';
   $('#freshness span').textContent = text;
   $('#freshness').classList.toggle('stale', offline || minutes > 30);
-  $('#freshness').title = 'Retrieved ' + new Date(snapshot.checkedAt).toLocaleString() + '. Each pool has its own check time; upstream data may be delayed.';
-  const health = viewHealth(snapshot, currentRoutes.flatMap(r => r.pools));
-  const checked = health.age === null ? 'No swaps covered' : 'Oldest pool check ' + (health.age < 1 ? 'under 1m' : Math.floor(health.age) + 'm') + ' ago';
+  $('#freshness').title = 'Retrieved ' + new Date(snapshot.checkedAt).toLocaleString() + '. Each market has its own check time; upstream data may be delayed.';
+  const records = currentRoutes.flatMap(r=>r.pools);
+  const healthSnapshot = activeSource==='exchange' ? {poolErrors:(snapshot.exchangeDiagnostics??[]).filter(d=>d.status!=='ok'),diagnostics:[]} : snapshot;
+  const health = viewHealth(healthSnapshot, records);
+  const checked = health.age === null ? 'No trades covered' : 'Oldest '+(activeSource==='exchange'?'market':'pool')+' check ' + (health.age < 1 ? 'under 1m' : Math.floor(health.age) + 'm') + ' ago';
   $('#view-health').textContent = (offline ? 'Offline · ' : health.status === 'old' ? 'Old data · ' : health.partial ? 'Partial feed · ' : '') + checked;
   $('#view-health').classList.toggle('health-warning', offline || health.status === 'old' || health.partial);
-  $('#view-health').title = 'Retrieval time, not a guarantee of upstream freshness. Pool checks span ' + (health.spreadMinutes ?? 0).toFixed(1) + ' minutes; this is not one synchronized market instant.';
+  $('#view-health').title = 'Retrieval time, not a guarantee of upstream freshness. Checks span ' + (health.spreadMinutes ?? 0).toFixed(1) + ' minutes.';
 }
 function renderOverview() {
   const alts = snapshot.assets.filter(a => a.kind === 'alt'), withPrice = alts.filter(a => a.priceChange24h !== null), positive = withPrice.filter(a => a.priceChange24h > 0).length;
   const biggest = [...withPrice].sort((a, b) => Math.abs(b.priceChange24h) - Math.abs(a.priceChange24h))[0];
-  const sampled = inNetwork().filter(p=>p.windows[windowKey]), hasPool = a => sampled.some(p=>p.base===a.id||p.quote===a.id), covered = alts.filter(hasPool).length, stableCovered = snapshot.assets.filter(a=>a.kind==='stable'&&hasPool(a)).length;
+  const sampled = [...snapshot.pools,...(snapshot.exchangeMarkets??[])].filter(p=>p.windows[windowKey]), hasPool = a => sampled.some(p=>p.base===a.id||p.quote===a.id), covered = alts.filter(hasPool).length, stableCovered = snapshot.assets.filter(a=>a.kind==='stable'&&hasPool(a)).length;
   $('#overview').innerHTML = '<div class="overview-card"><div><div class="eyebrow">THE LAST 24 HOURS</div><div class="overview-value">' + positive + ' of ' + withPrice.length + '<small>alts up in price</small></div></div><div class="mini-breadth" aria-hidden="true">' + alts.map(a => '<i class="' + (a.priceChange24h > 0 ? 'up' : a.priceChange24h < 0 ? 'down' : '') + '"></i>').join('') + '</div></div>' +
     '<div class="overview-card"><div><div class="eyebrow">BIGGEST PRICE MOVE</div><div class="overview-value">' + (biggest ? esc(shortSymbol(biggest)) + ' <span class="' + (biggest.priceChange24h >= 0 ? 'up' : 'down') + '">' + pct(biggest.priceChange24h) + '</span>' : 'Unavailable') + '</div></div>' + (biggest ? icon(biggest, 'overview-coin') : '') + '</div>' +
-    '<div class="overview-card"><div><div class="eyebrow">' + (network==='all'?'OUR TRADING SAMPLE':esc(networkName(network).toUpperCase())+' SAMPLE') + '</div><div class="overview-value">' + covered + ' / 10 alts<small>' + stableCovered + ' / 5 stables · ' + sampled.length + ' pools</small></div></div><div class="coverage-dots" aria-hidden="true">' + Array.from({length:15}, (_,i) => '<i class="' + (i < covered + stableCovered ? 'filled' : '') + '"></i>').join('') + '</div></div>';
+    '<div class="overview-card"><div><div class="eyebrow">COINS WITH OBSERVED ACTIVITY</div><div class="overview-value">' + covered + ' / 10 alts<small>' + stableCovered + ' / 5 stables · across sources</small></div></div><div class="coverage-dots" aria-hidden="true">' + Array.from({length:15}, (_,i) => '<i class="' + (i < covered + stableCovered ? 'filled' : '') + '"></i>').join('') + '</div></div>';
 }
 function renderMap(asset) {
   const related = new Set(currentRoutes.map(r => r.otherId));
@@ -109,9 +117,11 @@ function renderMap(asset) {
   $('#nodes').innerHTML = snapshot.assets.map(a => {
     const pos = a.kind === 'stable' ? [89, 13 + si++ * 18] : positions[ai++];
     const active = a.id === selected;
-    const poolCount = inNetwork().filter(p => p.windows[windowKey] && (p.base===a.id||p.quote===a.id)).length;
-    const caption = active ? 'SELECTED' : poolCount ? 'SAMPLED' : 'PRICE ONLY';
-    return '<button class="coin-node' + (related.has(a.id) ? ' related' : '') + (!active && !related.has(a.id) ? ' muted' : '') + '" data-coin="' + esc(a.id) + '" style="left:' + pos[0] + '%;top:' + pos[1] + '%" aria-pressed="' + active + '" aria-label="' + esc(a.name) + ', ' + pct(a.priceChange24h) + ' price in 24 hours. ' + (poolCount ? poolCount + ' sampled pools in this network scope.' : 'Price only, no flow coverage in this network scope.') + '" title="' + esc(a.name) + ' · ' + money(a.price) + '"><span class="node-icon">' + icon(a) + '</span><span class="coin-symbol">' + esc(shortSymbol(a)) + '</span><span class="coin-change ' + (a.priceChange24h >= 0 ? 'up' : 'down') + '">' + pct(a.priceChange24h) + '</span><span class="node-caption' + (!poolCount ? ' limited' : '') + '">' + caption + '</span></button>';
+    const nodeSource=activitySource(snapshot,a.id,windowKey,source,network);
+    const poolCount = (nodeSource==='exchange'?(snapshot.exchangeMarkets??[]):inNetwork()).filter(p => p.windows[windowKey] && (p.base===a.id||p.quote===a.id)).length;
+    const both=source==='auto'&&inNetwork().some(p=>p.windows[windowKey]&&(p.base===a.id||p.quote===a.id))&&(snapshot.exchangeMarkets??[]).some(m=>m.windows[windowKey]&&(m.base===a.id||m.quote===a.id));
+    const caption = poolCount ? (both?'BOTH SOURCES':nodeSource==='exchange'?'EXCHANGE':'ON-CHAIN') : 'NO SAMPLE';
+    return '<button class="coin-node' + (related.has(a.id) ? ' related' : '') + (!active && !related.has(a.id) ? ' muted' : '') + '" data-coin="' + esc(a.id) + '" style="left:' + pos[0] + '%;top:' + pos[1] + '%" aria-pressed="' + active + '" aria-label="' + esc(a.name) + ', ' + pct(a.priceChange24h) + ' price in 24 hours. ' + (poolCount ? poolCount + ' '+(nodeSource==='exchange'?'exchange markets':'on-chain pools')+' available.' : 'No trading sample in this scope.') + '" title="' + esc(a.name) + ' · ' + money(a.price) + '"><span class="node-icon">' + icon(a) + '</span><span class="coin-symbol">' + esc(shortSymbol(a)) + '</span><span class="coin-change ' + (a.priceChange24h >= 0 ? 'up' : 'down') + '">' + pct(a.priceChange24h) + '</span><span class="node-caption' + (!poolCount ? ' limited' : '') + '">' + caption + '</span></button>';
   }).join('');
   $('#nodes').querySelectorAll('[data-coin]').forEach(el => el.onclick = () => selectCoin(el.dataset.coin));
   $('#loading').hidden = true;
@@ -152,9 +162,9 @@ function drawConnections() {
       const cx = (from.x + to.x) / 2 + nx * offset * 2, cy = (from.y + to.y) / 2 + ny * offset * 2;
       const start = incoming ? from : to, end = incoming ? to : from;
       const d = 'M' + start.x + ',' + start.y + ' Q' + cx + ',' + cy + ' ' + end.x + ',' + end.y;
-      const label = (incoming ? shortSymbol(otherAsset) + ' to ' + shortSymbol(snapshot.assets.find(a=>a.id===selected)) : shortSymbol(snapshot.assets.find(a=>a.id===selected)) + ' to ' + shortSymbol(otherAsset)) + ': ' + compact(value);
+      const label = (incoming ? shortSymbol(otherAsset) + ' to ' + shortSymbol(snapshot.assets.find(a=>a.id===selected)) : shortSymbol(snapshot.assets.find(a=>a.id===selected)) + ' to ' + shortSymbol(otherAsset)) + ': ' + activityAmount(value);
       html += '<g><path class="route-hit" data-route="' + esc(route.otherId) + '" d="' + d + '" role="button" tabindex="0" aria-label="' + esc(label) + '"><title>' + esc(label) + '</title></path><path class="route-path' + (selectedRoute ? ' active' : '') + (incoming ? '' : ' outgoing') + '" d="' + d + '" stroke="' + (incoming ? '#247c68' : '#98513c') + '" stroke-width="' + (1 + 5 * value / max) + '" marker-end="url(#' + (incoming ? 'in-arrow' : 'out-arrow') + ')" pointer-events="none"/>';
-      if (selectedRoute) html += '<text class="map-route-label" text-anchor="middle" x="' + ((from.x+to.x)/2+nx*(offset+6*direction)) + '" y="' + ((from.y+to.y)/2+ny*(offset+6*direction)) + '">' + compact(value) + '</text>';
+      if (selectedRoute) html += '<text class="map-route-label" text-anchor="middle" x="' + ((from.x+to.x)/2+nx*(offset+6*direction)) + '" y="' + ((from.y+to.y)/2+ny*(offset+6*direction)) + '">' + activityAmount(value) + '</text>';
       html += '</g>';
     }
   }
@@ -171,9 +181,12 @@ function renderInspector(asset) {
   let html = '<div class="detail-top"><div class="coin-heading">' + icon(asset) + '<div><h2>' + symbol + '</h2><p>' + esc(asset.name) + '</p></div><span class="coin-rank">#' + asset.rank + '</span></div>' +
     '<div class="price-line"><strong>' + money(asset.price) + '</strong><span class="' + (asset.priceChange24h >= 0 ? 'up' : 'down') + '">' + pct(asset.priceChange24h) + ' · 24h</span></div><p class="price-source">Market-wide price · ' + (ageMinutes(asset.priceUpdatedAt) > 30 ? 'older quote · ' : '') + new Date(asset.priceUpdatedAt).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) + '</p>';
   if (asset.kind === 'stable') html += '<div class="stable-detail"><span>Distance from $1</span><strong>' + (asset.price === null ? 'Unavailable' : pct((asset.price - 1)*100)) + '</strong></div><p class="stable-risk-note">Targets $1. Backing and redemption differ; a near-$1 price is not a safety rating.</p>';
+  if(activeSource==='exchange') {
+    html+='</div>'+exchangeDetails({snapshot,asset,windowKey,selectedRoute,currentRoutes,icon});
+  } else {
   html += '</div><div class="detail-trading">';
   if (!summary) {
-    const reason = network!=='all' ? 'No sampled routes in this network and timeframe. Try all networks or another coin.' : asset.coverage.pools ? 'A verified dollar breakdown is unavailable for the ' + timeframe[windowKey] + '. Try another timeframe.' : asset.coverage.reason;
+    const reason = source==='dex'&&(asset.coverage.exchangeMarkets??0)>0 ? 'No on-chain sample is available here. Choose Automatic or Exchange only to see covered spot trades.' : network!=='all' ? 'No sampled routes in this network and timeframe. Try all networks or another coin.' : asset.coverage.pools ? 'A verified dollar breakdown is unavailable for the ' + timeframe[windowKey] + '. Try another timeframe.' : asset.coverage.reason;
     html += '<div class="empty-coverage"><div class="empty-icon" aria-hidden="true">◌</div><h3>Price available.<br>Flows still out of view.</h3><p>' + esc(reason) + '</p><p>Missing coverage doesn’t mean no trading. We haven’t estimated any arrows.</p><a href="https://www.coingecko.com/en/coins/' + encodeURIComponent(asset.id) + '" target="_blank" rel="noopener noreferrer">Explore ' + symbol + ' markets ↗</a></div>';
   } else {
     const share = summary.buyShare;
@@ -197,10 +210,11 @@ function renderInspector(asset) {
   }
   if (asset.kind === 'stable' && asset.supplyChange24h !== null) html += '<div class="stable-detail"><span>Circulating value · 24h</span><strong>' + pct(asset.supplyChange24h) + '</strong></div><p class="scope-note">DefiLlama circulating value in USD. Supply and price can both affect this figure; it does not measure purchases.</p>';
   html += '</div>';
+  }
   html += '<a class="inspect-jump" href="#research">Put this activity in context ↓</a>';
   $('#inspector').innerHTML = html;
   $('#inspector .inspect-jump').onclick = () => { $('#research-shell').open = true; };
-  $('#mobile-summary').innerHTML = '<span><strong>' + symbol + '</strong><small>' + (summary?.buyShare!==null && summary ? (summary.buyShare*100).toFixed(1)+'% buys · sampled swaps' : 'Price only · flows unavailable') + '</small></span><span>Details ↓</span>';
+  $('#mobile-summary').innerHTML = '<span><strong>' + symbol + '</strong><small>' + (summary?.buyShare!==null && summary ? (summary.buyShare*100).toFixed(1)+'% buys · '+(activeSource==='exchange'?'exchange trades':'on-chain swaps') : 'No trading sample') + '</small></span><span>Details ↓</span>';
   $('#inspector').querySelectorAll('[data-detail-route]').forEach(el => el.onclick = () => selectRoute(el.dataset.detailRoute));
   if ($('#all-routes')) $('#all-routes').onclick = () => { selectedRoute = null; render(); saveState(); };
 }
@@ -218,18 +232,30 @@ function render() {
   if(network!=='all'&&!networks.includes(network))network='all';
   $('#network-filter').innerHTML='<option value="all">All sampled networks</option>'+networks.map(n=>'<option value="'+esc(n)+'">'+esc(networkName(n))+'</option>').join('');
   $('#network-filter').value=network;
-  currentRoutes = routesForAsset({pools:inNetwork()}, selected, windowKey);
+  activeSource=activitySource(snapshot,selected,windowKey,source,network);
+  $('#source-filter').value=source;
+  $('#network-scope').hidden=activeSource==='exchange';
+  $('#activity-subtitle').textContent=activeSource==='exchange'?'Exchange trades · measured in USDT':'On-chain swaps · measured in USD';
+  $('#map-measure').textContent='Thicker lines = more traded '+(activeSource==='exchange'?'USDT':'dollars')+'. Coin size is equal.';
+  $('#research-shell > summary small').textContent=activeSource==='exchange'?'Compare activity · inspect markets · check the numbers':'Compare activity · inspect pools · check the numbers';
+  currentRoutes = activeSource==='exchange'?exchangeRoutes(snapshot.exchangeMarkets??[],selected,windowKey):routesForAsset({pools:inNetwork()}, selected, windowKey);
   if (selectedRoute && !currentRoutes.some(r=>r.otherId===selectedRoute)) selectedRoute=null;
   const asset = snapshot.assets.find(a=>a.id===selected);
   renderOverview(); renderMap(asset); renderInspector(asset); renderPriceBars(); freshness(); renderNotice();
-  renderResearch({snapshot,selected,windowKey,network,selectedRoute});
+  if(activeSource==='exchange')renderExchangeResearch({snapshot,selected,windowKey,selectedRoute});
+  else renderResearch({snapshot,selected,windowKey,network,selectedRoute});
   $('#mobile-summary').hidden = !mapInView;
   if (focusSelector) requestAnimationFrame(() => document.querySelector(focusSelector)?.focus({ preventScroll: true }));
 }
 function openMethod() {
-  $('#method-content').innerHTML = '<p class="method-intro">Each circle is a coin. Select one to see recorded swaps involving other coins in this view. Solid arrows point into your selection; dashed arrows point out. All circles are the same size.</p>' +
-    '<div class="method-grid"><article><h3>A trading sample</h3><p>We check selected decentralized exchange pools. Centralized exchanges, other tokens and untracked pools are outside this picture. A missing line means no covered route, not no trading.</p></article><article><h3>Activity, with a boundary</h3><p>Amounts are gross swap dollars. Net is buying minus selling from the trader’s perspective. It is not fresh money entering crypto, a price prediction, or proof of investor intent.</p></article><article><h3>Automatic rankings</h3><p>Ten non-stable assets by CoinGecko market cap, plus five USD-pegged stablecoins identified by DefiLlama. BTC and known wrapped/staked/bridged duplicates are excluded from the ten. Other asset types, including tokenized assets, remain eligible.</p></article><article><h3>Freshness you can see</h3><p>The shared collector targets a 15-minute refresh on GitHub Pages. Scheduled runs can be delayed. Local preview checks about every five minutes. Times show retrieval, not guaranteed upstream freshness. An old snapshot is labeled.</p></article></div>' +
-    (snapshot ? '<h2>Coverage in this snapshot</h2><table class="coverage-table"><thead><tr><th>Asset</th><th>Market rank</th><th>Trading sample</th><th>Networks</th></tr></thead><tbody>' + snapshot.assets.map(a => '<tr><td>' + esc(a.name) + '</td><td>#' + a.rank + '</td><td>' + (a.coverage.pools ? a.coverage.pools + ' pools' : 'Price only') + '</td><td>' + esc(a.coverage.networks.map(networkName).join(', ') || '—') + '</td></tr>').join('') + '</tbody></table><p class="method-foot">' + esc(snapshot.policy.poolSample) + ' Native wrapped ETH, SOL, BNB, TRX and HYPE can be mapped to their underlying coins on their native network; bridged lookalikes are not silently substituted. Stablecoin circulating value is measured in USD and can change with its price.<br><br>Rankings retrieved ' + new Date(snapshot.rankingCheckedAt).toLocaleString() + '. Pool checks completed ' + new Date(snapshot.checkedAt).toLocaleString() + '.<br>Sources: ' + SOURCES.map(s => '<a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a> (' + esc(s.use) + ')').join(' · ') + '.</p>' : '<p>Coverage details appear once a snapshot is available.</p>');
+  $('#method-content').innerHTML = '<p class="method-intro">Each circle is a coin. Solid arrows point into your selection; dashed arrows point out. All circles are the same size. These are observed trades, not wallet transfers or fresh capital.</p>' +
+    '<div class="method-grid"><article><h3>Two kinds of activity</h3><p>Automatic shows on-chain pools when available, otherwise a covered exchange spot market. The label beneath “Activity map” always identifies the source and unit. Choose On-chain only or Exchange only to keep a fixed scope.</p></article><article><h3>Keep the units honest</h3><p>On-chain amounts are provider-reported USD. Exchange amounts are USDT quote units, with completed five-minute intervals. We do not assume one USDT equals one dollar or add the two sources together. Every exchange trade has a buyer and seller; reported side indicates its direction.</p></article><article><h3>Automatic rankings</h3><p>Ten non-stable assets by CoinGecko market cap, plus five USD-pegged stablecoins identified by DefiLlama. BTC and known wrapped/staked/bridged duplicates are excluded from the ten. Other asset types, including tokenized assets, remain eligible. A new ranking does not create a new identity mapping automatically.</p></article><article><h3>Freshness you can see</h3><p>The shared collector targets a 15-minute refresh. Schedules and upstream feeds can be delayed. Exchange details show an explicit window end; pool windows roll at the provider. Retrieval times do not guarantee upstream accuracy. Missing coverage never means zero trading.</p></article></div>' +
+    (snapshot ? '<h2>Coverage in this snapshot</h2><p class="method-foot">Counts below use the selected '+windowKey.slice(1)+'h timeframe across all sources and networks. They measure which coins have a sample, not the share of global trading captured.</p><table class="coverage-table"><thead><tr><th>Asset</th><th>Rank</th><th>On-chain</th><th>Exchange</th></tr></thead><tbody>' + snapshot.assets.map(a => {
+      const pools=snapshot.pools.filter(p=>p.windows[windowKey]&&(p.base===a.id||p.quote===a.id));
+      const markets=(snapshot.exchangeMarkets??[]).filter(m=>m.windows[windowKey]&&(m.base===a.id||m.quote===a.id));
+      const failed=(snapshot.exchangeDiagnostics??[]).filter(d=>d.assetId===a.id&&d.status!=='ok');
+      return '<tr><td>'+esc(a.name)+'</td><td>#'+a.rank+'</td><td>'+(pools.length?pools.length+' pools · '+esc([...new Set(pools.map(p=>networkName(p.network)))].join(', ')):'No sample')+'</td><td>'+(markets.length?markets.length+' market'+(markets.length===1?'':'s')+' · '+esc([...new Set(markets.map(m=>venueName(m.venue)))].join(', ')):failed.length?'Feed unavailable':'No mapped market')+'</td></tr>';
+    }).join('') + '</tbody></table><p class="method-foot">' + esc(snapshot.policy.poolSample) + ' Native wrapped forms are explicit; bridged lookalikes are not silently substituted. Exchange identity must match a reviewed pair and current spot-market metadata. Assets without an eligible trading feed remain visible with price data.<br><br>Rankings retrieved ' + new Date(snapshot.rankingCheckedAt).toLocaleString() + '. Collection completed ' + new Date(snapshot.checkedAt).toLocaleString() + '.<br>Sources: ' + SOURCES.map(s => '<a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a> (' + esc(s.use) + ')').join(' · ') + '.</p><p class="method-foot">Binance-derived figures: <a href="https://github.com/binance/binance-public-data/blob/master/TERMS_AND_CONDITIONS.md" target="_blank" rel="noopener noreferrer">Binance Vision · CC BY-NC-SA 4.0</a>. Window totals are calculated by this site; other providers retain their own terms. Technical access does not establish unrestricted commercial reuse.</p>' : '<p>Coverage details appear once a snapshot is available.</p>');
   $('#method-dialog').showModal();
 }
 ['#about-button','#coverage-button','#footer-method'].forEach(id=>$(id).onclick=openMethod);
@@ -238,6 +264,7 @@ $('#method-dialog').onclick=e=>{if(e.target===$('#method-dialog')){const r=e.tar
 document.querySelectorAll('[data-window]').forEach(button=>button.onclick=()=>{windowKey=button.dataset.window;render();saveState();});
 $('#btc-toggle').onclick=()=>{btc=!btc;render();saveState();};
 $('#network-filter').onchange=e=>{network=e.target.value;selectedRoute=null;render();saveState();};
+$('#source-filter').onchange=e=>{source=e.target.value;selectedRoute=null;render();saveState();};
 $('#share-button').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);toast('View link copied');}catch{$('#share-url').value=location.href;$('#share-dialog').showModal();$('#share-url').select();}};
 $('#close-share').onclick=()=>$('#share-dialog').close();
 $('#mobile-summary').onclick=()=>{ $('#inspector').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}); $('#inspector').focus({preventScroll:true}); };
