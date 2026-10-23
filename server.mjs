@@ -12,7 +12,7 @@ const refresh = () => {
   refreshing = collect().catch(error => console.error('Refresh delayed: ' + error.message)).finally(() => { refreshing = null; });
   return refreshing;
 };
-const allowed = new Set(['/index.html', '/styles.css', '/app.js', '/research-panel.js', '/exchange-panel.js', '/favicon.svg', '/lib/model.js', '/lib/research.js', '/lib/quality.js', '/lib/exchanges.js', '/data/snapshot.json']);
+const allowed = new Set(['/index.html', '/activity.css', '/activity-view.js', '/lib/activity.js', '/styles.css', '/app.js', '/research-panel.js', '/exchange-panel.js', '/favicon.svg', '/lib/model.js', '/lib/research.js', '/lib/quality.js', '/lib/exchanges.js', '/data/snapshot.json']);
 const mime = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml' };
 const server = http.createServer(async (req, res) => {
   try {

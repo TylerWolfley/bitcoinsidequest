@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bitcoin Side Quest — Crypto activity, explained</title>
   <meta name="description" content="Explore the top ten altcoins and five stablecoins. See observed buying and selling in selected markets, with clear explanations and sources.">
-  <meta name="theme-color" content="#f7f8f5">
+  <meta name="theme-color" content="#f4f5f1">
   <link rel="canonical" href="https://bitcoinsidequest.com/">
   <meta property="og:title" content="Bitcoin Side Quest — Crypto activity, explained">
   <meta property="og:description" content="Ten alts. Five stablecoins. A clearer picture of observed crypto trading.">
@@ -17,43 +17,48 @@
   <meta name="twitter:description" content="See what's trading. Tap to understand it.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./activity.css">
   <script type="module" src="./app.js"></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to activity map</a>
   <header class="site-header">
     <a class="brand" href="./" aria-label="Bitcoin Side Quest home"><img src="./favicon.svg" width="35" height="35" alt=""><span>bitcoin<span class="brand-second">side quest<span class="brand-dot">.</span></span></span></a>
-    <div class="header-right"><span class="edition">THE MARKET, A LITTLE CLEARER</span><button class="text-button" id="about-button">How to read this <span aria-hidden="true">↗</span></button></div>
+    <div class="header-right"><span class="edition">A LITTLE CONTEXT. A CLEARER MARKET.</span><button class="motion-toggle" id="motion-toggle" aria-pressed="false"><span aria-hidden="true">◉</span> Motion off</button><button class="text-button" id="about-button">How it works <span aria-hidden="true">↗</span></button></div>
   </header>
   <main id="main">
     <section class="intro">
-      <div><div class="eyebrow"><span></span> YOUR CRYPTO FIELD GUIDE</div><h1>Follow the activity<span>.</span></h1><p>Ten alts. Five stablecoins. See what’s trading, and take a closer look.</p></div>
+      <div><div class="eyebrow"><span></span> YOUR CRYPTO FIELD GUIDE</div><h1>See what changed<span>.</span><br><em>Follow the activity.</em></h1><p>Real trades. Clear comparisons. A little less guesswork.</p></div>
       <div class="intro-actions"><div id="freshness" class="freshness"><i></i><span>Connecting to market data</span></div><button id="share-button" class="button-light"><span aria-hidden="true">↗</span> Share this view</button></div>
     </section>
     <div id="notice" class="notice" role="status" hidden></div>
     <section id="overview" class="overview" aria-label="Market overview"></section>
+    <section class="changes-section" aria-labelledby="changes-title"><div class="section-heading"><div><div class="section-number">01 / NOTICE THE CHANGE</div><h2 id="changes-title">What stands out</h2><p>Last hour vs the previous five hours · same markets, separate periods<br><span id="comparison-scope">Automatic source · all networks</span></p></div><span id="changes-status">Finding comparable activity</span></div><div id="changes-grid" class="changes-grid"></div></section>
+    <section id="coin-picker" class="coin-picker" aria-labelledby="picker-title"><div class="section-heading"><div><div class="section-number">02 / FOLLOW A COIN</div><h2 id="picker-title">Choose your side quest</h2></div><span>Activity pace: <b>1× = unchanged</b> · price changes: 24h</span></div><div id="alt-picker" class="alt-picker"></div><div class="stable-label"><span>5 STABLECOINS</span><span>Dollar targets · different backing and redemption</span></div><div id="stable-picker" class="stable-picker"></div></section>
     <section class="workspace" aria-label="Explore trading activity">
       <div class="map-panel">
-        <div class="map-toolbar"><div><h2>Activity map <span class="tag">BETA</span></h2><p id="activity-subtitle">Trading between coins · selected markets</p></div>
+        <div class="map-toolbar"><div><div class="section-number">03 / READ THE TRADES</div><h2 id="map-title">Trading, in view</h2><p id="activity-subtitle">Trading between coins · selected markets</p></div>
           <div class="time-control" role="group" aria-label="Trading timeframe"><button data-window="h1" aria-pressed="false">1H</button><button data-window="h6" aria-pressed="false">6H</button><button data-window="h24" aria-pressed="true">24H</button></div>
         </div>
-        <div class="scope-toolbar"><div class="scope-control"><label for="source-filter">Activity</label><select id="source-filter"><option value="auto">Automatic</option><option value="dex">On-chain only</option><option value="exchange">Exchange only</option></select></div><div id="network-scope" class="scope-control"><label for="network-filter">Network</label><select id="network-filter" aria-label="Filter sampled trading by network"><option value="all">All sampled networks</option></select></div></div>
+        <div class="scope-toolbar"><div class="scope-control"><label for="source-filter">Activity</label><select id="source-filter"><option value="auto">Automatic</option><option value="dex">On-chain only</option><option value="exchange">Exchange only</option></select></div><div id="network-scope" class="scope-control"><label for="network-filter">Network</label><select id="network-filter" aria-label="Filter sampled trading by network" title="Applies to on-chain comparisons across the page"><option value="all">All sampled networks</option></select></div></div>
         <div class="map-health"><span>Trading sample · market-wide coverage unknown</span><span id="view-health"></span></div>
-        <div class="map-subhead"><span><b>10</b> ALTCOINS</span><button id="btc-toggle" class="btc-toggle" aria-pressed="false"><span class="toggle-track"></span> BTC reference</button><span><b>5</b> STABLECOINS</span></div>
+        <div class="map-subhead"><span id="map-unit">Amounts in USD</span><button id="btc-toggle" class="btc-toggle" aria-pressed="false"><span class="toggle-track"></span> BTC reference</button></div>
         <div id="btc-reference" class="btc-reference" hidden></div>
-        <div id="map" class="map" aria-label="Select a coin to explore its sampled trades">
+        <div class="trade-column-headings"><span id="buy-label">Buying</span><span>Selected coin</span><span id="sell-label">Selling</span></div>
+        <div id="map" class="map" aria-label="Buying and selling routes for the selected coin">
           <svg id="connections" aria-label="Trading routes" role="group"></svg>
           <div id="nodes"></div>
           <div id="loading" class="loading-state"><span class="loader"></span><strong>Finding the latest picture</strong><span>Real market data. No simulated flows.</span></div>
         </div>
-        <div class="map-bottom"><div class="legend"><span><i class="line-key incoming"></i> Into selected coin</span><span><i class="line-key outgoing"></i> Out of selected coin</span></div><span id="route-count">Select a coin to begin</span></div>
-        <div class="map-foot"><span id="map-measure">Thicker lines = more traded dollars. Coin size is equal.</span><button id="coverage-button" class="text-button">Check coverage <span aria-hidden="true">↗</span></button></div>
+        <div id="map-summary" class="map-summary"></div>
+        <div class="map-bottom"><span id="route-count">Select a coin to begin</span><span>Tap a route to isolate it</span></div>
+        <div class="map-foot"><span id="map-measure">Thicker lines = more traded. Motion shows direction, not individual trades.</span><button id="coverage-button" class="text-button">Coverage <span aria-hidden="true">↗</span></button></div>
       </div>
-      <aside id="inspector" class="inspector" aria-label="Selected coin details" tabindex="-1"><div class="inspector-placeholder"><span class="tiny-compass">↗</span><h2>One coin.<br>A clearer picture.</h2><p>Choose a circle to see the trading behind it.</p></div></aside>
+      <aside id="inspector" class="inspector" aria-label="Selected coin details" tabindex="-1"><div class="inspector-placeholder"><span class="tiny-compass">↗</span><h2>One coin.<br>A clearer picture.</h2><p>Choose a coin to see the trading behind it.</p></div></aside>
     </section>
     <details id="research-shell" class="research-shell"><summary><span>Understand this activity</span><small>Compare activity · inspect pools · check the numbers</small></summary><section id="research" class="research" aria-label="Investigate the selected market"></section></details>
     <section class="price-section"><div class="section-heading"><div><h2>The wider picture</h2><p>Market-wide price changes · last 24 hours</p></div><span>Price movement is separate from trading flows.</span></div><div id="price-bars" class="price-bars"></div></section>
-    <footer><span class="footer-note">A little context goes a long way.</span><div>Data provided by <a href="https://www.coingecko.com/en/api" target="_blank" rel="noopener noreferrer">CoinGecko</a>, <a href="https://www.geckoterminal.com/" target="_blank" rel="noopener noreferrer">GeckoTerminal</a> &amp; <a href="https://defillama.com/stablecoins" target="_blank" rel="noopener noreferrer">DefiLlama</a>.</div><button id="footer-method" class="text-button">Sources &amp; method ↗</button></footer>
+    <footer><span class="footer-note">A little context goes a long way.</span><div>Data provided by <a href="https://www.coingecko.com/en/api" target="_blank" rel="noopener noreferrer">CoinGecko</a>, <a href="https://www.geckoterminal.com/" target="_blank" rel="noopener noreferrer">GeckoTerminal</a> &amp; <a href="https://defillama.com/stablecoins" target="_blank" rel="noopener noreferrer">DefiLlama</a>, <a href="https://www.binance.com/en/markets" target="_blank" rel="noopener noreferrer">Binance</a> &amp; <a href="https://www.kraken.com/prices" target="_blank" rel="noopener noreferrer">Kraken</a>.</div><button id="footer-method" class="text-button">Sources &amp; method ↗</button></footer>
   </main>
   <dialog id="method-dialog"><div class="dialog-top"><div><div class="eyebrow">A CLEARER PICTURE</div><h2>What you’re looking at</h2></div><button class="close-button" id="close-method" aria-label="Close information">×</button></div><div id="method-content"></div></dialog>
   <dialog id="share-dialog"><h2>Share this view</h2><label for="share-url">Copy this link</label><input id="share-url" readonly><button id="close-share" class="button-light">Done</button></dialog>

@@ -1,24 +1,21 @@
-import { routesForAsset, summarizeRoutes, ageMinutes } from './lib/model.js';
+import { routesForAsset, ageMinutes } from './lib/model.js';
 import { renderResearch } from './research-panel.js';
-import { validSnapshot, poolURL, SOURCES, viewHealth } from './lib/quality.js';
+import { validSnapshot, SOURCES, viewHealth } from './lib/quality.js';
 import { activitySource, exchangeRoutes, venueName } from './lib/exchanges.js';
-import { exchangeDetails, renderExchangeResearch, quoteAmount } from './exchange-panel.js';
+import { renderExchangeResearch } from './exchange-panel.js';
+import { renderChanges, renderCoinPicker, renderTradeMap, drawTradeRoutes, renderFocusCard } from './activity-view.js';
 const $ = selector => document.querySelector(selector);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const compact = n => n === null || !Number.isFinite(n) ? '—' : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 }).format(n);
 const money = n => n === null || !Number.isFinite(n) ? '—' : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: n < 1 ? 4 : 2 }).format(n);
 const pct = n => n === null || !Number.isFinite(n) ? '—' : (n >= 0 ? '+' : '') + n.toFixed(2) + '%';
-const signed = n => (n > 0 ? '+' : n < 0 ? '−' : '') + compact(Math.abs(n));
-const timeframe = { h1: 'last hour', h6: 'last 6 hours', h24: 'last 24 hours' };
 const shortSymbol = a => a.symbol === 'FIGR_HELOC' ? 'FIGR' : a.symbol;
 const networkName = n => ({ eth: 'Ethereum', bsc: 'BNB Chain', solana: 'Solana', tron: 'TRON', hyperevm: 'HyperEVM', arbitrum: 'Arbitrum', base: 'Base' })[n] ?? n;
 const imageURL = a => { try { const u = new URL(a.image); return u.protocol === 'https:' && /(^|\.)coingecko\.com$/.test(u.hostname) ? u.href : './favicon.svg'; } catch { return './favicon.svg'; } };
 const icon = (a, cls = '') => '<img class="' + cls + '" src="' + esc(imageURL(a)) + '" width="24" height="24" alt="" loading="lazy">';
-const positions = [[30,29],[50,15],[12,16],[51,44],[12,46],[31,61],[12,77],[51,77],[31,87],[66,62]];
 let snapshot = null, pending = null, currentRoutes = [], selected = 'ethereum', windowKey = 'h24', selectedRoute = null, btc = false, network = 'all';
 let source = 'auto', activeSource = 'dex';
 const inNetwork = () => snapshot.pools.filter(p => network === 'all' || p.network === network);
-const activityAmount = n => activeSource === 'exchange' ? quoteAmount(n) : compact(n);
 let offline = false, loading = false, mapInView = false, toastTimer;
 function readState() {
   const q = new URLSearchParams(location.search);
@@ -68,7 +65,7 @@ async function loadData(manual = false) {
     const data = await response.json();
     if (!validate(data)) throw new Error('Invalid snapshot');
     offline = false;
-    if (snapshot && snapshot.checkedAt === data.checkedAt) { freshness(); renderNotice(); if (manual) toast('You have the latest available snapshot'); return; }
+    if (snapshot && snapshot.checkedAt === data.checkedAt) { freshness(); renderNotice(); renderChanges(viewContext()); if (manual) toast('You have the latest available snapshot'); return; }
     if (snapshot && snapshot.assets.map(a => a.id).join() !== data.assets.map(a => a.id).join()) pending = data;
     else { snapshot = data; pending = null; }
     try { localStorage.setItem('bsq-snapshot-v1', JSON.stringify(data)); } catch {}
@@ -111,122 +108,38 @@ function renderOverview() {
     '<div class="overview-card"><div><div class="eyebrow">BIGGEST PRICE MOVE</div><div class="overview-value">' + (biggest ? esc(shortSymbol(biggest)) + ' <span class="' + (biggest.priceChange24h >= 0 ? 'up' : 'down') + '">' + pct(biggest.priceChange24h) + '</span>' : 'Unavailable') + '</div></div>' + (biggest ? icon(biggest, 'overview-coin') : '') + '</div>' +
     '<div class="overview-card"><div><div class="eyebrow">COINS WITH OBSERVED ACTIVITY</div><div class="overview-value">' + covered + ' / 10 alts<small>' + stableCovered + ' / 5 stables · across sources</small></div></div><div class="coverage-dots" aria-hidden="true">' + Array.from({length:15}, (_,i) => '<i class="' + (i < covered + stableCovered ? 'filled' : '') + '"></i>').join('') + '</div></div>';
 }
-function renderMap(asset) {
-  const related = new Set(currentRoutes.map(r => r.otherId));
-  let ai = 0, si = 0;
-  $('#nodes').innerHTML = snapshot.assets.map(a => {
-    const pos = a.kind === 'stable' ? [89, 13 + si++ * 18] : positions[ai++];
-    const active = a.id === selected;
-    const nodeSource=activitySource(snapshot,a.id,windowKey,source,network);
-    const poolCount = (nodeSource==='exchange'?(snapshot.exchangeMarkets??[]):inNetwork()).filter(p => p.windows[windowKey] && (p.base===a.id||p.quote===a.id)).length;
-    const both=source==='auto'&&inNetwork().some(p=>p.windows[windowKey]&&(p.base===a.id||p.quote===a.id))&&(snapshot.exchangeMarkets??[]).some(m=>m.windows[windowKey]&&(m.base===a.id||m.quote===a.id));
-    const caption = poolCount ? (both?'BOTH SOURCES':nodeSource==='exchange'?'EXCHANGE':'ON-CHAIN') : 'NO SAMPLE';
-    return '<button class="coin-node' + (related.has(a.id) ? ' related' : '') + (!active && !related.has(a.id) ? ' muted' : '') + '" data-coin="' + esc(a.id) + '" style="left:' + pos[0] + '%;top:' + pos[1] + '%" aria-pressed="' + active + '" aria-label="' + esc(a.name) + ', ' + pct(a.priceChange24h) + ' price in 24 hours. ' + (poolCount ? poolCount + ' '+(nodeSource==='exchange'?'exchange markets':'on-chain pools')+' available.' : 'No trading sample in this scope.') + '" title="' + esc(a.name) + ' · ' + money(a.price) + '"><span class="node-icon">' + icon(a) + '</span><span class="coin-symbol">' + esc(shortSymbol(a)) + '</span><span class="coin-change ' + (a.priceChange24h >= 0 ? 'up' : 'down') + '">' + pct(a.priceChange24h) + '</span><span class="node-caption' + (!poolCount ? ' limited' : '') + '">' + caption + '</span></button>';
-  }).join('');
-  $('#nodes').querySelectorAll('[data-coin]').forEach(el => el.onclick = () => selectCoin(el.dataset.coin));
-  $('#loading').hidden = true;
-  document.querySelectorAll('[data-window]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.window === windowKey)));
-  $('#btc-toggle').setAttribute('aria-pressed', String(btc));
-  $('#btc-reference').hidden = !btc;
-  if (btc && snapshot.bitcoin) {
-    const a = snapshot.bitcoin;
-    $('#btc-reference').innerHTML = '<b>₿ Bitcoin</b><strong>' + money(a.price) + '</strong><span class="' + (a.priceChange24h >= 0 ? 'up' : 'down') + '">' + pct(a.priceChange24h) + ' · 24h</span><span>Price reference · no flow estimate</span>';
-  }
-  const shown = selectedRoute ? currentRoutes.filter(r => r.otherId === selectedRoute) : currentRoutes.slice(0,3);
-  $('#route-count').textContent = currentRoutes.length ? (selectedRoute ? 'One route selected' : 'Showing ' + shown.length + ' of ' + currentRoutes.length + ' routes') + ' · ' + timeframe[windowKey] : 'No sampled routes for ' + shortSymbol(asset);
+function scrollToView(selector) {
+  $(selector).scrollIntoView({behavior:document.documentElement.dataset.motion==='on'?'smooth':'auto',block:'start'});
+}
+function viewContext() {
+  return {snapshot,selected,selectedRoute,currentRoutes,windowKey,activeSource,source,network,offline,
+    onCoin:id=>{selectCoin(id);scrollToView('.workspace');},
+    onHighlight:id=>{windowKey='h1';selectCoin(id);scrollToView('.workspace');},
+    onRoute:selectRoute,
+    onDetails:()=>{scrollToView('#inspector');$('#inspector').focus({preventScroll:true});},
+    onAll:()=>{selectedRoute=null;render();saveState();},
+    onResearch:()=>{$('#research-shell').open=true;scrollToView('#research-shell');}};
+}
+function renderMap() {
+  renderTradeMap(viewContext());
+  document.querySelectorAll('[data-window]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.window===windowKey)));
+  $('#btc-toggle').setAttribute('aria-pressed',String(btc));
+  $('#btc-reference').hidden=!btc;
+  if(btc&&snapshot.bitcoin){const a=snapshot.bitcoin;$('#btc-reference').innerHTML='<b>₿ Bitcoin</b><strong>'+money(a.price)+'</strong><span class="'+(a.priceChange24h>=0?'up':'down')+'">'+pct(a.priceChange24h)+' · 24h</span><span>Price reference · no flow estimate</span>';}
   requestAnimationFrame(drawConnections);
 }
-function drawConnections() {
-  if (!snapshot) return;
-  const map = $('#map'), svg = $('#connections'), bounds = map.getBoundingClientRect();
-  svg.setAttribute('viewBox', '0 0 ' + bounds.width + ' ' + bounds.height);
-  const chosenNode = [...$('#nodes').children].find(el => el.dataset.coin === selected);
-  if (!chosenNode) return;
-  const point = el => { const r = el.getBoundingClientRect(); return { x: r.left - bounds.left + r.width / 2, y: r.top - bounds.top + r.height / 2, radius: r.width / 2 + 5 }; };
-  const chosen = point(chosenNode);
-  const routes = selectedRoute ? currentRoutes.filter(r => r.otherId === selectedRoute) : currentRoutes.slice(0,3);
-  const max = Math.max(1, ...routes.flatMap(r => [r.incoming,r.outgoing]));
-  let html = '<defs><marker id="in-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#247c68"/></marker><marker id="out-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#98513c"/></marker></defs>';
-  for (const route of routes) {
-    const otherNode = [...$('#nodes').children].find(el => el.dataset.coin === route.otherId);
-    if (!otherNode) continue;
-    const other = point(otherNode), dx = chosen.x - other.x, dy = chosen.y - other.y, length = Math.hypot(dx,dy);
-    const ux = dx / length, uy = dy / length, nx = -uy, ny = ux;
-    const from = { x: other.x + ux * other.radius, y: other.y + uy * other.radius };
-    const to = { x: chosen.x - ux * chosen.radius, y: chosen.y - uy * chosen.radius };
-    const otherAsset = snapshot.assets.find(a => a.id === route.otherId);
-    for (const incoming of [true,false]) {
-      const value = incoming ? route.incoming : route.outgoing;
-      if (value <= 0) continue;
-      const direction = incoming ? 1 : -1, offset = direction * Math.min(19, bounds.width * .035);
-      const cx = (from.x + to.x) / 2 + nx * offset * 2, cy = (from.y + to.y) / 2 + ny * offset * 2;
-      const start = incoming ? from : to, end = incoming ? to : from;
-      const d = 'M' + start.x + ',' + start.y + ' Q' + cx + ',' + cy + ' ' + end.x + ',' + end.y;
-      const label = (incoming ? shortSymbol(otherAsset) + ' to ' + shortSymbol(snapshot.assets.find(a=>a.id===selected)) : shortSymbol(snapshot.assets.find(a=>a.id===selected)) + ' to ' + shortSymbol(otherAsset)) + ': ' + activityAmount(value);
-      html += '<g><path class="route-hit" data-route="' + esc(route.otherId) + '" d="' + d + '" role="button" tabindex="0" aria-label="' + esc(label) + '"><title>' + esc(label) + '</title></path><path class="route-path' + (selectedRoute ? ' active' : '') + (incoming ? '' : ' outgoing') + '" d="' + d + '" stroke="' + (incoming ? '#247c68' : '#98513c') + '" stroke-width="' + (1 + 5 * value / max) + '" marker-end="url(#' + (incoming ? 'in-arrow' : 'out-arrow') + ')" pointer-events="none"/>';
-      if (selectedRoute) html += '<text class="map-route-label" text-anchor="middle" x="' + ((from.x+to.x)/2+nx*(offset+6*direction)) + '" y="' + ((from.y+to.y)/2+ny*(offset+6*direction)) + '">' + activityAmount(value) + '</text>';
-      html += '</g>';
-    }
-  }
-  svg.innerHTML = html;
-  svg.querySelectorAll('[data-route]').forEach(el => {
-    el.onclick = () => selectRoute(el.dataset.route);
-    el.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectRoute(el.dataset.route); } };
-  });
-}
-function renderInspector(asset) {
-  const routes = selectedRoute ? currentRoutes.filter(r => r.otherId === selectedRoute) : currentRoutes;
-  const summary = summarizeRoutes(routes), pools = routes.flatMap(r => r.pools), totalPools = new Set(pools.map(p => p.id)).size;
-  const symbol = esc(shortSymbol(asset));
-  let html = '<div class="detail-top"><div class="coin-heading">' + icon(asset) + '<div><h2>' + symbol + '</h2><p>' + esc(asset.name) + '</p></div><span class="coin-rank">#' + asset.rank + '</span></div>' +
-    '<div class="price-line"><strong>' + money(asset.price) + '</strong><span class="' + (asset.priceChange24h >= 0 ? 'up' : 'down') + '">' + pct(asset.priceChange24h) + ' · 24h</span></div><p class="price-source">Market-wide price · ' + (ageMinutes(asset.priceUpdatedAt) > 30 ? 'older quote · ' : '') + new Date(asset.priceUpdatedAt).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) + '</p>';
-  if (asset.kind === 'stable') html += '<div class="stable-detail"><span>Distance from $1</span><strong>' + (asset.price === null ? 'Unavailable' : pct((asset.price - 1)*100)) + '</strong></div><p class="stable-risk-note">Targets $1. Backing and redemption differ; a near-$1 price is not a safety rating.</p>';
-  if(activeSource==='exchange') {
-    html+='</div>'+exchangeDetails({snapshot,asset,windowKey,selectedRoute,currentRoutes,icon});
-  } else {
-  html += '</div><div class="detail-trading">';
-  if (!summary) {
-    const reason = source==='dex'&&(asset.coverage.exchangeMarkets??0)>0 ? 'No on-chain sample is available here. Choose Automatic or Exchange only to see covered spot trades.' : network!=='all' ? 'No sampled routes in this network and timeframe. Try all networks or another coin.' : asset.coverage.pools ? 'A verified dollar breakdown is unavailable for the ' + timeframe[windowKey] + '. Try another timeframe.' : asset.coverage.reason;
-    html += '<div class="empty-coverage"><div class="empty-icon" aria-hidden="true">◌</div><h3>Price available.<br>Flows still out of view.</h3><p>' + esc(reason) + '</p><p>Missing coverage doesn’t mean no trading. We haven’t estimated any arrows.</p><a href="https://www.coingecko.com/en/coins/' + encodeURIComponent(asset.id) + '" target="_blank" rel="noopener noreferrer">Explore ' + symbol + ' markets ↗</a></div>';
-  } else {
-    const share = summary.buyShare;
-    const biggest = routes[0], other = snapshot.assets.find(a => a.id === biggest.otherId);
-    html += '<div class="sample-heading"><strong>' + (selectedRoute ? 'SELECTED ROUTE' : 'SAMPLED SWAPS') + '</strong><span>' + timeframe[windowKey] + '</span></div>' +
-      '<div class="balance-value ' + (summary.net >= 0 ? 'up' : 'down') + '">' + (share===null?'No swaps':(share*100).toFixed(1)+'% <small>buys</small>') + '</div><p class="balance-caption">' + signed(summary.net) + ' buying − selling · sampled dollars</p>' +
-      '<div class="balance-bar" aria-label="' + (share === null ? 'No trades in this window' : Math.round(share * 100) + '% of sampled dollars bought ' + shortSymbol(asset)) + '"><div style="width:' + (share === null ? 50 : share * 100) + '%"></div></div>' +
-      '<div class="balance-values"><div><span>Into ' + symbol + '</span><strong class="up">' + compact(summary.incoming) + '</strong></div><div><span>Out of ' + symbol + '</span><strong class="down">' + compact(summary.outgoing) + '</strong></div></div>' +
-      '<div class="explanation"><div class="eyebrow">WHAT HAPPENED</div><p>' + (summary.total === 0 ? 'No swaps were reported in these sampled pools during the ' + timeframe[windowKey] + '.' : 'Of <strong>' + compact(summary.total) + '</strong> traded across ' + totalPools + ' sampled pool' + (totalPools===1?'':'s') + ', <strong>' + Math.round(share*100) + '%</strong> was into ' + symbol + '. ' + (!selectedRoute ? 'The busiest connection was ' + esc(shortSymbol(other)) + '.' : 'This view is focused on the ' + esc(shortSymbol(other)) + ' connection.')) + '</p><p class="context-note">The trades show activity. They don’t establish its cause.</p></div>';
-  }
-  html += '</div><div class="detail-routes">';
-  if (currentRoutes.length) {
-    html += '<div class="routes-title"><span>EXPLORE THE ROUTES</span>' + (selectedRoute ? '<button id="all-routes" class="text-button">Show all</button>' : '<span>Total traded</span>') + '</div>';
-    html += currentRoutes.map(route => {
-      const other = snapshot.assets.find(a => a.id === route.otherId);
-      return '<button class="route-row" data-detail-route="' + esc(route.otherId) + '" aria-pressed="' + (selectedRoute===route.otherId) + '"><span class="route-coin">' + icon(other) + '<span>' + esc(shortSymbol(other)) + ' <small>' + route.pools.length + ' pool' + (route.pools.length===1?'':'s') + '</small></span></span><strong>' + compact(route.total) + '</strong><span class="chevron" aria-hidden="true">↗</span></button>';
-    }).join('');
-    const unique = [...new Map(pools.map(p => [p.id,p])).values()];
-    html += '<details class="pool-sources"' + (selectedRoute ? ' open' : '') + '><summary>Evidence · ' + unique.length + ' pools checked</summary>' + unique.map(p => '<a href="' + esc(poolURL(p)) + '" target="_blank" rel="noopener noreferrer">' + esc(p.name) + ' ↗<small>' + esc(networkName(p.network)) + ' · ' + esc(p.dex.replaceAll('_',' ')) + ' · checked ' + new Date(p.checkedAt).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) + '</small></a>').join('') + '</details>';
-    html += '<p class="scope-note">Selected DEX pools only. Includes native wrapped forms where applicable. Net buying is not new capital; swaps may include arbitrage and routing legs.</p>';
-  }
-  if (asset.kind === 'stable' && asset.supplyChange24h !== null) html += '<div class="stable-detail"><span>Circulating value · 24h</span><strong>' + pct(asset.supplyChange24h) + '</strong></div><p class="scope-note">DefiLlama circulating value in USD. Supply and price can both affect this figure; it does not measure purchases.</p>';
-  html += '</div>';
-  }
-  html += '<a class="inspect-jump" href="#research">Put this activity in context ↓</a>';
-  $('#inspector').innerHTML = html;
-  $('#inspector .inspect-jump').onclick = () => { $('#research-shell').open = true; };
-  $('#mobile-summary').innerHTML = '<span><strong>' + symbol + '</strong><small>' + (summary?.buyShare!==null && summary ? (summary.buyShare*100).toFixed(1)+'% buys · '+(activeSource==='exchange'?'exchange trades':'on-chain swaps') : 'No trading sample') + '</small></span><span>Details ↓</span>';
-  $('#inspector').querySelectorAll('[data-detail-route]').forEach(el => el.onclick = () => selectRoute(el.dataset.detailRoute));
-  if ($('#all-routes')) $('#all-routes').onclick = () => { selectedRoute = null; render(); saveState(); };
-}
+function drawConnections(){if(snapshot)drawTradeRoutes(viewContext());}
+function renderInspector(){renderFocusCard(viewContext());}
 function renderPriceBars() {
   const assets = snapshot.assets.filter(a => a.kind === 'alt'), max = Math.max(1,...assets.map(a=>Math.abs(a.priceChange24h ?? 0)));
   $('#price-bars').innerHTML = assets.map(a => '<button class="price-item" data-price-coin="' + esc(a.id) + '" aria-label="Select ' + esc(a.name) + ', price ' + pct(a.priceChange24h) + ' in 24 hours"><span class="price-item-top"><strong>' + esc(shortSymbol(a)) + '</strong><span class="' + (a.priceChange24h>=0?'up':'down') + '">' + pct(a.priceChange24h) + '</span></span><span class="price-track ' + (a.priceChange24h<0?'negative':'') + '"><span style="width:' + (Math.abs(a.priceChange24h??0)/max*100) + '%"></span></span></button>').join('');
-  $('#price-bars').querySelectorAll('[data-price-coin]').forEach(el => el.onclick=()=>{selectCoin(el.dataset.priceCoin); $('#inspector').scrollIntoView({behavior:'smooth',block:'nearest'});});
+  $('#price-bars').querySelectorAll('[data-price-coin]').forEach(el => el.onclick=()=>{selectCoin(el.dataset.priceCoin); scrollToView('.workspace');});
 }
 function render() {
   if (!snapshot) return;
   const focused = document.activeElement;
-  const focusSelector = focused?.id ? '#' + CSS.escape(focused.id) : focused?.dataset.coin ? '[data-coin="' + CSS.escape(focused.dataset.coin) + '"]' : focused?.dataset.detailRoute ? '[data-detail-route="' + CSS.escape(focused.dataset.detailRoute) + '"]' : focused?.dataset.route ? '[data-route="' + CSS.escape(focused.dataset.route) + '"]' : null;
+  const dataFocus=['coin','highlight','focusRoute','hour','priceCoin'].find(k=>focused?.dataset[k]);
+  const focusSelector=focused?.id?'#'+CSS.escape(focused.id):focused?.dataset.pair?'[data-pair="'+CSS.escape(focused.dataset.pair)+'"][data-side="'+focused.dataset.side+'"]':dataFocus?'[data-'+dataFocus.replace(/[A-Z]/g,c=>'-'+c.toLowerCase())+'="'+CSS.escape(focused.dataset[dataFocus])+'"]':null;
   if (!snapshot.assets.some(a => a.id===selected)) { selected = snapshot.assets[0].id; selectedRoute = null; }
   const networks = [...new Set(snapshot.pools.map(p=>p.network))].sort();
   if(network!=='all'&&!networks.includes(network))network='all';
@@ -234,22 +147,21 @@ function render() {
   $('#network-filter').value=network;
   activeSource=activitySource(snapshot,selected,windowKey,source,network);
   $('#source-filter').value=source;
-  $('#network-scope').hidden=activeSource==='exchange';
+  $('#network-scope').hidden=source==='exchange';
   $('#activity-subtitle').textContent=activeSource==='exchange'?'Exchange trades · measured in USDT':'On-chain swaps · measured in USD';
-  $('#map-measure').textContent='Thicker lines = more traded '+(activeSource==='exchange'?'USDT':'dollars')+'. Coin size is equal.';
+  $('#map-measure').textContent='Thicker lines = more traded. Motion shows direction, not individual trades.';
   $('#research-shell > summary small').textContent=activeSource==='exchange'?'Compare activity · inspect markets · check the numbers':'Compare activity · inspect pools · check the numbers';
   currentRoutes = activeSource==='exchange'?exchangeRoutes(snapshot.exchangeMarkets??[],selected,windowKey):routesForAsset({pools:inNetwork()}, selected, windowKey);
   if (selectedRoute && !currentRoutes.some(r=>r.otherId===selectedRoute)) selectedRoute=null;
-  const asset = snapshot.assets.find(a=>a.id===selected);
-  renderOverview(); renderMap(asset); renderInspector(asset); renderPriceBars(); freshness(); renderNotice();
+  renderOverview(); renderChanges(viewContext()); renderCoinPicker(viewContext()); renderMap(); renderInspector(); renderPriceBars(); freshness(); renderNotice();
   if(activeSource==='exchange')renderExchangeResearch({snapshot,selected,windowKey,selectedRoute});
   else renderResearch({snapshot,selected,windowKey,network,selectedRoute});
   $('#mobile-summary').hidden = !mapInView;
   if (focusSelector) requestAnimationFrame(() => document.querySelector(focusSelector)?.focus({ preventScroll: true }));
 }
 function openMethod() {
-  $('#method-content').innerHTML = '<p class="method-intro">Each circle is a coin. Solid arrows point into your selection; dashed arrows point out. All circles are the same size. These are observed trades, not wallet transfers or fresh capital.</p>' +
-    '<div class="method-grid"><article><h3>Two kinds of activity</h3><p>Automatic shows on-chain pools when available, otherwise a covered exchange spot market. The label beneath “Activity map” always identifies the source and unit. Choose On-chain only or Exchange only to keep a fixed scope.</p></article><article><h3>Keep the units honest</h3><p>On-chain amounts are provider-reported USD. Exchange amounts are USDT quote units, with completed five-minute intervals. We do not assume one USDT equals one dollar or add the two sources together. Every exchange trade has a buyer and seller; reported side indicates its direction.</p></article><article><h3>Automatic rankings</h3><p>Ten non-stable assets by CoinGecko market cap, plus five USD-pegged stablecoins identified by DefiLlama. BTC and known wrapped/staked/bridged duplicates are excluded from the ten. Other asset types, including tokenized assets, remain eligible. A new ranking does not create a new identity mapping automatically.</p></article><article><h3>Freshness you can see</h3><p>The shared collector targets a 15-minute refresh. Schedules and upstream feeds can be delayed. Exchange details show an explicit window end; pool windows roll at the provider. Retrieval times do not guarantee upstream accuracy. Missing coverage never means zero trading.</p></article></div>' +
+  $('#method-content').innerHTML = '<p class="method-intro">Choose a coin, then read its two sides: green routes show buying; dashed copper routes show selling. These are separate trades, not a journey by the same money. Wider lines show larger amounts among the visible routes. The ring shows buying share across all routes in the selection. Motion shows direction, not individual transactions.</p>' +
+    '<div class="method-grid"><article><h3>How changes are chosen</h3><p>We compare the last hour with the previous five hours averaged per hour, using the same markets. Highlights require fresh, complete data and a previous hourly average of at least 10,000 source units. Pace must increase to 1.5× or fall to two-thirds; buying share must change by at least 10 percentage points with 10,000 units traded in the last hour. These are editorial thresholds, not statistical significance, causes or predictions. Hourly charts use recorded exchange intervals; rolling pool totals cannot supply a timeline.</p></article><article><h3>Two kinds of activity</h3><p>Automatic shows on-chain pools when available, otherwise a covered exchange spot market. The trading view identifies the source and unit. Highlights and coin comparisons follow your Activity and Network filters; their comparison is always last hour versus the previous five hours. Choose On-chain only or Exchange only to keep a fixed scope.</p></article><article><h3>Keep the units honest</h3><p>On-chain amounts are provider-reported USD. Exchange amounts are USDT quote units, with completed five-minute intervals. We do not assume one USDT equals one dollar or add the two sources together. Every exchange trade has a buyer and seller; reported side indicates its direction.</p></article><article><h3>Automatic rankings</h3><p>Ten non-stable assets by CoinGecko market cap, plus five USD-pegged stablecoins identified by DefiLlama. BTC and known wrapped/staked/bridged duplicates are excluded from the ten. Other asset types, including tokenized assets, remain eligible. A new ranking does not create a new identity mapping automatically.</p></article><article><h3>Freshness you can see</h3><p>The shared collector targets a 15-minute refresh. Schedules and upstream feeds can be delayed. Exchange details show an explicit window end; pool windows roll at the provider. Retrieval times do not guarantee upstream accuracy. Missing coverage never means zero trading.</p></article></div>' +
     (snapshot ? '<h2>Coverage in this snapshot</h2><p class="method-foot">Counts below use the selected '+windowKey.slice(1)+'h timeframe across all sources and networks. They measure which coins have a sample, not the share of global trading captured.</p><table class="coverage-table"><thead><tr><th>Asset</th><th>Rank</th><th>On-chain</th><th>Exchange</th></tr></thead><tbody>' + snapshot.assets.map(a => {
       const pools=snapshot.pools.filter(p=>p.windows[windowKey]&&(p.base===a.id||p.quote===a.id));
       const markets=(snapshot.exchangeMarkets??[]).filter(m=>m.windows[windowKey]&&(m.base===a.id||m.quote===a.id));
@@ -267,11 +179,22 @@ $('#network-filter').onchange=e=>{network=e.target.value;selectedRoute=null;rend
 $('#source-filter').onchange=e=>{source=e.target.value;selectedRoute=null;render();saveState();};
 $('#share-button').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);toast('View link copied');}catch{$('#share-url').value=location.href;$('#share-dialog').showModal();$('#share-url').select();}};
 $('#close-share').onclick=()=>$('#share-dialog').close();
-$('#mobile-summary').onclick=()=>{ $('#inspector').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}); $('#inspector').focus({preventScroll:true}); };
+$('#mobile-summary').onclick=()=>{ scrollToView('#inspector'); $('#inspector').focus({preventScroll:true}); };
 new IntersectionObserver(entries=>{ mapInView=entries[0].isIntersecting; $('#mobile-summary').hidden=!snapshot || !mapInView; },{threshold:0.1}).observe($('#map'));
 window.addEventListener('popstate',()=>{readState();render();});
 new ResizeObserver(()=>requestAnimationFrame(drawConnections)).observe($('#map'));
-readState();loadData();
+const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+let savedMotion=null;
+try{savedMotion=localStorage.getItem('bsq-motion');}catch{}
+function applyMotion(){
+  const on=savedMotion==='on'||(savedMotion!=='off'&&!reducedMotion.matches);
+  document.documentElement.dataset.motion=on?'on':'off';
+  $('#motion-toggle').setAttribute('aria-pressed',String(on));
+  $('#motion-toggle').innerHTML='<span aria-hidden="true">◉</span> Motion '+(on?'on':'off');
+}
+$('#motion-toggle').onclick=()=>{savedMotion=document.documentElement.dataset.motion==='on'?'off':'on';try{localStorage.setItem('bsq-motion',savedMotion);}catch{}applyMotion();};
+reducedMotion.addEventListener('change',applyMotion);
+applyMotion();readState();loadData();
 setInterval(()=>{if(!document.hidden)loadData();},60_000);
-setInterval(()=>{freshness();if(snapshot)renderNotice();},30_000);
+setInterval(()=>{freshness();if(snapshot){renderNotice();if(offline||ageMinutes(snapshot.checkedAt)>30)renderChanges(viewContext());}},30_000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)loadData();});
