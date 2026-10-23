@@ -4,6 +4,10 @@ import { validSnapshot, SOURCES, viewHealth } from './lib/quality.js';
 import { activitySource, exchangeRoutes, venueName } from './lib/exchanges.js';
 import { renderExchangeResearch } from './exchange-panel.js';
 import { renderChanges, renderCoinPicker, renderTradeMap, drawTradeRoutes, renderFocusCard } from './activity-view.js?v=20261023-visual1';
+import { renderTemperature } from './temperature-view.js?v=20261023-temperature1';
+import { validTemperature } from './lib/temperature.js';
+import { validVisit,visitDigest } from './lib/market-context.js';
+import { riskTemperature,validRiskHistory } from './lib/risk-temperature.js';
 const $ = selector => document.querySelector(selector);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const compact = n => n === null || !Number.isFinite(n) ? '—' : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 }).format(n);
@@ -17,6 +21,37 @@ let snapshot = null, pending = null, currentRoutes = [], selected = 'ethereum', 
 let source = 'auto', activeSource = 'dex';
 const inNetwork = () => snapshot.pools.filter(p => network === 'all' || p.network === network);
 let offline = false, loading = false, mapInView = false, toastTimer;
+let temperatureFeed=null,temperatureOffline=false,temperatureLoading=false,visitStorage=true,previousVisit=null,riskHistory=null,historyLoading=false,historyUnavailable=false;
+let savedVisit=null;
+try{savedVisit=localStorage.getItem('bsq-visit-v2');}catch{visitStorage=false;}
+try{const v=JSON.parse(savedVisit);if(validVisit(v))previousVisit=v;}catch{}
+function renderMood(){
+  const model=riskTemperature(snapshot,{offline});
+  const currentVisit=!offline?visitDigest(snapshot,model):null;
+  if(currentVisit&&visitStorage)try{localStorage.setItem('bsq-visit-v2',JSON.stringify(currentVisit));}catch{visitStorage=false;}
+  renderTemperature({feed:temperatureFeed,model,history:riskHistory,historyUnavailable,temperatureOffline,previousVisit,currentVisit,storage:visitStorage,
+    onRetry:()=>{loadData(true);loadTemperature();loadRiskHistory();},onCoin:id=>{source='auto';network='all';windowKey='h24';selectCoin(id);scrollToView('.workspace');}});
+}
+async function loadTemperature(){
+  if(temperatureLoading)return;
+  temperatureLoading=true;
+  try{
+    const response=await fetch('./data/temperature.json',{cache:'no-cache',signal:AbortSignal.timeout(15_000)});
+    if(!response.ok)throw new Error('Sentiment unavailable');
+    const data=await response.json();if(!validTemperature(data))throw new Error('Invalid sentiment');
+    temperatureFeed=data;temperatureOffline=false;
+    try{localStorage.setItem('bsq-temperature-v1',JSON.stringify(data));}catch{}
+  }catch{
+    temperatureOffline=true;
+    if(!temperatureFeed)try{const cached=JSON.parse(localStorage.getItem('bsq-temperature-v1'));if(validTemperature(cached))temperatureFeed=cached;}catch{}
+  }finally{temperatureLoading=false;renderMood();}
+}
+async function loadRiskHistory(){
+  if(historyLoading)return;historyLoading=true;
+  try{const response=await fetch('./data/market-temperature.json',{cache:'no-cache',signal:AbortSignal.timeout(15_000)});if(!response.ok)throw new Error('History unavailable');const data=await response.json();if(!validRiskHistory(data))throw new Error('Invalid history');riskHistory=data;historyUnavailable=false;}
+  catch{historyUnavailable=true;}
+  finally{historyLoading=false;renderMood();}
+}
 function readState() {
   const q = new URLSearchParams(location.search);
   selected = q.get('coin') || 'ethereum';
@@ -65,7 +100,7 @@ async function loadData(manual = false) {
     const data = await response.json();
     if (!validate(data)) throw new Error('Invalid snapshot');
     offline = false;
-    if (snapshot && snapshot.checkedAt === data.checkedAt) { freshness(); renderNotice(); renderChanges(viewContext()); if (manual) toast('You have the latest available snapshot'); return; }
+    if (snapshot && snapshot.checkedAt === data.checkedAt) { freshness(); renderNotice(); renderChanges(viewContext()); renderMood(); if (manual) toast('You have the latest available snapshot'); return; }
     if (snapshot && snapshot.assets.map(a => a.id).join() !== data.assets.map(a => a.id).join()) pending = data;
     else { snapshot = data; pending = null; }
     try { localStorage.setItem('bsq-snapshot-v1', JSON.stringify(data)); } catch {}
@@ -83,7 +118,7 @@ async function loadData(manual = false) {
       $('#freshness span').textContent = 'Data unavailable';
       $('#freshness').classList.add('stale');
     }
-  } finally { loading = false; }
+  } finally { loading = false; renderMood(); }
 }
 function freshness() {
   if (!snapshot) return;
@@ -99,14 +134,6 @@ function freshness() {
   $('#view-health').textContent = (offline ? 'Offline · ' : health.status === 'old' ? 'Old data · ' : health.partial ? 'Partial feed · ' : '') + checked;
   $('#view-health').classList.toggle('health-warning', offline || health.status === 'old' || health.partial);
   $('#view-health').title = 'Retrieval time, not a guarantee of upstream freshness. Checks span ' + (health.spreadMinutes ?? 0).toFixed(1) + ' minutes.';
-}
-function renderOverview() {
-  const alts = snapshot.assets.filter(a => a.kind === 'alt'), withPrice = alts.filter(a => a.priceChange24h !== null), positive = withPrice.filter(a => a.priceChange24h > 0).length;
-  const biggest = [...withPrice].sort((a, b) => Math.abs(b.priceChange24h) - Math.abs(a.priceChange24h))[0];
-  const sampled = [...snapshot.pools,...(snapshot.exchangeMarkets??[])].filter(p=>p.windows[windowKey]), hasPool = a => sampled.some(p=>p.base===a.id||p.quote===a.id), covered = alts.filter(hasPool).length, stableCovered = snapshot.assets.filter(a=>a.kind==='stable'&&hasPool(a)).length;
-  $('#overview').innerHTML = '<div class="overview-card"><div><div class="eyebrow">THE LAST 24 HOURS</div><div class="overview-value">' + positive + ' of ' + withPrice.length + '<small>alts up in price</small></div></div><div class="mini-breadth" aria-hidden="true">' + alts.map(a => '<i class="' + (a.priceChange24h > 0 ? 'up' : a.priceChange24h < 0 ? 'down' : '') + '"></i>').join('') + '</div></div>' +
-    '<div class="overview-card"><div><div class="eyebrow">BIGGEST PRICE MOVE</div><div class="overview-value">' + (biggest ? esc(shortSymbol(biggest)) + ' <span class="' + (biggest.priceChange24h >= 0 ? 'up' : 'down') + '">' + pct(biggest.priceChange24h) + '</span>' : 'Unavailable') + '</div></div>' + (biggest ? icon(biggest, 'overview-coin') : '') + '</div>' +
-    '<div class="overview-card"><div><div class="eyebrow">COINS WITH OBSERVED ACTIVITY</div><div class="overview-value">' + covered + ' / 10 alts<small>' + stableCovered + ' / 5 stables · across sources</small></div></div><div class="coverage-dots" aria-hidden="true">' + Array.from({length:15}, (_,i) => '<i class="' + (i < covered + stableCovered ? 'filled' : '') + '"></i>').join('') + '</div></div>';
 }
 function scrollToView(selector) {
   $(selector).scrollIntoView({behavior:document.documentElement.dataset.motion==='on'?'smooth':'auto',block:'start'});
@@ -153,7 +180,7 @@ function render() {
   $('#research-shell > summary small').textContent=activeSource==='exchange'?'Compare activity · inspect markets · check the numbers':'Compare activity · inspect pools · check the numbers';
   currentRoutes = activeSource==='exchange'?exchangeRoutes(snapshot.exchangeMarkets??[],selected,windowKey):routesForAsset({pools:inNetwork()}, selected, windowKey);
   if (selectedRoute && !currentRoutes.some(r=>r.otherId===selectedRoute)) selectedRoute=null;
-  renderOverview(); renderChanges(viewContext()); renderCoinPicker(viewContext()); renderMap(); renderInspector(); renderPriceBars(); freshness(); renderNotice();
+  renderMood(); renderChanges(viewContext()); renderCoinPicker(viewContext()); renderMap(); renderInspector(); renderPriceBars(); freshness(); renderNotice();
   if(activeSource==='exchange')renderExchangeResearch({snapshot,selected,windowKey,selectedRoute});
   else renderResearch({snapshot,selected,windowKey,network,selectedRoute});
   $('#mobile-summary').hidden = !mapInView;
@@ -194,7 +221,7 @@ function applyMotion(){
 }
 $('#motion-toggle').onclick=()=>{savedMotion=document.documentElement.dataset.motion==='on'?'off':'on';try{localStorage.setItem('bsq-motion',savedMotion);}catch{}applyMotion();};
 reducedMotion.addEventListener('change',applyMotion);
-applyMotion();readState();loadData();
-setInterval(()=>{if(!document.hidden)loadData();},60_000);
-setInterval(()=>{freshness();if(snapshot){renderNotice();if(offline||ageMinutes(snapshot.checkedAt)>30)renderChanges(viewContext());}},30_000);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden)loadData();});
+applyMotion();readState();loadTemperature();loadRiskHistory();renderMood();loadData();
+setInterval(()=>{if(!document.hidden){loadData();loadTemperature();loadRiskHistory();}},60_000);
+setInterval(()=>{freshness();renderMood();if(snapshot){renderNotice();if(offline||ageMinutes(snapshot.checkedAt)>30)renderChanges(viewContext());}},30_000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){loadData();loadTemperature();loadRiskHistory();}});
