@@ -34,9 +34,11 @@
     <section id="overview" class="overview" aria-label="Market overview"></section>
     <section class="workspace" aria-label="Explore trading activity">
       <div class="map-panel">
-        <div class="map-toolbar"><div><h2>Activity map <span class="tag">BETA</span></h2><p>Swaps in selected DEX pools · partial coverage</p></div>
+        <div class="map-toolbar"><div><h2>Activity map <span class="tag">BETA</span></h2><p>Trading between coins · selected exchange pools</p></div>
           <div class="time-control" role="group" aria-label="Trading timeframe"><button data-window="h1" aria-pressed="false">1H</button><button data-window="h6" aria-pressed="false">6H</button><button data-window="h24" aria-pressed="true">24H</button></div>
         </div>
+        <div class="scope-toolbar"><label for="network-filter">Explore a network</label><select id="network-filter" aria-label="Filter sampled trading by network"><option value="all">All sampled networks</option></select></div>
+        <div class="map-health"><span>Trading sample · market-wide coverage unknown</span><span id="view-health"></span></div>
         <div class="map-subhead"><span><b>10</b> ALTCOINS</span><button id="btc-toggle" class="btc-toggle" aria-pressed="false"><span class="toggle-track"></span> BTC reference</button><span><b>5</b> STABLECOINS</span></div>
         <div id="btc-reference" class="btc-reference" hidden></div>
         <div id="map" class="map" aria-label="Select a coin to explore its sampled trades">
@@ -49,6 +51,7 @@
       </div>
       <aside id="inspector" class="inspector" aria-label="Selected coin details" tabindex="-1"><div class="inspector-placeholder"><span class="tiny-compass">↗</span><h2>One coin.<br>A clearer picture.</h2><p>Choose a circle to see the trading behind it.</p></div></aside>
     </section>
+    <details id="research-shell" class="research-shell"><summary><span>Understand this activity</span><small>Compare activity · inspect pools · check the numbers</small></summary><section id="research" class="research" aria-label="Investigate the selected market"></section></details>
     <section class="price-section"><div class="section-heading"><div><h2>The wider picture</h2><p>Market-wide price changes · last 24 hours</p></div><span>Price movement is separate from trading flows.</span></div><div id="price-bars" class="price-bars"></div></section>
     <footer><span class="footer-note">A little context goes a long way.</span><div>Data provided by <a href="https://www.coingecko.com/en/api" target="_blank" rel="noopener noreferrer">CoinGecko</a>, <a href="https://www.geckoterminal.com/" target="_blank" rel="noopener noreferrer">GeckoTerminal</a> &amp; <a href="https://defillama.com/stablecoins" target="_blank" rel="noopener noreferrer">DefiLlama</a>.</div><button id="footer-method" class="text-button">Sources &amp; method ↗</button></footer>
   </main>

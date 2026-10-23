@@ -26,6 +26,18 @@ The checked-in snapshot contains real provider data normalized for this interfac
 
 The UI provides the coverage table, pool links, retrieval times, source attribution, stale/offline notices, keyboard controls, reduced-motion support, mobile details access, and shareable URL state.
 
+## Investigate a selection
+
+Filter by network, then open **Understand this activity** for three optional views:
+
+- **Read the activity:** the latest hour's reported volume divided by the preceding five hours' hourly average, on the same pools. The baseline is `(h6 - h1) / 5`, not `h6 / 6`. Missing or inconsistent windows are excluded; a zero baseline produces no ratio. This short-window comparison is not a normal-market baseline or forecast.
+- **Inspect pools:** exact network and token identifiers, pool IDs, source links and liquidity. Pool IDs (including Uniswap v4 identifiers) are not always contract addresses. Reported liquidity is not executable depth or a safety audit.
+- **Verify the numbers:** recompute the selected totals from collector-recorded buy/sell fields and token direction. This checks arithmetic consistency, not source authenticity, chain inclusion, finality or completeness. Inputs are recorded fields, not provider-signed responses.
+
+Largest-pool volume share and the balance with that pool removed expose concentration. All comparisons respect the selected coin, network, route and available window. Coverage separates alts from stables; retrieval age uses the oldest covered pool in the selected coin/network/timeframe. Quote and pool retrieval times remain separate.
+
+The map keeps solid incoming and dashed outgoing lines, a text route list and keyboard controls. Essential labels have stronger contrast; a full accessibility certification and real beginner usability study remain outstanding.
+
 ## Ranking and identity rules
 
 CoinGecko market capitalization determines both lists. DefiLlama's stablecoin catalog supplies classification; USD-pegged entries qualify for the five stables. Bitcoin, classified stablecoins, and known wrapped/staked/bridged duplicates are excluded from the ten alts. Other asset types are retained: for example, Figure Heloc appeared in the initial broad ranking. The eligibility policy is visible in the interface.
@@ -44,7 +56,7 @@ Discovery is cached for six hours; identities for one day. Current dollar breakd
 
 The collector spreads pool requests, honors rate-limit cooldowns, times out failed requests, and stores diagnostics. Provider limits and data freshness can change. Retrieval time is not a guarantee of upstream event freshness. DefiLlama's circulating value is denominated in USD, so price changes can affect it as well as issuance.
 
-No paid feed or reverse-engineered private endpoint is used. Attribution is visible. These checks establish technical access, not an unrestricted redistribution license; recheck provider terms before adding monetization, bulk export, or commercial redistribution.
+No paid feed or reverse-engineered private endpoint is used. Attribution is visible. These checks establish technical access, not an unrestricted license. Commercial use, reusable exports and expanded historical retention need an explicit rights decision under the applicable provider terms. The new public data-download feature is withheld; source links and on-screen calculation checks remain available. See the licensing findings in [the expert review](docs/expert-review.md).
 
 ## GitHub Pages
 
@@ -59,3 +71,5 @@ Schedules are best-effort and can be delayed or disabled after prolonged reposit
 Centralized exchange flows, untracked counterparties, complete cross-chain journeys, historical replay, alerts, and news-based explanations are outside this version. BTC is a market-price benchmark only. Comparing different coins' sampled net amounts is not a market-wide ranking of inflows.
 
 See [the initial coverage audit](docs/coverage.md). Current coverage is always available in the running page and `data/snapshot.json`.
+
+See [the review from thirteen expert perspectives and prioritized roadmap](docs/expert-review.md). It distinguishes implemented safeguards from unresolved data, product, accessibility and verification gaps.

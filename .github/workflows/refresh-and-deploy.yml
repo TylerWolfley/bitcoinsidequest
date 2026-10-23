@@ -55,8 +55,8 @@ jobs:
       - name: Prepare public files
         run: |
           mkdir -p _site/lib _site/data
-          cp index.html styles.css app.js favicon.svg CNAME _site/
-          cp lib/model.js _site/lib/
+          cp index.html styles.css app.js research-panel.js favicon.svg CNAME _site/
+          cp lib/model.js lib/research.js lib/quality.js _site/lib/
           cp data/snapshot.json _site/data/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

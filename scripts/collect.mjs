@@ -2,13 +2,14 @@ import { mkdir, readFile, writeFile, rename } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { selectUniverse, identityRegistry, poolIdentity, normalizePool, addressKey, numberOrNull } from '../lib/model.js';
+import { validSnapshot } from '../lib/quality.js';
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const SNAPSHOT = path.join(ROOT, 'data/snapshot.json');
 const CG = 'https://api.coingecko.com/api/v3', GT = 'https://api.geckoterminal.com/api/v2';
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 async function readJSON(file) { try { return JSON.parse(await readFile(file, 'utf8')); } catch { return null; } }
 async function json(url) {
-  const response = await fetch(url, { headers: { accept: 'application/json', 'user-agent': 'BitcoinSideQuest/1.0' }, signal: AbortSignal.timeout(25_000) });
+  const response = await fetch(url, { headers: { accept: url.startsWith(GT) ? 'application/json;version=20230203' : 'application/json', 'user-agent': 'BitcoinSideQuest/1.0' }, signal: AbortSignal.timeout(25_000) });
   if (!response.ok) {
     const error = new Error(new URL(url).hostname + ': HTTP ' + response.status);
     error.status = response.status;
@@ -36,6 +37,7 @@ export async function collect({ log = console.log } = {}) {
     json(CG + '/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false'),
     json('https://stablecoins.llama.fi/stablecoins?includePrices=true'),
   ]);
+  const rankingCheckedAt = new Date().toISOString();
   const stableAssets = stableResponse.peggedAssets, selected = selectUniverse(markets, stableAssets);
   const stableMap = new Map(stableAssets.map(a => [a.gecko_id, a]));
   const assets = [...selected.alts.map(a => assetRecord(a, 'alt')), ...selected.stables.map(a => assetRecord(a, 'stable', stableMap.get(a.id)))];
@@ -93,8 +95,9 @@ export async function collect({ log = console.log } = {}) {
         const checkedAt = new Date().toISOString();
         const accepted = new Set();
         for (const pool of response.data ?? []) {
+          if (!requested.some(address=>addressKey(network,address)===addressKey(network,pool.attributes?.address))) continue;
           const normalized = normalizePool(pool, registry, network, checkedAt);
-          if (normalized) { pools.push(normalized); accepted.add(normalized.id); }
+          if (normalized) { normalized.sourceEndpoint = GT + '/networks/' + network + '/pools/' + encodeURIComponent(normalized.address) + '?include_volume_breakdown=true'; pools.push(normalized); accepted.add(normalized.id); }
         }
         const omitted = requested.filter(address => !accepted.has(addressKey(network, address))).length;
         if (omitted) poolErrors.push({ network, error: omitted + ' requested pools were absent or failed current liquidity/dollar validation.' });
@@ -117,7 +120,7 @@ export async function collect({ log = console.log } = {}) {
     };
   }
   const snapshot = {
-    schemaVersion: 1, checkedAt: new Date().toISOString(), startedAt, rankingCheckedAt: startedAt, refreshMinutes: 15,
+    schemaVersion: 1, evidenceVersion: 1, checkedAt: new Date().toISOString(), startedAt, rankingCheckedAt, refreshMinutes: 15,
     assets, bitcoin: selected.bitcoin ? assetRecord(selected.bitcoin, 'reference') : null, pools: uniquePools, diagnostics, poolErrors,
     membershipChanged: previous ? assets.map(a => a.id).join() !== previous.assets.map(a => a.id).join() : false,
     policy: {
@@ -133,6 +136,7 @@ export async function collect({ log = console.log } = {}) {
       { name: 'DefiLlama', url: 'https://defillama.com/stablecoins', use: 'Stablecoin classification and circulating value' },
     ],
   };
+  if (!validSnapshot(snapshot)) throw new Error('Collected data failed snapshot validation; previous snapshot retained');
   await writeFile(SNAPSHOT + '.tmp', JSON.stringify(snapshot, null, 2) + '\n');
   await rename(SNAPSHOT + '.tmp', SNAPSHOT);
   log('Saved ' + uniquePools.length + ' unique pools; ' + assets.filter(a => a.coverage.pools).length + '/15 assets with sampled routes.');
