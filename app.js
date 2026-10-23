@@ -3,7 +3,7 @@ import { renderResearch } from './research-panel.js';
 import { validSnapshot, SOURCES, viewHealth } from './lib/quality.js';
 import { activitySource, exchangeRoutes, venueName } from './lib/exchanges.js';
 import { renderExchangeResearch } from './exchange-panel.js';
-import { renderChanges, renderCoinPicker, renderTradeMap, drawTradeRoutes, renderFocusCard } from './activity-view.js';
+import { renderChanges, renderCoinPicker, renderTradeMap, drawTradeRoutes, renderFocusCard } from './activity-view.js?v=20261023-visual1';
 const $ = selector => document.querySelector(selector);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const compact = n => n === null || !Number.isFinite(n) ? '—' : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 }).format(n);
