@@ -6,6 +6,8 @@ Ten automatically ranked non-stable assets, five USD stablecoins, and an optiona
 
 The coverage expansion adds free Binance spot activity for BNB/XRP/DOGE/ZEC and Kraken spot activity for XMR. The first expanded collection covered **9/10 alts and 5/5 stables**. See [the reusable coverage system](docs/coverage-system.md) for identity mappings, admission rules, calculation logic and the procedure for adding coins.
 
+The visual field guide now leads with **What stands out**: up to three fresh, measured changes in pace or buying share. Coin tiles lead into a two-sided buying/selling diagram, a same-market comparison and, where recorded exchange intervals exist, an interactive hourly chart. See [the visual logic](docs/visual-logic.md) for eligibility thresholds, encodings, source scopes and motion behavior. Animations illustrate direction; they never simulate individual live trades.
+
 ## Run locally
 
 Requires Node.js 22 or later. No packages, API keys, wallets, or paid services are required.

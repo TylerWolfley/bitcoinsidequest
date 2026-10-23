@@ -15,5 +15,6 @@ jobs:
           node-version: '22'
       - run: node --test
       - run: node --check app.js
+      - run: node --check activity-view.js
       - run: node --check research-panel.js
       - run: node --check exchange-panel.js
