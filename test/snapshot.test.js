@@ -2,8 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { routesForAsset } from '../lib/model.js';
+import { auditArithmetic, scopedPools } from '../lib/research.js';
+import { validSnapshot } from '../lib/quality.js';
 test('saved live snapshot has unique identities and reproducible routes',async()=>{
  const s=JSON.parse(await readFile(new URL('../data/snapshot.json',import.meta.url),'utf8'));
+ assert.equal(validSnapshot(s),true);
  assert.equal(s.schemaVersion,1);
  assert.equal(s.assets.filter(a=>a.kind==='alt').length,10);
  assert.equal(s.assets.filter(a=>a.kind==='stable').length,5);
@@ -19,5 +22,9 @@ test('saved live snapshot has unique identities and reproducible routes',async()
      const a=routesForAsset({pools:[p]},p.base,w)[0],b=routesForAsset({pools:[p]},p.quote,w)[0];
      assert.equal(a.net+b.net,0);assert.equal(a.total,b.total);
    }
+ }
+ if(s.evidenceVersion===1)for(const a of s.assets)for(const w of ['h1','h6','h24']){
+   const audit=auditArithmetic(scopedPools(s,a.id),a.id,w);
+   assert.ok(['reproduced','no-data'].includes(audit.status),a.id+' '+w+' recorded inputs disagree with normalized data');
  }
 });
