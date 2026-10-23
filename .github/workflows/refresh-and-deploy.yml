@@ -1,0 +1,67 @@
+name: Refresh live data and deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+permissions:
+  contents: read
+concurrency:
+  group: sidequest-live-data
+  cancel-in-progress: false
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Restore discovery and last successful live snapshot
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            .cache
+            data/snapshot.json
+          key: sidequest-live-${{ github.run_id }}
+          restore-keys: |
+            sidequest-live-
+      - name: Collect free market data
+        id: refresh
+        continue-on-error: true
+        run: node scripts/collect.mjs
+      - name: Keep cached data when an upstream feed is unavailable
+        if: steps.refresh.outcome == 'failure'
+        run: echo "::warning::Refresh failed. Publishing the last valid snapshot with its original timestamp."
+      - name: Verify data semantics
+        run: node --test
+      - name: Save the newest valid snapshot and discovery cache
+        if: steps.refresh.outcome == 'success'
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            .cache
+            data/snapshot.json
+          key: sidequest-live-${{ github.run_id }}
+      - name: Prepare public files
+        run: |
+          mkdir -p _site/lib _site/data
+          cp index.html styles.css app.js favicon.svg CNAME _site/
+          cp lib/model.js _site/lib/
+          cp data/snapshot.json _site/data/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

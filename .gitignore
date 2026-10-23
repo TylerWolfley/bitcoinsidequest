@@ -1,12 +1,5 @@
-# Local source/export images not referenced by the deployed page.
-apple-touch-icon.png
-favicon.png
-favicon-16.png
-favicon-32.png
-gpt-image.png
-hero-image.png
-ig_*.png
-img2.png
-pumpfun-pfp.png
-quest-icon.png
-sidequest-hero-bg.png
+.cache/
+node_modules/
+.env*
+*.log
+coverage/

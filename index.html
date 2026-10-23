@@ -1,413 +1,61 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta
-      name="description"
-      content="Side Quest (QUEST) is a Solana meme coin culture page for the optional attention-games people play when the main crypto story gets too slow."
-    >
-    <meta name="theme-color" content="#0b0b0c">
-    <link rel="canonical" href="https://bitcoinsidequest.com/">
-
-    <meta property="og:title" content="Side Quest | QUEST">
-    <meta
-      property="og:description"
-      content="A dark Solana meme coin culture page about the side quests people find when the main crypto story gets too slow."
-    >
-    <meta property="og:url" content="https://bitcoinsidequest.com/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Side Quest">
-    <meta property="og:image" content="https://bitcoinsidequest.com/sidequest-hero-bg-optimized.jpg">
-    <meta property="og:image:secure_url" content="https://bitcoinsidequest.com/sidequest-hero-bg-optimized.jpg">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1672">
-    <meta property="og:image:height" content="941">
-    <meta
-      property="og:image:alt"
-      content="Side Quest dark interface background with subtle green quest-log panels."
-    >
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Side Quest | QUEST">
-    <meta
-      name="twitter:description"
-      content="A dark Solana meme coin culture page about the side quests people find when the main crypto story gets too slow."
-    >
-    <meta name="twitter:image" content="https://bitcoinsidequest.com/sidequest-hero-bg-optimized.jpg">
-    <meta
-      name="twitter:image:alt"
-      content="Side Quest dark interface background with subtle green quest-log panels."
-    >
-    <title>Side Quest | QUEST</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-round-16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-round-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-round.png">
-    <link
-      rel="preload"
-      href="sidequest-hero-bg-optimized.jpg"
-      as="image"
-      type="image/jpeg"
-      fetchpriority="high">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header class="site-header" aria-label="Site header">
-      <a class="brand" href="#top" aria-label="Side Quest home">
-        <img src="pumpfun-pfp-72.png" alt="" width="36" height="36" decoding="async">
-        <span>Side Quest</span>
-      </a>
-
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#narrative">Narrative</a>
-        <a href="#thesis">Thesis</a>
-        <a href="#terminal">Terminal</a>
-        <a href="#route">Route</a>
-      </nav>
-    </header>
-
-    <main id="top">
-      <section id="narrative" class="hero" aria-labelledby="site-title">
-        <svg
-          class="hero-surge"
-          viewBox="0 0 1200 620"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-          focusable="false">
-          <defs>
-            <filter id="hero-surge-glow" x="-10%" y="-80%" width="120%" height="260%">
-              <feGaussianBlur stdDeviation="7" result="blur"></feGaussianBlur>
-              <feColorMatrix
-                in="blur"
-                type="matrix"
-                values="0 0 0 0 0.13 0 0 0 0 0.77 0 0 0 0 0.37 0 0 0 0.46 0"
-                result="glow"></feColorMatrix>
-              <feMerge>
-                <feMergeNode in="glow"></feMergeNode>
-                <feMergeNode in="SourceGraphic"></feMergeNode>
-              </feMerge>
-            </filter>
-          </defs>
-          <path
-            class="hero-surge__glow"
-            pathLength="1"
-            d="M -60 438 C 70 438 148 442 224 420 C 282 403 300 363 344 346 C 374 334 392 354 416 341 C 442 326 414 307 450 296 C 484 286 466 340 504 309 C 542 278 556 218 616 190 C 696 153 764 118 840 86 C 930 48 1034 32 1260 -36">
-          </path>
-          <path
-            class="hero-surge__line"
-            pathLength="1"
-            d="M -60 438 C 70 438 148 442 224 420 C 282 403 300 363 344 346 C 374 334 392 354 416 341 C 442 326 414 307 450 296 C 484 286 466 340 504 309 C 542 278 556 218 616 190 C 696 153 764 118 840 86 C 930 48 1034 32 1260 -36">
-          </path>
-          <circle class="hero-surge__flash" cx="1038" cy="32" r="5"></circle>
-        </svg>
-
-        <div class="hero__copy">
-          <div class="hero__meta">
-            <p class="ticker coin-symbol">Q U E S T</p>
-            <span class="solana-chip" aria-label="Side Quest status: detour">
-              <span class="solana-mark" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-              STATUS: DETOUR
-            </span>
-          </div>
-          <h1 id="site-title">SIDE QUEST</h1>
-          <p class="narrative">
-            Bitcoin is the main quest.<br>
-            Solana was the shortcut.<br>
-            Bonk was the leverage.<br>
-            Pump.fun was the trap door.<br>
-            <br>
-            <span class="narrative__turn">Now you&rsquo;re in the shitcoin loop.</span><br>
-            <br>
-            Welcome to Side Quest.
-          </p>
-
-          <div class="hero__actions" aria-label="Page shortcuts">
-            <a class="button button--primary" href="#terminal">Open terminal</a>
-            <a class="button" href="#route">View route</a>
-          </div>
-
-          <div class="ticker-plate" aria-label="Ticker">
-            <strong>Q U E S T</strong>
-          </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bitcoin Side Quest — Crypto activity, explained</title>
+  <meta name="description" content="Explore the top ten altcoins and five stablecoins. See observed buying and selling in selected markets, with clear explanations and sources.">
+  <meta name="theme-color" content="#f7f8f5">
+  <link rel="canonical" href="https://bitcoinsidequest.com/">
+  <meta property="og:title" content="Bitcoin Side Quest — Crypto activity, explained">
+  <meta property="og:description" content="Ten alts. Five stablecoins. A clearer picture of observed crypto trading.">
+  <meta property="og:url" content="https://bitcoinsidequest.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bitcoin Side Quest">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bitcoin Side Quest">
+  <meta name="twitter:description" content="See what's trading. Tap to understand it.">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to activity map</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Bitcoin Side Quest home"><img src="./favicon.svg" width="35" height="35" alt=""><span>bitcoin<span class="brand-second">side quest<span class="brand-dot">.</span></span></span></a>
+    <div class="header-right"><span class="edition">THE MARKET, A LITTLE CLEARER</span><button class="text-button" id="about-button">How to read this <span aria-hidden="true">↗</span></button></div>
+  </header>
+  <main id="main">
+    <section class="intro">
+      <div><div class="eyebrow"><span></span> YOUR CRYPTO FIELD GUIDE</div><h1>Follow the activity<span>.</span></h1><p>Ten alts. Five stablecoins. See what’s trading, and take a closer look.</p></div>
+      <div class="intro-actions"><div id="freshness" class="freshness"><i></i><span>Connecting to market data</span></div><button id="share-button" class="button-light"><span aria-hidden="true">↗</span> Share this view</button></div>
+    </section>
+    <div id="notice" class="notice" role="status" hidden></div>
+    <section id="overview" class="overview" aria-label="Market overview"></section>
+    <section class="workspace" aria-label="Explore trading activity">
+      <div class="map-panel">
+        <div class="map-toolbar"><div><h2>Activity map <span class="tag">BETA</span></h2><p>Swaps in selected DEX pools · partial coverage</p></div>
+          <div class="time-control" role="group" aria-label="Trading timeframe"><button data-window="h1" aria-pressed="false">1H</button><button data-window="h6" aria-pressed="false">6H</button><button data-window="h24" aria-pressed="true">24H</button></div>
         </div>
-      </section>
-
-      <section class="manifesto" aria-label="Side Quest manifesto">
-        <div class="manifesto__inner">
-          <p>
-            Built from Solana meme coin culture, where a joke can become a
-            chart, a chatroom, a scoreboard, and a temporary identity before
-            anyone admits they meant to stay.
-          </p>
-
-          <p>
-            The main quest is still out there: stack, build, wait, survive
-            the cycle. Side Quest is the weird door on the way there. The plan
-            didn&rsquo;t disappear&mdash;it just got postponed until the detour became
-            the direction.
-          </p>
+        <div class="map-subhead"><span><b>10</b> ALTCOINS</span><button id="btc-toggle" class="btc-toggle" aria-pressed="false"><span class="toggle-track"></span> BTC reference</button><span><b>5</b> STABLECOINS</span></div>
+        <div id="btc-reference" class="btc-reference" hidden></div>
+        <div id="map" class="map" aria-label="Select a coin to explore its sampled trades">
+          <svg id="connections" aria-label="Trading routes" role="group"></svg>
+          <div id="nodes"></div>
+          <div id="loading" class="loading-state"><span class="loader"></span><strong>Finding the latest picture</strong><span>Real market data. No simulated flows.</span></div>
         </div>
-      </section>
-
-      <section id="thesis" class="thesis" aria-labelledby="thesis-title">
-        <div class="section-heading">
-          <p class="ticker">THE THESIS</p>
-          <h2 id="thesis-title">Meme coins are side quests.</h2>
-        </div>
-
-        <div class="thesis__grid">
-          <article class="thesis-card">
-            <span>Main quest</span>
-            <p>Stack BTC. Believe in Solana. Build, wait, survive the cycle.</p>
-          </article>
-
-          <article class="thesis-card">
-            <span>Side quest</span>
-            <p>The weird coin, the chart, the lore, the temporary identity, the community bit.</p>
-          </article>
-
-          <article class="thesis-card">
-            <span>The loop</span>
-            <p>A joke becomes a token. The token becomes a scoreboard. The scoreboard becomes a reason to come back.</p>
-          </article>
-        </div>
-
-        <p class="thesis__line">
-          Not a replacement for the main quest. The thing people do when the
-          main quest gets too slow.
-        </p>
-      </section>
-
-      <section class="terminal" aria-labelledby="terminal-title">
-        <div id="terminal" class="section-heading">
-          <p class="ticker">STATUS BOARD</p>
-          <h2 id="terminal-title">Coin terminal</h2>
-        </div>
-
-        <div class="terminal-panel">
-          <div class="terminal-panel__header">
-            <div>
-              <span class="terminal-kicker">SIDE QUEST / Q U E S T</span>
-              <strong>Coin status</strong>
-            </div>
-            <span class="terminal-status">Pre-launch</span>
-          </div>
-
-          <dl class="terminal-grid">
-            <div>
-              <dt>Chain</dt>
-              <dd>Solana</dd>
-            </div>
-            <div>
-              <dt>Price</dt>
-              <dd id="terminal-price">Pair not live</dd>
-            </div>
-            <div>
-              <dt>Supply</dt>
-              <dd id="terminal-supply">Mint not live</dd>
-            </div>
-            <div>
-              <dt>Liquidity</dt>
-              <dd id="terminal-liquidity">Pair not live</dd>
-            </div>
-            <div>
-              <dt>Market cap</dt>
-              <dd id="terminal-market-cap">Pair not live</dd>
-            </div>
-            <div>
-              <dt>24h volume</dt>
-              <dd id="terminal-volume">Pair not live</dd>
-            </div>
-            <div>
-              <dt>Holders</dt>
-              <dd id="terminal-holders">Opens at launch</dd>
-            </div>
-            <div>
-              <dt>Contract</dt>
-              <dd id="terminal-contract">Mint not public</dd>
-            </div>
-          </dl>
-
-          <div class="terminal-console" aria-label="Terminal log">
-            <p><span>&gt;</span> state: pre-launch</p>
-            <p><span>&gt;</span> chain ready: Solana</p>
-            <p id="terminal-log"><span>&gt;</span> metrics wake up when the QUEST mint and pair are public</p>
-          </div>
-        </div>
-
-        <div class="launch-panel" aria-labelledby="launch-title">
-          <div class="launch-panel__header">
-            <div>
-              <span class="terminal-kicker">LAUNCH ACCESS</span>
-              <h3 id="launch-title">Ready when live</h3>
-            </div>
-            <span class="launch-note">Pre-launch</span>
-          </div>
-
-          <div class="launch-grid">
-            <div class="launch-item launch-item--contract">
-              <span>Contract</span>
-              <strong id="launch-contract">Mint not public</strong>
-              <button id="copy-contract" class="copy-button" type="button" disabled>Copy</button>
-            </div>
-
-            <div class="launch-item">
-              <span>Trade</span>
-              <a id="launch-trade" class="launch-link is-disabled" aria-disabled="true">Pair not live</a>
-            </div>
-
-            <div class="launch-item">
-              <span>X</span>
-              <a id="launch-x" class="launch-link is-disabled" aria-disabled="true">Handle pending</a>
-            </div>
-
-            <div class="launch-item">
-              <span>Telegram</span>
-              <a id="launch-telegram" class="launch-link is-disabled" aria-disabled="true">Chat pending</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="route" aria-labelledby="route-title">
-        <div id="route" class="route-panel">
-          <div class="section-heading route-heading">
-            <p class="ticker">THE LOOP</p>
-            <h2 id="route-title">this wasn&rsquo;t the plan</h2>
-          </div>
-
-          <div class="route-map" aria-label="BTC to question mark flow">
-            <ol class="route-flow" aria-label="Side Quest route">
-              <li>BTC</li>
-              <li class="route-flow__arrow" aria-hidden="true"></li>
-              <li>SOL</li>
-              <li class="route-flow__arrow" aria-hidden="true"></li>
-              <li>BONK</li>
-              <li class="route-flow__arrow" aria-hidden="true"></li>
-              <li>PUMP.FUN</li>
-              <li class="route-flow__arrow" aria-hidden="true"></li>
-              <li>???</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <section class="onchain-log" aria-labelledby="onchain-log-title">
-        <div class="onchain-log__copy">
-          <h2 id="onchain-log-title">SIDE QUEST LOG</h2>
-
-          <div class="onchain-log__body">
-            <p>Every side quest starts the same way: one small detour.</p>
-
-            <p>
-              The Side Quest Log is a simple Solana program concept for
-              writing short &ldquo;side quest&rdquo; confessions &mdash; tiny
-              permanent notes from people who weren&rsquo;t supposed to stay this
-              long.
-            </p>
-
-            <p>No rewards. No fake utility. No complicated promise.</p>
-
-            <p>Just proof you were here when the main quest got postponed.</p>
-          </div>
-        </div>
-
-        <div class="onchain-module" aria-label="Side Quest Log concept terminal">
-          <div class="onchain-module__screen" aria-label="Program concept details">
-            <p><span>program:</span> SideQuestLog</p>
-            <p><span>network:</span> Solana</p>
-            <p><span>status:</span> concept</p>
-            <p><span>action:</span> write a side quest</p>
-            <p><span>message:</span> &ldquo;I was stacking BTC. Then I opened pump.fun.&rdquo;</p>
-          </div>
-
-          <form class="onchain-preview" aria-label="Side Quest Log concept preview">
-            <label for="quest-message">message</label>
-            <textarea
-              id="quest-message"
-              maxlength="120"
-              rows="3"
-              placeholder="Write the detour..."
-            ></textarea>
-
-            <div class="onchain-preview__bar">
-              <span id="quest-count">0/120</span>
-              <button id="quest-write" type="submit">write preview</button>
-            </div>
-
-            <p id="quest-preview-status" class="onchain-preview__status">
-              concept preview. write the detour.
-            </p>
-          </form>
-
-          <div class="onchain-receipt" aria-live="polite">
-            <p><span>receipt:</span> <strong id="quest-receipt">pending</strong></p>
-            <p><span>entry:</span> <strong id="quest-entry">no entry written</strong></p>
-          </div>
-
-          <p class="onchain-module__action" aria-disabled="true">
-            leave your side quest
-          </p>
-        </div>
-      </section>
-
-      <section class="quest-log" aria-labelledby="quest-log-title">
-        <div id="quest-log" class="section-heading">
-          <p class="ticker">STATUS</p>
-          <h2 id="quest-log-title">Quest log</h2>
-        </div>
-
-        <div class="quest-log__grid">
-          <article class="info-panel">
-            <span>Ticker</span>
-            <strong>Q U E S T</strong>
-          </article>
-
-          <article class="info-panel">
-            <span>Launch</span>
-            <strong>Launching soon</strong>
-          </article>
-
-          <article class="info-panel">
-            <span>Main quest</span>
-            <strong>Stack BTC</strong>
-          </article>
-
-          <article class="info-panel">
-            <span>Side quest</span>
-            <strong>Flip shitcoins</strong>
-          </article>
-        </div>
-      </section>
-
-      <section id="culture" class="culture" aria-labelledby="culture-title">
-        <div class="culture__inner">
-          <p class="ticker">CULTURE</p>
-          <h2 id="culture-title">for everyone who left the main quest for one more trade</h2>
-          <div class="culture__copy">
-            <p class="culture__tagline">for anyone addicted to side questing&hellip; the main quest can wait</p>
-            <p class="culture__note">Jokes, timing, lore, screenshots, bad exits, perfect entries, and one more tab open too late.</p>
-            <p class="culture__route">btc &rarr; sol &rarr; bonk &rarr; pump.fun &rarr; ???</p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <span>just one more</span>
-      <span class="footer-solana" aria-label="SOL CULT">
-        <span class="solana-mark" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-        SOL CULT
-      </span>
-    </footer>
-    <script src="script.js" defer></script>
-  </body>
+        <div class="map-bottom"><div class="legend"><span><i class="line-key incoming"></i> Into selected coin</span><span><i class="line-key outgoing"></i> Out of selected coin</span></div><span id="route-count">Select a coin to begin</span></div>
+        <div class="map-foot"><span>Thicker lines = more traded dollars. Coin size is equal.</span><button id="coverage-button" class="text-button">Check coverage <span aria-hidden="true">↗</span></button></div>
+      </div>
+      <aside id="inspector" class="inspector" aria-label="Selected coin details" tabindex="-1"><div class="inspector-placeholder"><span class="tiny-compass">↗</span><h2>One coin.<br>A clearer picture.</h2><p>Choose a circle to see the trading behind it.</p></div></aside>
+    </section>
+    <section class="price-section"><div class="section-heading"><div><h2>The wider picture</h2><p>Market-wide price changes · last 24 hours</p></div><span>Price movement is separate from trading flows.</span></div><div id="price-bars" class="price-bars"></div></section>
+    <footer><span class="footer-note">A little context goes a long way.</span><div>Data provided by <a href="https://www.coingecko.com/en/api" target="_blank" rel="noopener noreferrer">CoinGecko</a>, <a href="https://www.geckoterminal.com/" target="_blank" rel="noopener noreferrer">GeckoTerminal</a> &amp; <a href="https://defillama.com/stablecoins" target="_blank" rel="noopener noreferrer">DefiLlama</a>.</div><button id="footer-method" class="text-button">Sources &amp; method ↗</button></footer>
+  </main>
+  <dialog id="method-dialog"><div class="dialog-top"><div><div class="eyebrow">A CLEARER PICTURE</div><h2>What you’re looking at</h2></div><button class="close-button" id="close-method" aria-label="Close information">×</button></div><div id="method-content"></div></dialog>
+  <dialog id="share-dialog"><h2>Share this view</h2><label for="share-url">Copy this link</label><input id="share-url" readonly><button id="close-share" class="button-light">Done</button></dialog>
+  <div id="toast" role="status" class="toast" hidden></div>
+  <button id="mobile-summary" class="mobile-summary" aria-controls="inspector" hidden></button>
+  <noscript><p class="notice">Enable JavaScript to explore the live activity map. Source data remains available from the providers linked below.</p></noscript>
+</body>
 </html>

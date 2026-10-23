@@ -1,0 +1,1656 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-23T19:14:10.969Z",
+  "startedAt": "2026-10-23T19:13:24.541Z",
+  "rankingCheckedAt": "2026-10-23T19:13:24.541Z",
+  "refreshMinutes": 15,
+  "assets": [
+    {
+      "id": "ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "kind": "alt",
+      "image": "https://coin-images.coingecko.com/coins/images/279/large/ethereum.png?1696501628",
+      "rank": 2,
+      "price": 2397.91,
+      "marketCap": 292933107799,
+      "volume24h": 10773095884,
+      "priceChange24h": 0.89229,
+      "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+      "supplyValue": null,
+      "supplyChange24h": null,
+      "supplySource": null,
+      "coverage": {
+        "status": "sample",
+        "pools": 5,
+        "networks": [
+          "eth"
+        ],
+        "reason": "Selected DEX pools only; excludes centralized exchanges and untracked pairs.",
+        "discoveryFailed": false
+      }
+    },
+    {
+      "id": "binancecoin",
+      "name": "BNB",
+      "symbol": "BNB",
+      "kind": "alt",
+      "image": "https://coin-images.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1696501970",
+      "rank": 4,
+      "price": 742.25,
+      "marketCap": 97618991497,
+      "volume24h": 817751847,
+      "priceChange24h": 1.72306,
+      "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+      "supplyValue": null,
+      "supplyChange24h": null,
+      "supplySource": null,
+      "coverage": {
+        "status": "no-pairs",
+        "pools": 0,
+        "networks": [],
+        "reason": "No validated dollar-volume pools within this asset set were available in the sampled feeds.",
+        "discoveryFailed": false
+      }
+    },
+    {
+      "id": "ripple",
+      "name": "XRP",
+      "symbol": "XRP",
+      "kind": "alt",
+      "image": "https://coin-images.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1696501442",
+      "rank": 5,
+      "price": 1.31,
+      "marketCap": 82476584773,
+      "volume24h": 1272684195,
+      "priceChange24h": 0.1208,
+      "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+      "supplyValue": null,
+      "supplyChange24h": null,
+      "supplySource": null,
+      "coverage": {
+        "status": "price-only",
+        "pools": 0,
+        "networks": [],
+        "reason": "Live market price available. Native trading flows are not covered by this version.",
+        "discoveryFailed": false
+      }
+    },
+    {
+      "id": "solana",
+      "name": "Solana",
+      "symbol": "SOL",
+      "kind": "alt",
+      "image": "https://coin-images.coingecko.com/coins/images/4128/large/solana.png?1718769756",
+      "rank": 7,
+      "price": 104,
+      "marketCap": 61341401185,
+      "volume24h": 2028862442,
+      "priceChange24h": 0.7926,
+      "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+      "supplyValue": null,
+      "supplyChange24h": null,
+      "supplySource": null,
+      "coverage": {
+        "status": "sample",
+        "pools": 5,
+        "networks": [
+          "solana"
+        ],
+        "reason": "Selected DEX pools only; excludes centralized exchanges and untracked pairs.",
+        "discoveryFailed": false
+      }
+    },
+    {
+      "id": "tron",
+      "name": "TRON",
+      "symbol": "TRX",
+      "kind": "alt",
+      "image": "https://coin-images.coingecko.com/coins/images/1094/large/photo_2026-04-13_09-59-16.png?1776048311",
+      "rank": 8,
+      "price": 0.329877,
+      "marketCap": 31336289094,
+      "volume24h": 300725162,
+      "priceChange24h": 0.63964,
+      "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+      "supplyValue": null,
+      "supplyChange24h": null,
+      "supplySource": null,
+      "coverage": {
+        "status": "sample",
+        "pools": 2,
+        "networks": [
+          "tron"
+        ],
+        "reason": "Selected DEX pools only; excludes centralized exchanges and untracked pairs.",
+        "discoveryFailed": false
+      }
+    },
+    {
+      "id": "figure-heloc",
+      "name": "Figure Heloc",
+      "symbol": "FIGR_HELOC",
+      "kind": "alt",
+      "image": "https://coin-images.coingecko.com/coins/images/68480/large/figure.png?1755863954",
+      "rank": 9,
+      "price": 1.021,
+      "marketCap": 26026059428,
+      "volume24h": 148701709,
+      "priceChange24h": -1.68515,
+      "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+      "supplyValue": null,
+      "supplyChange24h": null,
+      "supplySource": null,
+      "coverage": {
+        "status": "price-only",
+        "pools": 0,
+        "networks": [],
+        "reason": "Live market price available. Native trading flows are not covered by this version.",
+        "discoveryFailed": false
+      }
+    },
+    {
+      "id": "zcash",
+      "name": "Zcash",
+      "symbol": "ZEC",
+      "kind": "alt",
+      "image": "https://coin-images.coingecko.com/coins/images/486/large/Brandmark-Yellow_%281%29.png?1785810558",
+      "rank": 10,
+      "price": 1232.51,
+      "marketCap": 20965452624,
+      "volume24h": 772416513,
+      "priceChange24h": 2.01226,
+      "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+      "supplyValue": null,
+      "supplyChange24h": null,
+      "supplySource": null,
+      "coverage": {
+        "status": "price-only",
+        "pools": 0,
+        "networks": [],
+        "reason": "Live market price available. Native trading flows are not covered by this version.",
+        "discoveryFailed": false
+      }
+    },
+    {
+      "id": "hyperliquid",
+      "name": "Hyperliquid",
+      "symbol": "HYPE",
+      "kind": "alt",
+      "image": "https://coin-images.coingecko.com/coins/images/50882/large/hyperliquid.jpg?1729431300",
+      "rank": 11,
+      "price": 77.67,
+      "marketCap": 17275981693,
+      "volume24h": 721945449,
+      "priceChange24h": 0.50298,
+      "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+      "supplyValue": null,
+      "supplyChange24h": null,
+      "supplySource": null,
+      "coverage": {
+        "status": "sample",
+        "pools": 4,
+        "networks": [
+          "hyperevm"
+        ],
+        "reason": "Selected DEX pools only; excludes centralized exchanges and untracked pairs.",
+        "discoveryFailed": false
+      }
+    },
+    {
+      "id": "dogecoin",
+      "name": "Dogecoin",
+      "symbol": "DOGE",
+      "kind": "alt",
+      "image": "https://coin-images.coingecko.com/coins/images/5/large/dogecoin.png?1696501409",
+      "rank": 12,
+      "price": 0.079366,
+      "marketCap": 12416815114,
+      "volume24h": 453057124,
+      "priceChange24h": 1.27993,
+      "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+      "supplyValue": null,
+      "supplyChange24h": null,
+      "supplySource": null,
+      "coverage": {
+        "status": "price-only",
+        "pools": 0,
+        "networks": [],
+        "reason": "Live market price available. Native trading flows are not covered by this version.",
+        "discoveryFailed": false
+      }
+    },
+    {
+      "id": "monero",
+      "name": "Monero",
+      "symbol": "XMR",
+      "kind": "alt",
+      "image": "https://coin-images.coingecko.com/coins/images/69/large/monero_logo.png?1696501460",
+      "rank": 13,
+      "price": 597.42,
+      "marketCap": 11245928477,
+      "volume24h": 123314924,
+      "priceChange24h": -2.05832,
+      "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+      "supplyValue": null,
+      "supplyChange24h": null,
+      "supplySource": null,
+      "coverage": {
+        "status": "price-only",
+        "pools": 0,
+        "networks": [],
+        "reason": "Live market price available. Native trading flows are not covered by this version.",
+        "discoveryFailed": false
+      }
+    },
+    {
+      "id": "tether",
+      "name": "Tether",
+      "symbol": "USDT",
+      "kind": "stable",
+      "image": "https://coin-images.coingecko.com/coins/images/325/large/Tether.png?1696501661",
+      "rank": 3,
+      "price": 0.999113,
+      "marketCap": 182562372045,
+      "volume24h": 42665625203,
+      "priceChange24h": 0.01272,
+      "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+      "supplyValue": 182622982951.63956,
+      "supplyChange24h": -0.014550259199552773,
+      "supplySource": "DefiLlama circulating value in USD",
+      "coverage": {
+        "status": "sample",
+        "pools": 16,
+        "networks": [
+          "eth",
+          "solana",
+          "tron"
+        ],
+        "reason": "Selected DEX pools only; excludes centralized exchanges and untracked pairs.",
+        "discoveryFailed": false
+      }
+    },
+    {
+      "id": "usd-coin",
+      "name": "USDC",
+      "symbol": "USDC",
+      "kind": "stable",
+      "image": "https://coin-images.coingecko.com/coins/images/6319/large/USDC.png?1769615602",
+      "rank": 6,
+      "price": 0.999627,
+      "marketCap": 71749090548,
+      "volume24h": 10537095481,
+      "priceChange24h": 0.0088,
+      "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+      "supplyValue": 71943938585.29419,
+      "supplyChange24h": -0.9520304409677882,
+      "supplySource": "DefiLlama circulating value in USD",
+      "coverage": {
+        "status": "sample",
+        "pools": 23,
+        "networks": [
+          "eth",
+          "solana",
+          "hyperevm"
+        ],
+        "reason": "Selected DEX pools only; excludes centralized exchanges and untracked pairs.",
+        "discoveryFailed": false
+      }
+    },
+    {
+      "id": "usds",
+      "name": "USDS",
+      "symbol": "USDS",
+      "kind": "stable",
+      "image": "https://coin-images.coingecko.com/coins/images/39926/large/usds.webp?1726666683",
+      "rank": 14,
+      "price": 1,
+      "marketCap": 10061431070,
+      "volume24h": 95926678,
+      "priceChange24h": 0.01495,
+      "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+      "supplyValue": 6853594247.623832,
+      "supplyChange24h": 1.9976762827260242,
+      "supplySource": "DefiLlama circulating value in USD",
+      "coverage": {
+        "status": "sample",
+        "pools": 3,
+        "networks": [
+          "eth",
+          "solana"
+        ],
+        "reason": "Selected DEX pools only; excludes centralized exchanges and untracked pairs.",
+        "discoveryFailed": false
+      }
+    },
+    {
+      "id": "ethena-usde",
+      "name": "Ethena USDe",
+      "symbol": "USDE",
+      "kind": "stable",
+      "image": "https://coin-images.coingecko.com/coins/images/33613/large/usde.png?1733810059",
+      "rank": 23,
+      "price": 0.999389,
+      "marketCap": 4599038916,
+      "volume24h": 32770118,
+      "priceChange24h": 0.0026,
+      "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+      "supplyValue": 4598304467.310088,
+      "supplyChange24h": -1.2112659437770623,
+      "supplySource": "DefiLlama circulating value in USD",
+      "coverage": {
+        "status": "sample",
+        "pools": 7,
+        "networks": [
+          "eth",
+          "solana"
+        ],
+        "reason": "Selected DEX pools only; excludes centralized exchanges and untracked pairs.",
+        "discoveryFailed": false
+      }
+    },
+    {
+      "id": "dai",
+      "name": "Dai",
+      "symbol": "DAI",
+      "kind": "stable",
+      "image": "https://coin-images.coingecko.com/coins/images/9956/large/Badge_Dai.png?1696509996",
+      "rank": 25,
+      "price": 1,
+      "marketCap": 4539861453,
+      "volume24h": 107301901,
+      "priceChange24h": 0.03857,
+      "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+      "supplyValue": 4739404696.970083,
+      "supplyChange24h": -0.13618790582531348,
+      "supplySource": "DefiLlama circulating value in USD",
+      "coverage": {
+        "status": "sample",
+        "pools": 5,
+        "networks": [
+          "eth"
+        ],
+        "reason": "Selected DEX pools only; excludes centralized exchanges and untracked pairs.",
+        "discoveryFailed": false
+      }
+    }
+  ],
+  "bitcoin": {
+    "id": "bitcoin",
+    "name": "Bitcoin",
+    "symbol": "BTC",
+    "kind": "reference",
+    "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400",
+    "rank": 1,
+    "price": 81335,
+    "marketCap": 1634898201835,
+    "volume24h": 22808210199,
+    "priceChange24h": 0.16194,
+    "priceUpdatedAt": "2026-10-23T19:11:49.000Z",
+    "supplyValue": null,
+    "supplyChange24h": null,
+    "supplySource": null
+  },
+  "pools": [
+    {
+      "id": "eth_0xe0554a476a092703abdb3ef35c80e0d76d32939f",
+      "network": "eth",
+      "address": "0xe0554a476a092703abdb3ef35c80e0d76d32939f",
+      "name": "USDC / WETH 0.01%",
+      "dex": "uniswap_v3",
+      "base": "usd-coin",
+      "quote": "ethereum",
+      "baseRepresentation": "USDC",
+      "quoteRepresentation": "WETH",
+      "wrapped": true,
+      "liquidity": 9068979.5469,
+      "windows": {
+        "h1": {
+          "buy": 629716.645893606,
+          "sell": 544346.373131504,
+          "total": 1174063.0190251102
+        },
+        "h6": {
+          "buy": 6421823.72336766,
+          "sell": 6411414.89054955,
+          "total": 12833238.61391721
+        },
+        "h24": {
+          "buy": 38013085.8062781,
+          "sell": 38001519.0503012,
+          "total": 76014604.8565793
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:25.377Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0xe0554a476a092703abdb3ef35c80e0d76d32939f"
+    },
+    {
+      "id": "eth_0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+      "network": "eth",
+      "address": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+      "name": "WETH / USDC 0.05%",
+      "dex": "uniswap_v3",
+      "base": "ethereum",
+      "quote": "usd-coin",
+      "baseRepresentation": "WETH",
+      "quoteRepresentation": "USDC",
+      "wrapped": true,
+      "liquidity": 82031775.5879,
+      "windows": {
+        "h1": {
+          "buy": 416146.02533129,
+          "sell": 615251.806086487,
+          "total": 1031397.831417777
+        },
+        "h6": {
+          "buy": 5035408.44362995,
+          "sell": 5085752.63700167,
+          "total": 10121161.080631621
+        },
+        "h24": {
+          "buy": 12927665.1427275,
+          "sell": 12619982.5168649,
+          "total": 25547647.659592398
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:25.377Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+    },
+    {
+      "id": "eth_0x4e68ccd3e89f51c3074ca5072bbac773960dfa36",
+      "network": "eth",
+      "address": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36",
+      "name": "WETH / USDT 0.3%",
+      "dex": "uniswap_v3",
+      "base": "ethereum",
+      "quote": "tether",
+      "baseRepresentation": "WETH",
+      "quoteRepresentation": "Tether",
+      "wrapped": true,
+      "liquidity": 90194333.7891,
+      "windows": {
+        "h1": {
+          "buy": 43.9294607061,
+          "sell": 238194.110250165,
+          "total": 238238.0397108711
+        },
+        "h6": {
+          "buy": 4136242.36671933,
+          "sell": 3407268.65551319,
+          "total": 7543511.02223252
+        },
+        "h24": {
+          "buy": 9411944.83633197,
+          "sell": 6563431.41154365,
+          "total": 15975376.24787562
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:25.377Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0x4e68ccd3e89f51c3074ca5072bbac773960dfa36"
+    },
+    {
+      "id": "eth_0x11b815efb8f581194ae79006d24e0d814b7697f6",
+      "network": "eth",
+      "address": "0x11b815efb8f581194ae79006d24e0d814b7697f6",
+      "name": "WETH / USDT 0.05%",
+      "dex": "uniswap_v3",
+      "base": "ethereum",
+      "quote": "tether",
+      "baseRepresentation": "WETH",
+      "quoteRepresentation": "Tether",
+      "wrapped": true,
+      "liquidity": 9575341.8261,
+      "windows": {
+        "h1": {
+          "buy": 76013.2641892155,
+          "sell": 137169.747751033,
+          "total": 213183.01194024849
+        },
+        "h6": {
+          "buy": 1667442.18339665,
+          "sell": 1680568.56060527,
+          "total": 3348010.7440019203
+        },
+        "h24": {
+          "buy": 5034410.54977416,
+          "sell": 4951716.02538057,
+          "total": 9986126.57515473
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:25.377Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0x11b815efb8f581194ae79006d24e0d814b7697f6"
+    },
+    {
+      "id": "eth_0x2b21c65d9a7dc6926ee330a1c6e5a8037fd81774f3dc066536f800128e39f634",
+      "network": "eth",
+      "address": "0x2b21c65d9a7dc6926ee330a1c6e5a8037fd81774f3dc066536f800128e39f634",
+      "name": "USDC / USDT",
+      "dex": "uniswap-v4-ethereum",
+      "base": "usd-coin",
+      "quote": "tether",
+      "baseRepresentation": "USDC",
+      "quoteRepresentation": "Tether",
+      "wrapped": false,
+      "liquidity": 5556638.4764,
+      "windows": {
+        "h1": {
+          "buy": 7585512.77645056,
+          "sell": 7764372.28840446,
+          "total": 15349885.06485502
+        },
+        "h6": {
+          "buy": 27295384.5377932,
+          "sell": 27537944.2486399,
+          "total": 54833328.7864331
+        },
+        "h24": {
+          "buy": 67821956.832045,
+          "sell": 69222654.5207412,
+          "total": 137044611.35278618
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:25.377Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0x2b21c65d9a7dc6926ee330a1c6e5a8037fd81774f3dc066536f800128e39f634"
+    },
+    {
+      "id": "eth_0x667701e51b4d1ca244f17c78f7ab8744b4c99f9b",
+      "network": "eth",
+      "address": "0x667701e51b4d1ca244f17c78f7ab8744b4c99f9b",
+      "name": "USDC / USDT",
+      "dex": "fluid-ethereum",
+      "base": "usd-coin",
+      "quote": "tether",
+      "baseRepresentation": "USDC",
+      "quoteRepresentation": "Tether",
+      "wrapped": false,
+      "liquidity": 35046170.5478,
+      "windows": {
+        "h1": {
+          "buy": 4661069.65221562,
+          "sell": 4893706.40942323,
+          "total": 9554776.06163885
+        },
+        "h6": {
+          "buy": 14806667.9063406,
+          "sell": 14812862.6113282,
+          "total": 29619530.5176688
+        },
+        "h24": {
+          "buy": 37976928.1058997,
+          "sell": 39252041.6555647,
+          "total": 77228969.7614644
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:25.377Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0x667701e51b4d1ca244f17c78f7ab8744b4c99f9b"
+    },
+    {
+      "id": "eth_0x0fb0e40cec3bb23e13abc585958a93c796fbea56955e19a23727a716a0423239",
+      "network": "eth",
+      "address": "0x0fb0e40cec3bb23e13abc585958a93c796fbea56955e19a23727a716a0423239",
+      "name": "USDC / USDT",
+      "dex": "uniswap-v4-ethereum",
+      "base": "usd-coin",
+      "quote": "tether",
+      "baseRepresentation": "USDC",
+      "quoteRepresentation": "Tether",
+      "wrapped": false,
+      "liquidity": 3398823.2916,
+      "windows": {
+        "h1": {
+          "buy": 1532876.34855512,
+          "sell": 1562533.54090995,
+          "total": 3095409.88946507
+        },
+        "h6": {
+          "buy": 12704678.3918472,
+          "sell": 12907612.9371486,
+          "total": 25612291.3289958
+        },
+        "h24": {
+          "buy": 26687882.3426463,
+          "sell": 27404487.8867125,
+          "total": 54092370.2293588
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:25.377Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0x0fb0e40cec3bb23e13abc585958a93c796fbea56955e19a23727a716a0423239"
+    },
+    {
+      "id": "eth_0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7",
+      "network": "eth",
+      "address": "0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7",
+      "name": "DAI / USDC / USDT",
+      "dex": "curve",
+      "base": "dai",
+      "quote": "usd-coin",
+      "baseRepresentation": "Dai",
+      "quoteRepresentation": "USDC",
+      "wrapped": false,
+      "liquidity": 159855740.2638,
+      "windows": {
+        "h1": {
+          "buy": 0,
+          "sell": 4401.4782885261,
+          "total": 4401.4782885261
+        },
+        "h6": {
+          "buy": 51114.1751378004,
+          "sell": 56345.4088399918,
+          "total": 107459.5839777922
+        },
+        "h24": {
+          "buy": 454768.7351524101,
+          "sell": 132417.5814505214,
+          "total": 587186.3166029315
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:25.377Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7"
+    },
+    {
+      "id": "eth_0x3b1b1f2e775a6db1664f8e7d59ad568605ea2406312c11aef03146c0cf89d5b9",
+      "network": "eth",
+      "address": "0x3b1b1f2e775a6db1664f8e7d59ad568605ea2406312c11aef03146c0cf89d5b9",
+      "name": "USDT / USDS",
+      "dex": "uniswap-v4-ethereum",
+      "base": "tether",
+      "quote": "usds",
+      "baseRepresentation": "Tether",
+      "quoteRepresentation": "USDS",
+      "wrapped": false,
+      "liquidity": 50004140.3881,
+      "windows": {
+        "h1": {
+          "buy": 18226.9277712047,
+          "sell": 19408.953956912,
+          "total": 37635.8817281167
+        },
+        "h6": {
+          "buy": 2951780.73280916,
+          "sell": 2959097.92940416,
+          "total": 5910878.66221332
+        },
+        "h24": {
+          "buy": 3103281.82334369,
+          "sell": 3107567.58118775,
+          "total": 6210849.40453144
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:25.377Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0x3b1b1f2e775a6db1664f8e7d59ad568605ea2406312c11aef03146c0cf89d5b9"
+    },
+    {
+      "id": "eth_0xe9f1e2ef814f5686c30ce6fb7103d0f780836c67",
+      "network": "eth",
+      "address": "0xe9f1e2ef814f5686c30ce6fb7103d0f780836c67",
+      "name": "DAI / USDS 0.3%",
+      "dex": "uniswap_v3",
+      "base": "dai",
+      "quote": "usds",
+      "baseRepresentation": "Dai",
+      "quoteRepresentation": "USDS",
+      "wrapped": false,
+      "liquidity": 206727.3082,
+      "windows": {
+        "h1": {
+          "buy": 63.3200673157,
+          "sell": 57.2478540406,
+          "total": 120.56792135629999
+        },
+        "h6": {
+          "buy": 63.3200673157,
+          "sell": 57.2478540406,
+          "total": 120.56792135629999
+        },
+        "h24": {
+          "buy": 182.8650597943,
+          "sell": 165.3286748017,
+          "total": 348.193734596
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:25.377Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0xe9f1e2ef814f5686c30ce6fb7103d0f780836c67"
+    },
+    {
+      "id": "eth_0x56fc29b86900aa0afa6e20b020429bffba1105cfb45070492c67529b46eb48c1",
+      "network": "eth",
+      "address": "0x56fc29b86900aa0afa6e20b020429bffba1105cfb45070492c67529b46eb48c1",
+      "name": "USDe / USDC 0.003%",
+      "dex": "uniswap-v4-ethereum",
+      "base": "ethena-usde",
+      "quote": "usd-coin",
+      "baseRepresentation": "Ethena USDe",
+      "quoteRepresentation": "USDC",
+      "wrapped": false,
+      "liquidity": 1551701.7366,
+      "windows": {
+        "h1": {
+          "buy": 98888.3162279814,
+          "sell": 8788.1844502309,
+          "total": 107676.5006782123
+        },
+        "h6": {
+          "buy": 2373342.71693451,
+          "sell": 2058459.47761439,
+          "total": 4431802.1945489
+        },
+        "h24": {
+          "buy": 7867140.92393685,
+          "sell": 7397607.64246072,
+          "total": 15264748.56639757
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:33.925Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0x56fc29b86900aa0afa6e20b020429bffba1105cfb45070492c67529b46eb48c1"
+    },
+    {
+      "id": "eth_0xe6d7ebb9f1a9519dc06d557e03c522d53520e76a",
+      "network": "eth",
+      "address": "0xe6d7ebb9f1a9519dc06d557e03c522d53520e76a",
+      "name": "USDe / USDC 0.01%",
+      "dex": "uniswap_v3",
+      "base": "ethena-usde",
+      "quote": "usd-coin",
+      "baseRepresentation": "Ethena USDe",
+      "quoteRepresentation": "USDC",
+      "wrapped": false,
+      "liquidity": 2409112.3918,
+      "windows": {
+        "h1": {
+          "buy": 81326.7220083624,
+          "sell": 0,
+          "total": 81326.7220083624
+        },
+        "h6": {
+          "buy": 623047.990418874,
+          "sell": 504047.655002824,
+          "total": 1127095.645421698
+        },
+        "h24": {
+          "buy": 1313097.62973771,
+          "sell": 1350618.35762957,
+          "total": 2663715.98736728
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:33.925Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0xe6d7ebb9f1a9519dc06d557e03c522d53520e76a"
+    },
+    {
+      "id": "eth_0xf063bd202e45d6b2843102cb4ece339026645d4a",
+      "network": "eth",
+      "address": "0xf063bd202e45d6b2843102cb4ece339026645d4a",
+      "name": "USDe / USDT",
+      "dex": "fluid-ethereum",
+      "base": "ethena-usde",
+      "quote": "tether",
+      "baseRepresentation": "Ethena USDe",
+      "quoteRepresentation": "Tether",
+      "wrapped": false,
+      "liquidity": 1662017.3709,
+      "windows": {
+        "h1": {
+          "buy": 32875.3216813124,
+          "sell": 99.6693930644,
+          "total": 32974.991074376805
+        },
+        "h6": {
+          "buy": 293340.226195279,
+          "sell": 325852.724549987,
+          "total": 619192.9507452659
+        },
+        "h24": {
+          "buy": 555627.285215075,
+          "sell": 579553.861725514,
+          "total": 1135181.146940589
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:33.925Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0xf063bd202e45d6b2843102cb4ece339026645d4a"
+    },
+    {
+      "id": "eth_0x63bb22f47c7ede6578a25c873e77eb782ec8e4c19778e36ce64d37877b5bd1e7",
+      "network": "eth",
+      "address": "0x63bb22f47c7ede6578a25c873e77eb782ec8e4c19778e36ce64d37877b5bd1e7",
+      "name": "USDe / USDT 0.005%",
+      "dex": "uniswap-v4-ethereum",
+      "base": "ethena-usde",
+      "quote": "tether",
+      "baseRepresentation": "Ethena USDe",
+      "quoteRepresentation": "Tether",
+      "wrapped": false,
+      "liquidity": 319696.178,
+      "windows": {
+        "h1": {
+          "buy": 29.2638833506,
+          "sell": 0.002513590019,
+          "total": 29.266396940619
+        },
+        "h6": {
+          "buy": 20592.7903886747,
+          "sell": 21604.9881156824,
+          "total": 42197.778504357106
+        },
+        "h24": {
+          "buy": 351359.318388681,
+          "sell": 354231.529468896,
+          "total": 705590.847857577
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:33.925Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0x63bb22f47c7ede6578a25c873e77eb782ec8e4c19778e36ce64d37877b5bd1e7"
+    },
+    {
+      "id": "eth_0x48da0965ab2d2cbf1c17c09cfb5cbe67ad5b1406",
+      "network": "eth",
+      "address": "0x48da0965ab2d2cbf1c17c09cfb5cbe67ad5b1406",
+      "name": "DAI / USDT 0.01%",
+      "dex": "uniswap_v3",
+      "base": "dai",
+      "quote": "tether",
+      "baseRepresentation": "Dai",
+      "quoteRepresentation": "Tether",
+      "wrapped": false,
+      "liquidity": 1032221.9616,
+      "windows": {
+        "h1": {
+          "buy": 2659.9089132199,
+          "sell": 350.0736052322,
+          "total": 3009.9825184521
+        },
+        "h6": {
+          "buy": 90137.345658203,
+          "sell": 139014.322724541,
+          "total": 229151.668382744
+        },
+        "h24": {
+          "buy": 377600.883736834,
+          "sell": 495717.209343209,
+          "total": 873318.093080043
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:33.925Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0x48da0965ab2d2cbf1c17c09cfb5cbe67ad5b1406"
+    },
+    {
+      "id": "eth_0x769db46f39c42ee7ad5f71f4167c47edd281e767",
+      "network": "eth",
+      "address": "0x769db46f39c42ee7ad5f71f4167c47edd281e767",
+      "name": "DAI / WETH 0.3%",
+      "dex": "sushiswap-v3-ethereum",
+      "base": "dai",
+      "quote": "ethereum",
+      "baseRepresentation": "Dai",
+      "quoteRepresentation": "WETH",
+      "wrapped": true,
+      "liquidity": 8932288.6676,
+      "windows": {
+        "h1": {
+          "buy": 6157.5539003833,
+          "sell": 0,
+          "total": 6157.5539003833
+        },
+        "h6": {
+          "buy": 107237.508973491,
+          "sell": 131931.857275917,
+          "total": 239169.366249408
+        },
+        "h24": {
+          "buy": 208197.836324076,
+          "sell": 316242.026784648,
+          "total": 524439.863108724
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:33.925Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0x769db46f39c42ee7ad5f71f4167c47edd281e767"
+    },
+    {
+      "id": "eth_0x5777d92f208679db4b9778590fa3cab3ac9e2168",
+      "network": "eth",
+      "address": "0x5777d92f208679db4b9778590fa3cab3ac9e2168",
+      "name": "DAI / USDC 0.01%",
+      "dex": "uniswap_v3",
+      "base": "dai",
+      "quote": "usd-coin",
+      "baseRepresentation": "Dai",
+      "quoteRepresentation": "USDC",
+      "wrapped": false,
+      "liquidity": 1399647.6166,
+      "windows": {
+        "h1": {
+          "buy": 2.2249464524,
+          "sell": 50773.3230405603,
+          "total": 50775.5479870127
+        },
+        "h6": {
+          "buy": 3758.7851596498,
+          "sell": 144274.99768337,
+          "total": 148033.78284301978
+        },
+        "h24": {
+          "buy": 91274.7731116369,
+          "sell": 258119.235435904,
+          "total": 349394.00854754087
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:33.925Z",
+      "url": "https://www.geckoterminal.com/eth/pools/0x5777d92f208679db4b9778590fa3cab3ac9e2168"
+    },
+    {
+      "id": "solana_Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE",
+      "network": "solana",
+      "address": "Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE",
+      "name": "SOL / USDC",
+      "dex": "orca",
+      "base": "solana",
+      "quote": "usd-coin",
+      "baseRepresentation": "Wrapped SOL",
+      "quoteRepresentation": "USDC",
+      "wrapped": true,
+      "liquidity": 29941511.8045,
+      "windows": {
+        "h1": {
+          "buy": 1053367.4878479,
+          "sell": 1574841.10259363,
+          "total": 2628208.59044153
+        },
+        "h6": {
+          "buy": 21511500.18814,
+          "sell": 21979500.8784402,
+          "total": 43491001.066580206
+        },
+        "h24": {
+          "buy": 46539808.9553676,
+          "sell": 45963252.9944751,
+          "total": 92503061.94984269
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:42.374Z",
+      "url": "https://www.geckoterminal.com/solana/pools/Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE"
+    },
+    {
+      "id": "solana_3ucNos4NbumPLZNWztqGHNFFgkHeRMBQAVemeeomsUxv",
+      "network": "solana",
+      "address": "3ucNos4NbumPLZNWztqGHNFFgkHeRMBQAVemeeomsUxv",
+      "name": "SOL / USDC",
+      "dex": "raydium-clmm",
+      "base": "solana",
+      "quote": "usd-coin",
+      "baseRepresentation": "Wrapped SOL",
+      "quoteRepresentation": "USDC",
+      "wrapped": true,
+      "liquidity": 8073809.7314,
+      "windows": {
+        "h1": {
+          "buy": 329786.65121738,
+          "sell": 445347.050286554,
+          "total": 775133.701503934
+        },
+        "h6": {
+          "buy": 5377393.88841618,
+          "sell": 5480562.21601209,
+          "total": 10857956.10442827
+        },
+        "h24": {
+          "buy": 11642928.0430344,
+          "sell": 11512294.4766417,
+          "total": 23155222.5196761
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:42.374Z",
+      "url": "https://www.geckoterminal.com/solana/pools/3ucNos4NbumPLZNWztqGHNFFgkHeRMBQAVemeeomsUxv"
+    },
+    {
+      "id": "solana_5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6",
+      "network": "solana",
+      "address": "5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6",
+      "name": "SOL / USDC",
+      "dex": "meteora",
+      "base": "solana",
+      "quote": "usd-coin",
+      "baseRepresentation": "Wrapped SOL",
+      "quoteRepresentation": "USDC",
+      "wrapped": true,
+      "liquidity": 4537284.3171,
+      "windows": {
+        "h1": {
+          "buy": 188444.681889823,
+          "sell": 308236.613089601,
+          "total": 496681.294979424
+        },
+        "h6": {
+          "buy": 4523424.43371687,
+          "sell": 4586743.20451186,
+          "total": 9110167.63822873
+        },
+        "h24": {
+          "buy": 9359058.80843969,
+          "sell": 9224429.429557,
+          "total": 18583488.23799669
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:42.374Z",
+      "url": "https://www.geckoterminal.com/solana/pools/5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6"
+    },
+    {
+      "id": "solana_DJNtGuBGEQiUCWE8F981M2C3ZghZt2XLD8f2sQdZ6rsZ",
+      "network": "solana",
+      "address": "DJNtGuBGEQiUCWE8F981M2C3ZghZt2XLD8f2sQdZ6rsZ",
+      "name": "SOL / USDC",
+      "dex": "pancakeswap-v3-solana",
+      "base": "solana",
+      "quote": "usd-coin",
+      "baseRepresentation": "Wrapped SOL",
+      "quoteRepresentation": "USDC",
+      "wrapped": true,
+      "liquidity": 1744976.5302,
+      "windows": {
+        "h1": {
+          "buy": 140191.808962645,
+          "sell": 154477.34995033,
+          "total": 294669.158912975
+        },
+        "h6": {
+          "buy": 2047611.651741,
+          "sell": 2061267.72243299,
+          "total": 4108879.37417399
+        },
+        "h24": {
+          "buy": 4611615.03043416,
+          "sell": 4595675.1926453,
+          "total": 9207290.22307946
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:42.374Z",
+      "url": "https://www.geckoterminal.com/solana/pools/DJNtGuBGEQiUCWE8F981M2C3ZghZt2XLD8f2sQdZ6rsZ"
+    },
+    {
+      "id": "solana_3nMFwZXwY1s1M5s8vYAHqd4wGs4iSxXE4LRoUMMYqEgF",
+      "network": "solana",
+      "address": "3nMFwZXwY1s1M5s8vYAHqd4wGs4iSxXE4LRoUMMYqEgF",
+      "name": "SOL / USDT 0.01%",
+      "dex": "raydium-clmm",
+      "base": "solana",
+      "quote": "tether",
+      "baseRepresentation": "Wrapped SOL",
+      "quoteRepresentation": "Tether",
+      "wrapped": true,
+      "liquidity": 843542.9278,
+      "windows": {
+        "h1": {
+          "buy": 59657.3190186817,
+          "sell": 67032.7810101512,
+          "total": 126690.10002883291
+        },
+        "h6": {
+          "buy": 1043542.83402327,
+          "sell": 1050887.53257755,
+          "total": 2094430.36660082
+        },
+        "h24": {
+          "buy": 2350984.79609835,
+          "sell": 2340554.44211169,
+          "total": 4691539.23821004
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:42.374Z",
+      "url": "https://www.geckoterminal.com/solana/pools/3nMFwZXwY1s1M5s8vYAHqd4wGs4iSxXE4LRoUMMYqEgF"
+    },
+    {
+      "id": "solana_FfEJYz4hLLFe4KyNyKYCjvfhMfbtpLH3CXpcPe8nhmfy",
+      "network": "solana",
+      "address": "FfEJYz4hLLFe4KyNyKYCjvfhMfbtpLH3CXpcPe8nhmfy",
+      "name": "USDT / USDC",
+      "dex": "jup-lend-amm",
+      "base": "tether",
+      "quote": "usd-coin",
+      "baseRepresentation": "Tether",
+      "quoteRepresentation": "USDC",
+      "wrapped": false,
+      "liquidity": 2518538.4708,
+      "windows": {
+        "h1": {
+          "buy": 39540.5033882931,
+          "sell": 47561.8687293242,
+          "total": 87102.3721176173
+        },
+        "h6": {
+          "buy": 585137.117261458,
+          "sell": 584695.354396357,
+          "total": 1169832.471657815
+        },
+        "h24": {
+          "buy": 2003361.02683272,
+          "sell": 1994919.57763196,
+          "total": 3998280.60446468
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:42.374Z",
+      "url": "https://www.geckoterminal.com/solana/pools/FfEJYz4hLLFe4KyNyKYCjvfhMfbtpLH3CXpcPe8nhmfy"
+    },
+    {
+      "id": "solana_23XoPQqGw9WMsLoqTu8HMzJLD6RnXsufbKyWPLJywsCT",
+      "network": "solana",
+      "address": "23XoPQqGw9WMsLoqTu8HMzJLD6RnXsufbKyWPLJywsCT",
+      "name": "USDT / USDC",
+      "dex": "byreal",
+      "base": "tether",
+      "quote": "usd-coin",
+      "baseRepresentation": "Tether",
+      "quoteRepresentation": "USDC",
+      "wrapped": false,
+      "liquidity": 1059226.8082,
+      "windows": {
+        "h1": {
+          "buy": 16622.7481782877,
+          "sell": 15332.2654266303,
+          "total": 31955.013604918
+        },
+        "h6": {
+          "buy": 265357.017202358,
+          "sell": 269329.889146125,
+          "total": 534686.9063484829
+        },
+        "h24": {
+          "buy": 788669.266504018,
+          "sell": 785414.850572266,
+          "total": 1574084.117076284
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:42.374Z",
+      "url": "https://www.geckoterminal.com/solana/pools/23XoPQqGw9WMsLoqTu8HMzJLD6RnXsufbKyWPLJywsCT"
+    },
+    {
+      "id": "solana_FpPP9PDMPSTEwpX1ykS5QEkA5MSrEuWzV55hoWG3pKoN",
+      "network": "solana",
+      "address": "FpPP9PDMPSTEwpX1ykS5QEkA5MSrEuWzV55hoWG3pKoN",
+      "name": "USDT / USDC",
+      "dex": "zerofi",
+      "base": "tether",
+      "quote": "usd-coin",
+      "baseRepresentation": "Tether",
+      "quoteRepresentation": "USDC",
+      "wrapped": false,
+      "liquidity": 220709.5528,
+      "windows": {
+        "h1": {
+          "buy": 23689.9999469399,
+          "sell": 9800.6012686559,
+          "total": 33490.6012155958
+        },
+        "h6": {
+          "buy": 296587.433677783,
+          "sell": 294524.277293841,
+          "total": 591111.710971624
+        },
+        "h24": {
+          "buy": 741105.92166588,
+          "sell": 755248.313743504,
+          "total": 1496354.2354093841
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:42.374Z",
+      "url": "https://www.geckoterminal.com/solana/pools/FpPP9PDMPSTEwpX1ykS5QEkA5MSrEuWzV55hoWG3pKoN"
+    },
+    {
+      "id": "solana_AS5MV3ear4NZPMWXbCsEz3AdbCaXEnq4ChdaWsvLgkcM",
+      "network": "solana",
+      "address": "AS5MV3ear4NZPMWXbCsEz3AdbCaXEnq4ChdaWsvLgkcM",
+      "name": "USDS / USDC",
+      "dex": "raydium-clmm",
+      "base": "usds",
+      "quote": "usd-coin",
+      "baseRepresentation": "USDS",
+      "quoteRepresentation": "USDC",
+      "wrapped": false,
+      "liquidity": 741614.6007,
+      "windows": {
+        "h1": {
+          "buy": 0,
+          "sell": 0,
+          "total": 0
+        },
+        "h6": {
+          "buy": 14405.8088981918,
+          "sell": 23462.1578496756,
+          "total": 37867.9667478674
+        },
+        "h24": {
+          "buy": 15154.1382841362,
+          "sell": 24089.1531042061,
+          "total": 39243.2913883423
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:42.374Z",
+      "url": "https://www.geckoterminal.com/solana/pools/AS5MV3ear4NZPMWXbCsEz3AdbCaXEnq4ChdaWsvLgkcM"
+    },
+    {
+      "id": "solana_Eo9fLk6KzPeyjYLgXyzGfmvBVehKHbpqHpahEe2Casf3",
+      "network": "solana",
+      "address": "Eo9fLk6KzPeyjYLgXyzGfmvBVehKHbpqHpahEe2Casf3",
+      "name": "USDe / USDT",
+      "dex": "pumpswap",
+      "base": "ethena-usde",
+      "quote": "tether",
+      "baseRepresentation": "Ethena USDe",
+      "quoteRepresentation": "Tether",
+      "wrapped": false,
+      "liquidity": 2481761.3267,
+      "windows": {
+        "h1": {
+          "buy": 0,
+          "sell": 0,
+          "total": 0
+        },
+        "h6": {
+          "buy": 0.1975116286,
+          "sell": 0,
+          "total": 0.1975116286
+        },
+        "h24": {
+          "buy": 120.6041598292,
+          "sell": 0,
+          "total": 120.6041598292
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:42.374Z",
+      "url": "https://www.geckoterminal.com/solana/pools/Eo9fLk6KzPeyjYLgXyzGfmvBVehKHbpqHpahEe2Casf3"
+    },
+    {
+      "id": "solana_FkATaYFhZjKoxvrPFAyFQvhHj1WZL2X4QZMTdKMoBcPz",
+      "network": "solana",
+      "address": "FkATaYFhZjKoxvrPFAyFQvhHj1WZL2X4QZMTdKMoBcPz",
+      "name": "USDe / USDC",
+      "dex": "zerofi",
+      "base": "ethena-usde",
+      "quote": "usd-coin",
+      "baseRepresentation": "Ethena USDe",
+      "quoteRepresentation": "USDC",
+      "wrapped": false,
+      "liquidity": 176723.8398,
+      "windows": {
+        "h1": {
+          "buy": 0,
+          "sell": 0,
+          "total": 0
+        },
+        "h6": {
+          "buy": 0,
+          "sell": 0,
+          "total": 0
+        },
+        "h24": {
+          "buy": 0,
+          "sell": 0,
+          "total": 0
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:52.416Z",
+      "url": "https://www.geckoterminal.com/solana/pools/FkATaYFhZjKoxvrPFAyFQvhHj1WZL2X4QZMTdKMoBcPz"
+    },
+    {
+      "id": "solana_CvJ9FUo71fmm7jgNQ751uu9TQGfHmfFEuFmVCjeyhGkc",
+      "network": "solana",
+      "address": "CvJ9FUo71fmm7jgNQ751uu9TQGfHmfFEuFmVCjeyhGkc",
+      "name": "USDe / USDC",
+      "dex": "zerofi",
+      "base": "ethena-usde",
+      "quote": "usd-coin",
+      "baseRepresentation": "Ethena USDe",
+      "quoteRepresentation": "USDC",
+      "wrapped": false,
+      "liquidity": 113507.9791,
+      "windows": {
+        "h1": {
+          "buy": 0,
+          "sell": 0,
+          "total": 0
+        },
+        "h6": {
+          "buy": 0,
+          "sell": 0,
+          "total": 0
+        },
+        "h24": {
+          "buy": 0,
+          "sell": 0,
+          "total": 0
+        }
+      },
+      "checkedAt": "2026-10-23T19:13:52.416Z",
+      "url": "https://www.geckoterminal.com/solana/pools/CvJ9FUo71fmm7jgNQ751uu9TQGfHmfFEuFmVCjeyhGkc"
+    },
+    {
+      "id": "tron_TSUUVjysXV8YqHytSNjfkNXnnB49QDvZpx",
+      "network": "tron",
+      "address": "TSUUVjysXV8YqHytSNjfkNXnnB49QDvZpx",
+      "name": "USDT / WTRX 0.05%",
+      "dex": "sunswap-v3",
+      "base": "tether",
+      "quote": "tron",
+      "baseRepresentation": "Tether",
+      "quoteRepresentation": "Wrapped Tron",
+      "wrapped": true,
+      "liquidity": 186447521.9121,
+      "windows": {
+        "h1": {
+          "buy": 84149.0692320839,
+          "sell": 620290.468000765,
+          "total": 704439.5372328488
+        },
+        "h6": {
+          "buy": 2616199.15535396,
+          "sell": 1938552.71982429,
+          "total": 4554751.87517825
+        },
+        "h24": {
+          "buy": 11072819.7837041,
+          "sell": 13695390.2806125,
+          "total": 24768210.0643166
+        }
+      },
+      "checkedAt": "2026-10-23T19:14:07.999Z",
+      "url": "https://www.geckoterminal.com/tron/pools/TSUUVjysXV8YqHytSNjfkNXnnB49QDvZpx"
+    },
+    {
+      "id": "tron_TFGDbUyP8xez44C76fin3bn3Ss6jugoUwJ",
+      "network": "tron",
+      "address": "TFGDbUyP8xez44C76fin3bn3Ss6jugoUwJ",
+      "name": "USDT / WTRX",
+      "dex": "sunswap-v2",
+      "base": "tether",
+      "quote": "tron",
+      "baseRepresentation": "Tether",
+      "quoteRepresentation": "Wrapped Tron",
+      "wrapped": true,
+      "liquidity": 93359854.358,
+      "windows": {
+        "h1": {
+          "buy": 6855.4149028985,
+          "sell": 7550.9167298184,
+          "total": 14406.331632716901
+        },
+        "h6": {
+          "buy": 77415.7880375642,
+          "sell": 15547.9536670469,
+          "total": 92963.7417046111
+        },
+        "h24": {
+          "buy": 116385.109124031,
+          "sell": 239290.768621311,
+          "total": 355675.877745342
+        }
+      },
+      "checkedAt": "2026-10-23T19:14:07.999Z",
+      "url": "https://www.geckoterminal.com/tron/pools/TFGDbUyP8xez44C76fin3bn3Ss6jugoUwJ"
+    },
+    {
+      "id": "hyperevm_0x6c9a33e3b592c0d65b3ba59355d5be0d38259285",
+      "network": "hyperevm",
+      "address": "0x6c9a33e3b592c0d65b3ba59355d5be0d38259285",
+      "name": "USDC / WHYPE 0.05%",
+      "dex": "project-x",
+      "base": "usd-coin",
+      "quote": "hyperliquid",
+      "baseRepresentation": "USDC",
+      "quoteRepresentation": "Wrapped HYPE",
+      "wrapped": true,
+      "liquidity": 13632332.5417,
+      "windows": {
+        "h1": {
+          "buy": 642002.810571473,
+          "sell": 385903.514478139,
+          "total": 1027906.325049612
+        },
+        "h6": {
+          "buy": 5599974.51407787,
+          "sell": 5579791.99235881,
+          "total": 11179766.50643668
+        },
+        "h24": {
+          "buy": 13007408.6399504,
+          "sell": 13026299.7707199,
+          "total": 26033708.410670303
+        }
+      },
+      "checkedAt": "2026-10-23T19:14:10.968Z",
+      "url": "https://www.geckoterminal.com/hyperevm/pools/0x6c9a33e3b592c0d65b3ba59355d5be0d38259285"
+    },
+    {
+      "id": "hyperevm_0xbe512f5881b85c48d9c17bc5bb2be047d156d696",
+      "network": "hyperevm",
+      "address": "0xbe512f5881b85c48d9c17bc5bb2be047d156d696",
+      "name": "USDC / WHYPE 0.133%",
+      "dex": "nest",
+      "base": "usd-coin",
+      "quote": "hyperliquid",
+      "baseRepresentation": "USDC",
+      "quoteRepresentation": "Wrapped HYPE",
+      "wrapped": true,
+      "liquidity": 10982704.4228,
+      "windows": {
+        "h1": {
+          "buy": 217680.887768766,
+          "sell": 90869.4004415203,
+          "total": 308550.2882102863
+        },
+        "h6": {
+          "buy": 1692533.99707484,
+          "sell": 1671693.06334703,
+          "total": 3364227.06042187
+        },
+        "h24": {
+          "buy": 3524496.36976714,
+          "sell": 3484034.00938136,
+          "total": 7008530.3791485
+        }
+      },
+      "checkedAt": "2026-10-23T19:14:10.968Z",
+      "url": "https://www.geckoterminal.com/hyperevm/pools/0xbe512f5881b85c48d9c17bc5bb2be047d156d696"
+    },
+    {
+      "id": "hyperevm_0x5a177cf0effb7e0e7115d792e587c1a5a9cbc9d4",
+      "network": "hyperevm",
+      "address": "0x5a177cf0effb7e0e7115d792e587c1a5a9cbc9d4",
+      "name": "USDC / WHYPE 0.24%",
+      "dex": "ramses-v3-hyperevm",
+      "base": "usd-coin",
+      "quote": "hyperliquid",
+      "baseRepresentation": "USDC",
+      "quoteRepresentation": "Wrapped HYPE",
+      "wrapped": true,
+      "liquidity": 1095561.0903,
+      "windows": {
+        "h1": {
+          "buy": 64027.0774513978,
+          "sell": 25751.7619235844,
+          "total": 89778.8393749822
+        },
+        "h6": {
+          "buy": 312431.727891997,
+          "sell": 299931.591798682,
+          "total": 612363.319690679
+        },
+        "h24": {
+          "buy": 873684.336598543,
+          "sell": 864894.895782666,
+          "total": 1738579.232381209
+        }
+      },
+      "checkedAt": "2026-10-23T19:14:10.968Z",
+      "url": "https://www.geckoterminal.com/hyperevm/pools/0x5a177cf0effb7e0e7115d792e587c1a5a9cbc9d4"
+    },
+    {
+      "id": "hyperevm_0x422e586c906eb241f784b4f5a633c2c7e59a2f54",
+      "network": "hyperevm",
+      "address": "0x422e586c906eb241f784b4f5a633c2c7e59a2f54",
+      "name": "USDC / WHYPE 0.3%",
+      "dex": "project-x",
+      "base": "usd-coin",
+      "quote": "hyperliquid",
+      "baseRepresentation": "USDC",
+      "quoteRepresentation": "Wrapped HYPE",
+      "wrapped": true,
+      "liquidity": 4427603.9133,
+      "windows": {
+        "h1": {
+          "buy": 75172.9887199673,
+          "sell": 0,
+          "total": 75172.9887199673
+        },
+        "h6": {
+          "buy": 323528.978577861,
+          "sell": 318890.005107494,
+          "total": 642418.9836853549
+        },
+        "h24": {
+          "buy": 740360.106533234,
+          "sell": 781693.443234154,
+          "total": 1522053.549767388
+        }
+      },
+      "checkedAt": "2026-10-23T19:14:10.968Z",
+      "url": "https://www.geckoterminal.com/hyperevm/pools/0x422e586c906eb241f784b4f5a633c2c7e59a2f54"
+    }
+  ],
+  "diagnostics": [
+    {
+      "assetId": "ethereum",
+      "network": "eth",
+      "checkedAt": "2026-10-23T18:55:05.628Z",
+      "returned": 20,
+      "eligible": 8,
+      "status": "ok"
+    },
+    {
+      "assetId": "binancecoin",
+      "network": "bsc",
+      "checkedAt": "2026-10-23T18:55:05.971Z",
+      "returned": 20,
+      "eligible": 0,
+      "status": "ok"
+    },
+    {
+      "assetId": "solana",
+      "network": "solana",
+      "checkedAt": "2026-10-23T18:55:14.489Z",
+      "returned": 20,
+      "eligible": 7,
+      "status": "ok"
+    },
+    {
+      "assetId": "tron",
+      "network": "tron",
+      "checkedAt": "2026-10-23T18:55:22.923Z",
+      "returned": 20,
+      "eligible": 2,
+      "status": "ok"
+    },
+    {
+      "assetId": "hyperliquid",
+      "network": "hyperevm",
+      "checkedAt": "2026-10-23T18:55:31.703Z",
+      "returned": 20,
+      "eligible": 6,
+      "status": "ok"
+    },
+    {
+      "assetId": "tether",
+      "network": "eth",
+      "checkedAt": "2026-10-23T18:55:40.010Z",
+      "returned": 20,
+      "eligible": 11,
+      "status": "ok"
+    },
+    {
+      "assetId": "tether",
+      "network": "solana",
+      "checkedAt": "2026-10-23T18:56:49.016Z",
+      "returned": 20,
+      "eligible": 10,
+      "status": "ok"
+    },
+    {
+      "assetId": "usd-coin",
+      "network": "eth",
+      "checkedAt": "2026-10-23T18:56:57.465Z",
+      "returned": 20,
+      "eligible": 10,
+      "status": "ok"
+    },
+    {
+      "assetId": "usd-coin",
+      "network": "solana",
+      "checkedAt": "2026-10-23T18:57:06.007Z",
+      "returned": 20,
+      "eligible": 1,
+      "status": "ok"
+    },
+    {
+      "assetId": "usds",
+      "network": "eth",
+      "checkedAt": "2026-10-23T18:57:14.222Z",
+      "returned": 20,
+      "eligible": 2,
+      "status": "ok"
+    },
+    {
+      "assetId": "usds",
+      "network": "solana",
+      "checkedAt": "2026-10-23T18:57:23.219Z",
+      "returned": 20,
+      "eligible": 1,
+      "status": "ok"
+    },
+    {
+      "assetId": "ethena-usde",
+      "network": "eth",
+      "checkedAt": "2026-10-23T18:57:31.439Z",
+      "returned": 20,
+      "eligible": 7,
+      "status": "ok"
+    },
+    {
+      "assetId": "ethena-usde",
+      "network": "solana",
+      "checkedAt": "2026-10-23T18:57:40.533Z",
+      "returned": 20,
+      "eligible": 3,
+      "status": "ok"
+    },
+    {
+      "assetId": "dai",
+      "network": "eth",
+      "checkedAt": "2026-10-23T18:58:48.826Z",
+      "returned": 20,
+      "eligible": 12,
+      "status": "ok"
+    }
+  ],
+  "poolErrors": [],
+  "membershipChanged": false,
+  "policy": {
+    "ranking": "CoinGecko circulating market capitalization",
+    "stablecoins": "Top five USD-pegged assets classified by DefiLlama, ranked by CoinGecko market cap",
+    "exclusions": "Bitcoin, classified stablecoins, known wrapped/staked/bridged duplicates are excluded from the ten alts. Other asset types are included.",
+    "poolSample": "Up to four mapped pools per discovered contract, among the first twenty returned. Minimum $50,000 liquidity. Only pairs connecting displayed assets. No market-wide flow estimate.",
+    "semantics": "Gross trader-side swaps in sampled pools. Buy refers to the pool base token. Net is buy dollars minus sell dollars, not new capital. Routes can include arbitrage or multi-hop legs."
+  },
+  "sources": [
+    {
+      "name": "CoinGecko",
+      "url": "https://www.coingecko.com/en/api",
+      "use": "Rankings, prices, contract identities"
+    },
+    {
+      "name": "GeckoTerminal",
+      "url": "https://www.geckoterminal.com/",
+      "use": "Sampled pool buy/sell dollars and liquidity"
+    },
+    {
+      "name": "DefiLlama",
+      "url": "https://defillama.com/stablecoins",
+      "use": "Stablecoin classification and circulating value"
+    }
+  ]
+}

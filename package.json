@@ -1,0 +1,6 @@
+{
+  "name": "bitcoin-side-quest", "version": "1.0.0", "private": true, "type": "module",
+  "description": "A visual guide to observed crypto trading activity.",
+  "scripts": { "start": "node server.mjs", "refresh": "node scripts/collect.mjs", "test": "node --test" },
+  "engines": { "node": ">=22" }
+}
