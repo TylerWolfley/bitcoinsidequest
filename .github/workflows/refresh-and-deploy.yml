@@ -74,9 +74,9 @@ jobs:
       - name: Prepare public files
         run: |
           mkdir -p _site/lib _site/data
-          cp index.html temperature.html journal.html styles.css activity.css activity-view.js insights.css site-shell.js insight-page.js temperature-detail.js journal-view.js app.js research-panel.js exchange-panel.js favicon.svg CNAME _site/
+          cp index.html market-map.html token.html temperature.html journal.html styles.css activity.css activity-view.js activity-detail.js insights.css market.css site-shell.js insight-page.js temperature-detail.js journal-view.js app.js live-data.js market-ui.js market-map.js token.js research-panel.js exchange-panel.js favicon.svg CNAME _site/
           cp lib/*.js _site/lib/
-          cp data/snapshot.json data/temperature.json data/market-temperature.json data/price-statistics.json data/journal.json data/archive-status.json _site/data/
+          cp data/snapshot.json data/temperature.json data/market-temperature.json data/price-statistics.json data/price-charts.json data/journal.json data/archive-status.json _site/data/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
