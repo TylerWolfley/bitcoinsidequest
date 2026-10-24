@@ -1,16 +1,19 @@
-import { readFile,writeFile,rename,mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { validSnapshot } from '../lib/quality.js';
-import { riskTemperature,validRiskHistory,recordRiskHistory } from '../lib/risk-temperature.js';
-const root=new URL('../data/',import.meta.url),file=fileURLToPath(new URL('market-temperature.json',root));
-export async function refreshRiskTemperature(){
-  const snapshot=JSON.parse(await readFile(new URL('snapshot.json',root),'utf8'));
-  if(!validSnapshot(snapshot))throw new Error('Invalid market snapshot');
-  let previous=null;try{previous=JSON.parse(await readFile(file,'utf8'));}catch{}
-  const model=riskTemperature(snapshot),result=recordRiskHistory(previous,model);
-  if(!validRiskHistory(result))throw new Error('Invalid model history');
-  await mkdir(path.dirname(file),{recursive:true});await writeFile(file+'.tmp',JSON.stringify(result)+'\n');await rename(file+'.tmp',file);
-  console.log('Experimental market temperature: '+(model.score===null?'unavailable · '+model.reason:model.score+'/100')+' · '+result.points.length+' recorded snapshots');return result;
+import { validRiskHistory } from '../lib/risk-temperature.js';
+import { ROOT, readJSON, writeJSON, saveObservation } from './history-store.mjs';
+export async function refreshRiskTemperature() {
+  const data = path.join(ROOT,'data'), snapshot = await readJSON(path.join(data,'snapshot.json'));
+  if (!validSnapshot(snapshot)) throw new Error('Invalid market snapshot');
+  const result = await saveObservation(snapshot,{priceHistory:await readJSON(path.join(data,'price-history.json')),reference:await readJSON(path.join(data,'temperature.json'))});
+  if (!validRiskHistory(result.history)) throw new Error('Invalid model history');
+  await writeJSON(path.join(data,'market-temperature.json'),result.history);
+  await writeJSON(path.join(data,'journal.json'),result.journal);
+  if (result.latest) await writeJSON(path.join(data,'evidence-latest.json'),result.latest);
+  const days = Object.values(result.index.days);
+  await writeJSON(path.join(data,'archive-status.json'),{version:1,durable:false,observations:days.reduce((s,d)=>s+d.count,0),days:days.length,lastAt:days.map(d=>d.last).sort().at(-1)??null,branch:'market-history'});
+  console.log('Temperature v2: '+(result.model.score??'waiting')+' · '+result.history.points.length+' observations · '+result.journal.posts.length+' daily notes');
+  return result.history;
 }
-if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))refreshRiskTemperature().catch(e=>{console.error(e.message);process.exitCode=1;});
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) refreshRiskTemperature().catch(e=>{console.error(e.message);process.exitCode=1;});

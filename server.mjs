@@ -23,6 +23,7 @@ const refreshMood=()=>{
 };
 const allowed = new Set(['/index.html', '/activity.css', '/activity-view.js', '/lib/activity.js', '/styles.css', '/app.js', '/research-panel.js', '/exchange-panel.js', '/favicon.svg', '/lib/model.js', '/lib/research.js', '/lib/quality.js', '/lib/exchanges.js', '/data/snapshot.json']);
 ['/temperature.css','/temperature-view.js','/lib/temperature.js','/lib/risk-temperature.js','/lib/market-context.js','/data/temperature.json','/data/market-temperature.json'].forEach(p=>allowed.add(p));
+['temperature.html','journal.html','insights.css','site-shell.js','insight-page.js','temperature-detail.js','journal-view.js','lib/temperature-policy.js','lib/scenarios.js','lib/journal.js','data/journal.json','data/price-statistics.json','data/archive-status.json'].forEach(p=>allowed.add('/'+p));
 const mime = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml' };
 const server = http.createServer(async (req, res) => {
   try {
