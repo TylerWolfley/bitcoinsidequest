@@ -9,3 +9,5 @@
 @media(prefers-reduced-motion:reduce){.market-token{transition:none}}
 
 .change-card{text-decoration:none}.site-nav a{min-height:44px;display:inline-flex;align-items:center}
+
+.market-token{min-height:54px;gap:3px}.market-token small{font-size:9px;color:var(--muted);font-variant-numeric:tabular-nums}

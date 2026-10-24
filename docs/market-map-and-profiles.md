@@ -20,7 +20,7 @@ The navigation is Activity / Market Map / Temperature / Journal. Profiles are de
 4. Use existing source selection: eligible on-chain sample first, otherwise the reviewed exchange sample. Explicit on-chain/exchange choices stay explicit. USD and USDT amounts are never pooled; only within-source ratios are compared across assets.
 5. Admission requires a snapshot and price no older than 30 minutes, complete and synchronized activity periods, fresh activity, a positive baseline and at least 10,000 source units in the comparison. Failed eligibility is shown next to the coin outside the plot.
 6. The two axes cover different periods. Position describes two observations together; it is not evidence that activity caused, predicted or confirmed the price movement. Hover labels, method text and headings identify the windows.
-7. Rectangular labels have equal size. Price direction uses color plus signed numbers; size is not market cap or confidence. Displaced labels keep a leader and original coordinate marker. Motion only transitions measured positions and respects the site preference/reduced motion.
+7. Rectangular labels have equal size and show both the signed price return and activity ratio. Size is not market cap or confidence. Displaced labels keep a leader and original coordinate marker, and cannot cross the zero-return or 1× activity boundary. Plot height expands to make room for crowded quadrants. Motion only transitions measured positions and respects the site preference/reduced motion.
 8. On narrow screens, the same readings become aligned price bars and explicit pace values. Reading and opening a coin does not require hover, dragging or interpreting a crowded plot.
 
 ## Profile vibe
