@@ -1,6 +1,6 @@
-import { riskBand, riskChange } from './lib/risk-temperature.js?v=20261023-v2';
+import { riskBand, riskChange } from './lib/risk-temperature.js?v=20261023-map1';
 import { temperatureState, TEMPERATURE_SOURCE } from './lib/temperature.js';
-import { esc, signed, date } from './site-shell.js?v=20261023-v2';
+import { esc, signed, date } from './site-shell.js?v=20261023-map1';
 const names={participation:'Price strength',leadership:'Strength vs Bitcoin',buying:'Buy-side activity'};
 const descriptions={participation:'How strongly are the ten alts moving?',leadership:'Are they keeping up with Bitcoin?',buying:'Which side leads in our fixed trading sample?'};
 let days=1,selectedAt=null,methodOpen=false;
@@ -12,7 +12,7 @@ function component(key,part,model){
  return '<article class="check-card"><div class="check-title"><span>'+names[key]+'</span><small>'+Math.round(part.weight*100)+'% weight</small><b>'+(part.score===null?'—':Math.round(part.score))+'</b></div><p>'+descriptions[key]+'</p><div class="check-meter"><i style="width:'+(part.score??0)+'%"></i></div><div class="coin-evidence">'+model.assets.map(a=>{
   const r=part.rows.find(r=>r.id===a.id),excluded=key==='buying'&&model.excluded.some(e=>e.id===a.id),state=excluded?'excluded':!r?'missing':r.score>55?'up':r.score<45?'down':'mixed';
   const detail=excluded?'price only':!r?'missing or stale':key==='buying'?r.value.toFixed(1)+'% reported buying':signed(r.value,2)+'%'+(key==='leadership'?' relative to BTC':' price change');
-  return '<a class="evidence-dot '+state+'" href="./?coin='+encodeURIComponent(a.id)+'&window=h24" aria-label="'+esc(a.symbol+': '+detail+'. Open trading activity.')+'" title="'+esc(a.symbol+': '+detail)+'">'+esc(a.symbol==='FIGR_HELOC'?'FIGR':a.symbol)+'</a>';
+  return '<a class="evidence-dot '+state+'" href="./token.html?from=.%2Ftemperature.html&coin='+encodeURIComponent(a.id)+'&window=h24" aria-label="'+esc(a.symbol+': '+detail+'. Open token profile.')+'" title="'+esc(a.symbol+': '+detail)+'">'+esc(a.symbol==='FIGR_HELOC'?'FIGR':a.symbol)+'</a>';
  }).join('')+'</div><span class="coverage-count">'+part.rows.length+' / '+part.expected+' required inputs ready'+(key==='buying'&&model.excluded.length?' · '+model.excluded.length+' price-only':'')+'</span></article>';
 }
 export function renderTemperatureDetail(root,{model,history,reference,archive,historyFailed}){

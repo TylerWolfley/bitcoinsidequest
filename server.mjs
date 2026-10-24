@@ -5,13 +5,14 @@ import { fileURLToPath } from 'node:url';
 import { collect } from './scripts/collect.mjs';
 import { refreshTemperature } from './scripts/collect-temperature.mjs';
 import { refreshRiskTemperature } from './scripts/collect-risk-temperature.mjs';
+import { buildPriceCharts } from './scripts/build-price-charts.mjs';
 const ROOT = fileURLToPath(new URL('./', import.meta.url));
 const port = Number(process.env.PORT || 4173);
 let refreshing = null, lastAttempt = 0;
 const refresh = () => {
   if (refreshing || Date.now() - lastAttempt < 5 * 60_000) return refreshing;
   lastAttempt = Date.now();
-  refreshing = collect().then(()=>refreshRiskTemperature()).catch(error => console.error('Refresh delayed: ' + error.message)).finally(() => { refreshing = null; });
+  refreshing = collect().then(()=>refreshRiskTemperature()).then(()=>buildPriceCharts()).catch(error => console.error('Refresh delayed: ' + error.message)).finally(() => { refreshing = null; });
   return refreshing;
 };
 let moodRefreshing=null,lastMoodAttempt=0;
@@ -25,6 +26,7 @@ const allowed = new Set(['/index.html', '/activity.css', '/activity-view.js', '/
 ['/temperature.css','/temperature-view.js','/lib/temperature.js','/lib/risk-temperature.js','/lib/market-context.js','/data/temperature.json','/data/market-temperature.json'].forEach(p=>allowed.add(p));
 ['temperature.html','journal.html','insights.css','site-shell.js','insight-page.js','temperature-detail.js','journal-view.js','lib/temperature-policy.js','lib/scenarios.js','lib/journal.js','data/journal.json','data/price-statistics.json','data/archive-status.json'].forEach(p=>allowed.add('/'+p));
 const mime = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml' };
+['market-map.html','token.html','market.css','market-map.js','token.js','market-ui.js','live-data.js','activity-detail.js','lib/market-map.js','lib/price-charts.js','data/price-charts.json'].forEach(p=>allowed.add('/'+p));
 const server = http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://localhost:' + port), pathname = url.pathname === '/' ? '/index.html' : url.pathname;

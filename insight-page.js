@@ -1,11 +1,11 @@
 import { validSnapshot } from './lib/quality.js';
-import { riskTemperature,validRiskHistory } from './lib/risk-temperature.js?v=20261023-v2';
+import { riskTemperature,validRiskHistory } from './lib/risk-temperature.js?v=20261023-map1';
 import { validTemperature } from './lib/temperature.js';
 import { validPriceStatistics as validPriceHistory } from './lib/scenarios.js';
 import { validJournal } from './lib/journal.js';
-import { renderMonitor,initPageMotion,date } from './site-shell.js?v=20261023-v2';
-import { renderTemperatureDetail } from './temperature-detail.js?v=20261023-v2';
-import { renderJournal } from './journal-view.js?v=20261023-v2';
+import { renderMonitor,initPageMotion,date } from './site-shell.js?v=20261023-map1';
+import { renderTemperatureDetail } from './temperature-detail.js?v=20261023-map1';
+import { renderJournal } from './journal-view.js?v=20261023-map1';
 const page=document.body.dataset.page,root=document.querySelector('#insight-content'),status=document.querySelector('#page-status');
 let snapshot=null,history=null,reference=null,prices=null,journal=null,archive=null,offline=false,historyFailed=false,journalFailed=false,loading=false;
 function render(){

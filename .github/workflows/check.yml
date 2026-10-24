@@ -15,6 +15,11 @@ jobs:
           node-version: '22'
       - run: node --test
       - run: node --check app.js
+      - run: node --check market-map.js
+      - run: node --check token.js
+      - run: node --check activity-detail.js
+      - run: node --check live-data.js
+      - run: node --check scripts/build-price-charts.mjs
       - run: node --check activity-view.js
       - run: node --check insight-page.js
       - run: node --check temperature-detail.js

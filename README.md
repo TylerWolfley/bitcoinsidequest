@@ -2,7 +2,9 @@
 
 A small, visual crypto activity dashboard for **bitcoinsidequest.com**.
 
-Ten automatically ranked non-stable assets, five USD stablecoins, and an optional BTC price reference. Select a coin, change the timeframe, then inspect a route and its supporting markets. This replaces the old QUEST memecoin site and artwork.
+Ten automatically ranked non-stable assets, five USD stablecoins, and a BTC reference. Activity is the quick overview; the dedicated Market Map compares price direction with recent trading pace. Every token opens a profile with its price, market cap, measured vibe, real daily chart and trading evidence. Temperature and Journal complete the main navigation. This replaces the old QUEST memecoin site and artwork.
+
+See [the map/profile rules and page system](docs/market-map-and-profiles.md) and [the sitewide audit](docs/site-audit-2026-10-23.md). These document the shared eligibility logic, chart provenance, navigation and remaining limits.
 
 The coverage expansion adds free Binance spot activity for BNB/XRP/DOGE/ZEC and Kraken spot activity for XMR. The first expanded collection covered **9/10 alts and 5/5 stables**. See [the reusable coverage system](docs/coverage-system.md) for identity mappings, admission rules, calculation logic and the procedure for adding coins.
 
@@ -18,7 +20,7 @@ Requires Node.js 22 or later. No packages, API keys, wallets, or paid services a
 
 The checked-in snapshot contains real provider data normalized for this interface. The local server refreshes in the background approximately every five minutes and continues serving the last valid snapshot during outages. Browser tabs check the shared JSON once a minute. Node is only needed for collection and local development; the deployed frontend is static HTML, CSS, JavaScript, and JSON.
 
-## What the map measures
+## What the token trading diagram measures
 
 - Arrows represent **gross trader-side swap dollars** in explicitly sampled DEX pools, for 1h, 6h, or 24h rolling windows.
 - Exchange mode instead shows **reported spot-trading value in USDT** from reviewed active pairs. Complete fixed-boundary 1h/6h/24h windows are reconstructed from Binance candles or paginated Kraken trades. USDT is not assumed equal to USD; exchange and DEX values are never combined.

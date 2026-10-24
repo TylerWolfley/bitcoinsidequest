@@ -1,7 +1,7 @@
-import { riskBand, riskChange, validRiskHistory } from './lib/risk-temperature.js?v=20261023-v2';
-import { compareVisit } from './lib/market-context.js?v=20261023-v2';
+import { riskBand, riskChange, validRiskHistory } from './lib/risk-temperature.js?v=20261023-map1';
+import { compareVisit } from './lib/market-context.js?v=20261023-map1';
 export const esc = value => String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export const money = n => Number.isFinite(n) ? new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:n<1?4:2}).format(n) : '—';
+export const money = n => Number.isFinite(n) ? new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:n<10?4:2}).format(n) : '—';
 export const signed = (n,d=1) => Number.isFinite(n) ? (n>0?'+':'')+n.toFixed(d) : '—';
 export const date = at => new Date(at).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
 export function renderMonitor({model,history,previousVisit,currentVisit}) {

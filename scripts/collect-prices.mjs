@@ -2,13 +2,15 @@ import { readFile, writeFile, rename } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { dailyPrices, validPriceHistory, priceStatistics } from '../lib/scenarios.js';
+import { allTokens } from '../lib/market-map.js';
+import { buildPriceCharts } from './build-price-charts.mjs';
 const root = new URL('../data/', import.meta.url);
 export async function refreshPrices({ log = console.log } = {}) {
   const file = new URL('price-history.json', root), snapshot = JSON.parse(await readFile(new URL('snapshot.json', root), 'utf8'));
   let old; try { old = JSON.parse(await readFile(file, 'utf8')); } catch {}
   const result = validPriceHistory(old) ? old : { version: 1, coins: {} };
   const today = new Date().toISOString().slice(0,10);
-  for (const asset of snapshot.assets.filter(a => a.kind === 'alt')) {
+  for (const asset of allTokens(snapshot)) {
     const prior = result.coins[asset.id];
     if (prior?.checkedAt?.slice(0,10) === today && prior.prices.length) continue;
     const source = 'https://api.coingecko.com/api/v3/coins/' + encodeURIComponent(asset.id) + '/market_chart?vs_currency=usd&days=365';
@@ -26,6 +28,7 @@ export async function refreshPrices({ log = console.log } = {}) {
   await writeFile(fileURLToPath(file) + '.tmp', JSON.stringify(result) + '\n');
   await rename(fileURLToPath(file) + '.tmp', file);
   await writeFile(new URL('price-statistics.json',root),JSON.stringify({version:1,coins:Object.fromEntries(Object.entries(result.coins).map(([id,series])=>[id,priceStatistics(series)]))})+'\n');
+  await buildPriceCharts();
   return result;
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) refreshPrices().catch(e => { console.error(e.message); process.exitCode=1; });
