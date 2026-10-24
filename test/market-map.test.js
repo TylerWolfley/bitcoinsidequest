@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { marketReading,tokenVibe,profileURL,returnPath,placeLabels,tokenById } from '../lib/market-map.js';
+import { marketReading,tokenVibe,profileURL,returnPath,placeLabels,placeMarketLabels,tokenById } from '../lib/market-map.js';
 import { chartDisplay,validChartDisplay } from '../lib/price-charts.js';
 import { DAY } from '../lib/scenarios.js';
 const now=Date.parse('2026-10-23T20:00:00Z'),at=new Date(now).toISOString();
@@ -8,6 +8,15 @@ const asset={id:'solana',name:'Solana',symbol:'SOL',kind:'alt',price:100,priceUp
 const win=(buy,sell)=>({buy,sell,total:buy+sell});
 const record={id:'pool',network:'solana',base:'solana',quote:'tether',checkedAt:at,windows:{h1:win(16000,4000),h6:win(41000,29000)}};
 const snapshot=()=>({checkedAt:at,assets:[asset],bitcoin:{id:'bitcoin',price:50000,priceUpdatedAt:at,priceChange24h:2},pools:[record],exchangeMarkets:[]});
+
+test('crowded labels never cross the zero-return or 1x-activity boundary',()=>{
+ const points=Array.from({length:10},(_,i)=>({id:'coin-'+i,x:280,y:181}));
+ const labels=placeMarketLabels(points,600,500,300,180);
+ for(const p of labels){assert.ok(p.x+35<=300);assert.ok(p.y-27>=180);assert.equal(p.anchorX,280);assert.equal(p.anchorY,181);}
+ for(let i=0;i<labels.length;i++)for(let j=i+1;j<labels.length;j++)assert.ok(Math.abs(labels[i].x-labels[j].x)>=70||Math.abs(labels[i].y-labels[j].y)>=54);
+ const mixed=placeMarketLabels([{id:'a',x:301,y:179},{id:'b',x:299,y:179},{id:'c',x:301,y:181},{id:'d',x:299,y:181}],600,400,300,180);
+ for(const p of mixed){assert.equal(p.x>=300,p.anchorX>=300);assert.equal(p.y>=180,p.anchorY>=180);}
+});
 test('map and vibe use one comparison, not another weighted sentiment score',()=>{
  const r=marketReading(snapshot(),asset,{now});assert.equal(r.pace,2);assert.equal(r.buyShare,.8);assert.ok(Math.abs(r.relative-1.9607843)<.00001);
  assert.equal(tokenVibe(r).label,'Price rising · trading picked up');assert.equal('score' in tokenVibe(r),false);

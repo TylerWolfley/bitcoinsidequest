@@ -13,14 +13,14 @@ The pass follows the user routine: notice a change, compare the market, inspect 
 | Dollar-target assets do not fit a growth-asset map | Stablecoins have a separate peg/circulating-value strip and stable-specific profile description |
 | Activity sources and periods can be confused | The same scope rules drive map and profile; controls and explanations expose source and period |
 | Existing shared links would break after moving details | Homepage coin URLs redirect, preserving filters; return links preserve origin and comparison |
-| Dense desktop plots are difficult on phones | Mobile shows aligned bars and explicit pace values, using identical data |
+| Dense desktop plots are difficult on phones | Mobile shows aligned bars and explicit pace values, using identical data; desktop labels remain in their true quadrant and print both values |
 | Research history could leak into a static deploy | The explicit public file allowlist is retained; raw histories and encryption keys remain excluded |
 | Refresh can interrupt reading | Focus is retained and profile evidence disclosures preserve their open state |
 
 ## Verification
 
 - Added semantic tests for stale/offline/future inputs, complete windows, small baselines, measured zero vs missing, BTC-relative returns, source isolation, stablecoin descriptions, canonical links, colliding labels and daily chart gaps/validation.
-- Full suite: 69 tests passing before publication. Browser checks cover desktop/phone layouts, range controls, scenario selection, old links and profile navigation. Publication is checked separately against the deployed revision.
+- Full suite: 70 tests passing, including a follow-up regression for clustered labels crossing a market quadrant. Browser checks cover desktop/phone layouts, range controls, scenario selection, old links and profile navigation. Publication is checked separately against the deployed revision.
 - Current first collection: nine of ten alts have comparable activity; all sixteen current tokens have real daily chart history. Coverage is dynamic, not a permanent guarantee.
 
 ## Deferred deliberately
