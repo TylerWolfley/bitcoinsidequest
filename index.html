@@ -18,22 +18,22 @@
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./activity.css?v=20261023-visual1">
-  <link rel="stylesheet" href="./temperature.css?v=20261023-temperature1">
-  <script type="module" src="./app.js?v=20261023-temperature1"></script>
+  <link rel="stylesheet" href="./insights.css?v=20261023-v2">
+  <script type="module" src="./app.js?v=20261023-v2"></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to activity map</a>
   <header class="site-header">
     <a class="brand" href="./" aria-label="Bitcoin Side Quest home"><img src="./favicon.svg" width="35" height="35" alt=""><span>bitcoin<span class="brand-second">side quest<span class="brand-dot">.</span></span></span></a>
-    <div class="header-right"><span class="edition">A LITTLE CONTEXT. A CLEARER MARKET.</span><button class="motion-toggle" id="motion-toggle" aria-pressed="false"><span aria-hidden="true">◉</span> Motion off</button><button class="text-button" id="about-button">How it works <span aria-hidden="true">↗</span></button></div>
+    <nav class="site-nav" aria-label="Main navigation"><a href="./" aria-current="page">Activity</a><a href="./temperature.html">Temperature</a><a href="./journal.html">Journal</a></nav><div class="header-right"><button class="motion-toggle" id="motion-toggle" aria-pressed="false"><span aria-hidden="true">◉</span> Motion off</button><a class="temperature-monitor" id="temperature-monitor" href="./temperature.html" aria-label="Market temperature, open breakdown"><span class="monitor-heading">MARKET TEMP ↗</span><span class="monitor-value"><strong>—</strong><span>Connecting</span></span><span class="monitor-track"></span></a><button class="text-button" id="about-button">How it works <span aria-hidden="true">↗</span></button></div>
   </header>
   <main id="main">
     <section class="intro">
-      <div><div class="eyebrow"><span></span> YOUR CRYPTO FIELD GUIDE</div><h1>A clearer read <em>on crypto.</em></h1><p>Ten alts. One market temperature. The evidence behind every reading.</p></div>
+      <div><div class="eyebrow"><span></span> YOUR CRYPTO FIELD GUIDE</div><h1>A clearer read <em>on crypto.</em></h1><p>See what’s moving. Check the temperature. Follow the evidence.</p></div>
       <div class="intro-actions"><div id="freshness" class="freshness"><i></i><span>Connecting to market data</span></div><button id="share-button" class="button-light"><span aria-hidden="true">↗</span> Share this view</button></div>
     </section>
     <div id="notice" class="notice" role="status" hidden></div>
-    <section id="temperature" class="temperature" aria-label="Market temperature and its altcoin inputs"></section>
+    <p id="visit-context" class="visit-context" hidden></p>
     <section class="changes-section" aria-labelledby="changes-title"><div class="section-heading"><div><div class="section-number">01 / NOTICE THE CHANGE</div><h2 id="changes-title">What stands out</h2><p>Last hour vs the previous five hours · same markets, separate periods<br><span id="comparison-scope">Automatic source · all networks</span></p></div><span id="changes-status">Finding comparable activity</span></div><div id="changes-grid" class="changes-grid"></div></section>
     <section id="coin-picker" class="coin-picker" aria-labelledby="picker-title"><div class="section-heading"><div><div class="section-number">02 / FOLLOW A COIN</div><h2 id="picker-title">Choose your side quest</h2></div><span>Activity pace: <b>1× = unchanged</b> · price changes: 24h</span></div><div id="alt-picker" class="alt-picker"></div><div class="stable-label"><span>5 STABLECOINS</span><span>Dollar targets · different backing and redemption</span></div><div id="stable-picker" class="stable-picker"></div></section>
     <section class="workspace" aria-label="Explore trading activity">
@@ -59,6 +59,7 @@
     </section>
     <details id="research-shell" class="research-shell"><summary><span>Understand this activity</span><small>Compare activity · inspect pools · check the numbers</small></summary><section id="research" class="research" aria-label="Investigate the selected market"></section></details>
     <section class="price-section"><div class="section-heading"><div><h2>The wider picture</h2><p>Market-wide price changes · last 24 hours</p></div><span>Price movement is separate from trading flows.</span></div><div id="price-bars" class="price-bars"></div></section>
+    <a class="journal-teaser" href="./journal.html"><span><small>THE DAILY CHECK-IN</small><strong>Signals with receipts.</strong><span>Measured market notes + price scenarios you can unpack.</span></span><b aria-hidden="true">↗</b></a>
     <footer><span class="footer-note">A little context goes a long way.</span><div>Data provided by <a href="https://www.coingecko.com/en/api" target="_blank" rel="noopener noreferrer">CoinGecko</a>, <a href="https://www.geckoterminal.com/" target="_blank" rel="noopener noreferrer">GeckoTerminal</a> &amp; <a href="https://defillama.com/stablecoins" target="_blank" rel="noopener noreferrer">DefiLlama</a>, <a href="https://www.binance.com/en/markets" target="_blank" rel="noopener noreferrer">Binance</a> &amp; <a href="https://www.kraken.com/prices" target="_blank" rel="noopener noreferrer">Kraken</a>.</div><button id="footer-method" class="text-button">Sources &amp; method ↗</button></footer>
   </main>
   <dialog id="method-dialog"><div class="dialog-top"><div><div class="eyebrow">A CLEARER PICTURE</div><h2>What you’re looking at</h2></div><button class="close-button" id="close-method" aria-label="Close information">×</button></div><div id="method-content"></div></dialog>

@@ -13,9 +13,9 @@ concurrency:
 jobs:
   site:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     permissions:
-      contents: read
+      contents: write
       pages: write
       id-token: write
     environment:
@@ -37,6 +37,10 @@ jobs:
           key: sidequest-live-${{ github.run_id }}
           restore-keys: |
             sidequest-live-
+      - name: Restore durable observations and publication state
+        run: node scripts/archive-sync.mjs restore
+        env:
+          HISTORY_KEY: ${{ secrets.HISTORY_KEY }}
       - name: Collect free market data
         id: refresh
         continue-on-error: true
@@ -47,10 +51,16 @@ jobs:
       - name: Collect daily sentiment and its recorded history
         id: temperature
         run: node scripts/collect-temperature.mjs
-      - name: Record the experimental altcoin temperature
+      - name: Refresh free daily prices for scenarios
+        run: node scripts/collect-prices.mjs
+      - name: Record replay evidence and publish the daily note
         run: node scripts/collect-risk-temperature.mjs
       - name: Verify data semantics
         run: node --test
+      - name: Commit evidence before publishing the site
+        run: node scripts/archive-sync.mjs save
+        env:
+          HISTORY_KEY: ${{ secrets.HISTORY_KEY }}
       - name: Save the newest valid snapshot and discovery cache
         if: steps.refresh.outcome == 'success' || steps.temperature.outcome == 'success'
         uses: actions/cache/save@v4
@@ -64,9 +74,9 @@ jobs:
       - name: Prepare public files
         run: |
           mkdir -p _site/lib _site/data
-          cp index.html styles.css activity.css activity-view.js temperature.css temperature-view.js app.js research-panel.js exchange-panel.js favicon.svg CNAME _site/
-          cp lib/model.js lib/activity.js lib/research.js lib/quality.js lib/exchanges.js lib/temperature.js lib/risk-temperature.js lib/market-context.js _site/lib/
-          cp data/snapshot.json data/temperature.json data/market-temperature.json _site/data/
+          cp index.html temperature.html journal.html styles.css activity.css activity-view.js insights.css site-shell.js insight-page.js temperature-detail.js journal-view.js app.js research-panel.js exchange-panel.js favicon.svg CNAME _site/
+          cp lib/*.js _site/lib/
+          cp data/snapshot.json data/temperature.json data/market-temperature.json data/price-statistics.json data/journal.json data/archive-status.json _site/data/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

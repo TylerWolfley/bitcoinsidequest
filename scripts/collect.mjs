@@ -4,6 +4,7 @@ import path from 'node:path';
 import { selectUniverse, identityRegistry, poolIdentity, normalizePool, addressKey, numberOrNull } from '../lib/model.js';
 import { validSnapshot } from '../lib/quality.js';
 import { collectExchanges } from './collect-exchanges.mjs';
+import { TEMPERATURE_POLICY } from '../lib/temperature-policy.js';
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const SNAPSHOT = path.join(ROOT, 'data/snapshot.json');
 const CG = 'https://api.coingecko.com/api/v3', GT = 'https://api.geckoterminal.com/api/v2';
@@ -88,6 +89,16 @@ export async function collect({ log = console.log } = {}) {
     groups.set(candidate.network, group);
   }
   const pools = [], poolErrors = [];
+  // Keep the declared temperature sample even when discovery ordering changes.
+  // Current identity and liquidity checks still apply to every returned pool.
+  for (const a of assets.filter(a => a.kind === 'alt')) {
+    for (const m of TEMPERATURE_POLICY.coins[a.id]?.markets ?? []) {
+      if (!m.network) continue;
+      const addresses = groups.get(m.network) ?? [];
+      if (!addresses.includes(m.address)) addresses.push(m.address);
+      groups.set(m.network, addresses);
+    }
+  }
   for (const [network, addresses] of groups) {
     for (let offset = 0; offset < addresses.length; offset += 10) {
       try {

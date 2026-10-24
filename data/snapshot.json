@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "evidenceVersion": 1,
-  "checkedAt": "2026-10-23T21:08:41.105Z",
-  "startedAt": "2026-10-23T21:07:41.757Z",
-  "rankingCheckedAt": "2026-10-23T21:07:42.089Z",
+  "checkedAt": "2026-10-24T00:05:50.499Z",
+  "startedAt": "2026-10-24T00:04:47.667Z",
+  "rankingCheckedAt": "2026-10-24T00:04:48.025Z",
   "refreshMinutes": 15,
   "assets": [
     {
@@ -13,11 +13,11 @@
       "kind": "alt",
       "image": "https://coin-images.coingecko.com/coins/images/279/large/ethereum.png?1696501628",
       "rank": 2,
-      "price": 2401.81,
-      "marketCap": 293394627312,
-      "volume24h": 9744506937,
-      "priceChange24h": 0.90632,
-      "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
+      "price": 2384.81,
+      "marketCap": 291317322386,
+      "volume24h": 9900080421,
+      "priceChange24h": -0.0086,
+      "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
       "supplyValue": null,
       "supplyChange24h": null,
       "supplySource": null,
@@ -40,11 +40,11 @@
       "kind": "alt",
       "image": "https://coin-images.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1696501970",
       "rank": 4,
-      "price": 742.04,
-      "marketCap": 97586493191,
-      "volume24h": 855275955,
-      "priceChange24h": 1.73047,
-      "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
+      "price": 738.89,
+      "marketCap": 97173404628,
+      "volume24h": 930208651,
+      "priceChange24h": 1.1597,
+      "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
       "supplyValue": null,
       "supplyChange24h": null,
       "supplySource": null,
@@ -67,11 +67,11 @@
       "kind": "alt",
       "image": "https://coin-images.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1696501442",
       "rank": 5,
-      "price": 1.31,
-      "marketCap": 82581134675,
-      "volume24h": 1223575800,
-      "priceChange24h": 0.56919,
-      "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
+      "price": 1.29,
+      "marketCap": 81674710358,
+      "volume24h": 1307314472,
+      "priceChange24h": -1.08991,
+      "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
       "supplyValue": null,
       "supplyChange24h": null,
       "supplySource": null,
@@ -94,11 +94,11 @@
       "kind": "alt",
       "image": "https://coin-images.coingecko.com/coins/images/4128/large/solana.png?1718769756",
       "rank": 7,
-      "price": 103.92,
-      "marketCap": 61281752050,
-      "volume24h": 2028478165,
-      "priceChange24h": 0.60386,
-      "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
+      "price": 102.73,
+      "marketCap": 60580360057,
+      "volume24h": 2177861536,
+      "priceChange24h": -0.796,
+      "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
       "supplyValue": null,
       "supplyChange24h": null,
       "supplySource": null,
@@ -121,11 +121,11 @@
       "kind": "alt",
       "image": "https://coin-images.coingecko.com/coins/images/1094/large/photo_2026-04-13_09-59-16.png?1776048311",
       "rank": 8,
-      "price": 0.329927,
-      "marketCap": 31346078543,
-      "volume24h": 293639193,
-      "priceChange24h": 0.63843,
-      "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
+      "price": 0.32972,
+      "marketCap": 31326465291,
+      "volume24h": 306785044,
+      "priceChange24h": 0.44582,
+      "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
       "supplyValue": null,
       "supplyChange24h": null,
       "supplySource": null,
@@ -148,11 +148,11 @@
       "kind": "alt",
       "image": "https://coin-images.coingecko.com/coins/images/68480/large/figure.png?1755863954",
       "rank": 9,
-      "price": 1.023,
-      "marketCap": 26076870978,
-      "volume24h": 189410008,
-      "priceChange24h": -1.71743,
-      "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
+      "price": 1.021,
+      "marketCap": 26026803921,
+      "volume24h": 71025317,
+      "priceChange24h": -0.64801,
+      "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
       "supplyValue": null,
       "supplyChange24h": null,
       "supplySource": null,
@@ -173,11 +173,11 @@
       "kind": "alt",
       "image": "https://coin-images.coingecko.com/coins/images/486/large/Brandmark-Yellow_%281%29.png?1785810558",
       "rank": 10,
-      "price": 1233.71,
-      "marketCap": 20974200028,
-      "volume24h": 727646859,
-      "priceChange24h": 1.85068,
-      "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
+      "price": 1180.29,
+      "marketCap": 20065536408,
+      "volume24h": 796271067,
+      "priceChange24h": -3.33029,
+      "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
       "supplyValue": null,
       "supplyChange24h": null,
       "supplySource": null,
@@ -200,11 +200,11 @@
       "kind": "alt",
       "image": "https://coin-images.coingecko.com/coins/images/50882/large/hyperliquid.jpg?1729431300",
       "rank": 11,
-      "price": 77.64,
-      "marketCap": 17268834064,
-      "volume24h": 713836666,
-      "priceChange24h": 0.42487,
-      "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
+      "price": 77.06,
+      "marketCap": 17140707881,
+      "volume24h": 779073384,
+      "priceChange24h": -0.50052,
+      "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
       "supplyValue": null,
       "supplyChange24h": null,
       "supplySource": null,
@@ -227,11 +227,11 @@
       "kind": "alt",
       "image": "https://coin-images.coingecko.com/coins/images/5/large/dogecoin.png?1696501409",
       "rank": 12,
-      "price": 0.079287,
-      "marketCap": 12403579117,
-      "volume24h": 448372079,
-      "priceChange24h": 1.14375,
-      "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
+      "price": 0.078559,
+      "marketCap": 12289344270,
+      "volume24h": 483926350,
+      "priceChange24h": -0.25772,
+      "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
       "supplyValue": null,
       "supplyChange24h": null,
       "supplySource": null,
@@ -254,11 +254,11 @@
       "kind": "alt",
       "image": "https://coin-images.coingecko.com/coins/images/69/large/monero_logo.png?1696501460",
       "rank": 13,
-      "price": 591.58,
-      "marketCap": 11134287329,
-      "volume24h": 119732069,
-      "priceChange24h": -0.13231,
-      "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
+      "price": 584.13,
+      "marketCap": 10994304333,
+      "volume24h": 114575841,
+      "priceChange24h": -1.54202,
+      "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
       "supplyValue": null,
       "supplyChange24h": null,
       "supplySource": null,
@@ -281,13 +281,13 @@
       "kind": "stable",
       "image": "https://coin-images.coingecko.com/coins/images/325/large/Tether.png?1696501661",
       "rank": 3,
-      "price": 0.999161,
-      "marketCap": 182573233468,
-      "volume24h": 41134895794,
-      "priceChange24h": 0.02273,
-      "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
-      "supplyValue": 182620885283.21268,
-      "supplyChange24h": -0.014550259265722065,
+      "price": 0.999129,
+      "marketCap": 182566888133,
+      "volume24h": 43090753251,
+      "priceChange24h": 0.02016,
+      "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
+      "supplyValue": 182622533828.5255,
+      "supplyChange24h": -0.014550260423928929,
       "supplySource": "DefiLlama circulating value in USD",
       "coverage": {
         "status": "sample",
@@ -313,13 +313,13 @@
       "kind": "stable",
       "image": "https://coin-images.coingecko.com/coins/images/6319/large/USDC.png?1769615602",
       "rank": 6,
-      "price": 0.999669,
-      "marketCap": 71679965964,
-      "volume24h": 10366211238,
-      "priceChange24h": 0.02248,
-      "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
-      "supplyValue": 71863965805.10944,
-      "supplyChange24h": -1.0609165652660457,
+      "price": 0.999691,
+      "marketCap": 71674205939,
+      "volume24h": 10802351246,
+      "priceChange24h": 0.01825,
+      "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
+      "supplyValue": 71843447835.26619,
+      "supplyChange24h": -1.0927335407259542,
       "supplySource": "DefiLlama circulating value in USD",
       "coverage": {
         "status": "sample",
@@ -343,12 +343,12 @@
       "image": "https://coin-images.coingecko.com/coins/images/39926/large/usds.webp?1726666683",
       "rank": 14,
       "price": 1,
-      "marketCap": 10061393189,
-      "volume24h": 97574851,
-      "priceChange24h": 0.02073,
-      "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
-      "supplyValue": 6855120169.10596,
-      "supplyChange24h": 2.0043703564100346,
+      "marketCap": 10054452092,
+      "volume24h": 98348702,
+      "priceChange24h": 0.00045,
+      "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
+      "supplyValue": 6855316602.227335,
+      "supplyChange24h": 2.015167897869441,
       "supplySource": "DefiLlama circulating value in USD",
       "coverage": {
         "status": "sample",
@@ -370,13 +370,13 @@
       "kind": "stable",
       "image": "https://coin-images.coingecko.com/coins/images/33613/large/usde.png?1733810059",
       "rank": 23,
-      "price": 0.999453,
-      "marketCap": 4602220884,
-      "volume24h": 30680001,
-      "priceChange24h": 0.01986,
-      "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
-      "supplyValue": 4600821054.551628,
-      "supplyChange24h": -1.165817028088556,
+      "price": 0.999465,
+      "marketCap": 4594011595,
+      "volume24h": 32997209,
+      "priceChange24h": 0.01736,
+      "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
+      "supplyValue": 4593695206.939326,
+      "supplyChange24h": -1.3265861554944358,
       "supplySource": "DefiLlama circulating value in USD",
       "coverage": {
         "status": "sample",
@@ -399,12 +399,12 @@
       "image": "https://coin-images.coingecko.com/coins/images/9956/large/Badge_Dai.png?1696509996",
       "rank": 24,
       "price": 1,
-      "marketCap": 4532984163,
-      "volume24h": 114095289,
-      "priceChange24h": 0.0268,
-      "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
-      "supplyValue": 4730176373.228819,
-      "supplyChange24h": -0.3360223290133635,
+      "marketCap": 4540191971,
+      "volume24h": 127728437,
+      "priceChange24h": -0.01793,
+      "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
+      "supplyValue": 4739225791.817515,
+      "supplyChange24h": -0.1542717120999848,
       "supplySource": "DefiLlama circulating value in USD",
       "coverage": {
         "status": "sample",
@@ -426,11 +426,11 @@
     "kind": "reference",
     "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400",
     "rank": 1,
-    "price": 81380,
-    "marketCap": 1635935092634,
-    "volume24h": 22659271294,
-    "priceChange24h": 0.24656,
-    "priceUpdatedAt": "2026-10-23T21:06:45.000Z",
+    "price": 81099,
+    "marketCap": 1630294099968,
+    "volume24h": 24039385566,
+    "priceChange24h": -0.20163,
+    "priceUpdatedAt": "2026-10-24T00:02:50.000Z",
     "supplyValue": null,
     "supplyChange24h": null,
     "supplySource": null
@@ -452,42 +452,42 @@
         "baseTokenId": "eth_0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
         "quoteTokenId": "eth_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
         "buy": {
-          "h1": "414962.685346304",
-          "h6": "4365866.96955775",
-          "h24": "37907435.8945654"
+          "h1": "799826.171865521",
+          "h6": "4154511.53235141",
+          "h24": "39078177.2183979"
         },
         "sell": {
-          "h1": "470332.780327797",
-          "h6": "4383370.56359437",
-          "h24": "37889437.6784754"
+          "h1": "881421.800869588",
+          "h6": "4019535.76362669",
+          "h24": "38977684.9883801"
         },
         "volume": {
-          "h1": "885295.4656741",
-          "h6": "8749237.53315212",
-          "h24": "75796873.5730408"
+          "h1": "1681247.97273511",
+          "h6": "8174047.2959781",
+          "h24": "78055862.2067779"
         },
-        "reserve": "9070333.6502"
+        "reserve": "9021879.5001"
       },
       "wrapped": true,
-      "liquidity": 9070333.6502,
+      "liquidity": 9021879.5001,
       "windows": {
         "h1": {
-          "buy": 414962.685346304,
-          "sell": 470332.780327797,
-          "total": 885295.4656741009
+          "buy": 799826.171865521,
+          "sell": 881421.800869588,
+          "total": 1681247.972735109
         },
         "h6": {
-          "buy": 4365866.96955775,
-          "sell": 4383370.56359437,
-          "total": 8749237.53315212
+          "buy": 4154511.53235141,
+          "sell": 4019535.76362669,
+          "total": 8174047.2959781
         },
         "h24": {
-          "buy": 37907435.8945654,
-          "sell": 37889437.6784754,
-          "total": 75796873.57304081
+          "buy": 39078177.2183979,
+          "sell": 38977684.9883801,
+          "total": 78055862.20677799
         }
       },
-      "checkedAt": "2026-10-23T21:07:42.733Z",
+      "checkedAt": "2026-10-24T00:04:48.643Z",
       "url": "https://www.geckoterminal.com/eth/pools/0xe0554a476a092703abdb3ef35c80e0d76d32939f",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0xe0554a476a092703abdb3ef35c80e0d76d32939f?include_volume_breakdown=true"
     },
@@ -507,42 +507,42 @@
         "baseTokenId": "eth_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
         "quoteTokenId": "eth_0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
         "buy": {
-          "h1": "276578.77338949",
-          "h6": "2484004.04016824",
-          "h24": "12412966.759459"
+          "h1": "906968.339501174",
+          "h6": "2900598.2700937",
+          "h24": "13606751.4096659"
         },
         "sell": {
-          "h1": "84333.1493373858",
-          "h6": "2433024.57903427",
-          "h24": "12146051.9966986"
+          "h1": "586629.078434314",
+          "h6": "3332274.56439942",
+          "h24": "13655045.8029903"
         },
         "volume": {
-          "h1": "360911.922726876",
-          "h6": "4917028.61920251",
-          "h24": "24559018.7561577"
+          "h1": "1493597.41793549",
+          "h6": "6232872.83449311",
+          "h24": "27261797.2126562"
         },
-        "reserve": "82036232.9218"
+        "reserve": "81858375.3251"
       },
       "wrapped": true,
-      "liquidity": 82036232.9218,
+      "liquidity": 81858375.3251,
       "windows": {
         "h1": {
-          "buy": 276578.77338949,
-          "sell": 84333.1493373858,
-          "total": 360911.92272687575
+          "buy": 906968.339501174,
+          "sell": 586629.078434314,
+          "total": 1493597.417935488
         },
         "h6": {
-          "buy": 2484004.04016824,
-          "sell": 2433024.57903427,
-          "total": 4917028.6192025095
+          "buy": 2900598.2700937,
+          "sell": 3332274.56439942,
+          "total": 6232872.834493119
         },
         "h24": {
-          "buy": 12412966.759459,
-          "sell": 12146051.9966986,
-          "total": 24559018.7561576
+          "buy": 13606751.4096659,
+          "sell": 13655045.8029903,
+          "total": 27261797.2126562
         }
       },
-      "checkedAt": "2026-10-23T21:07:42.733Z",
+      "checkedAt": "2026-10-24T00:04:48.643Z",
       "url": "https://www.geckoterminal.com/eth/pools/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640?include_volume_breakdown=true"
     },
@@ -562,42 +562,42 @@
         "baseTokenId": "eth_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
         "quoteTokenId": "eth_0xdac17f958d2ee523a2206206994597c13d831ec7",
         "buy": {
-          "h1": "51.1398364419",
-          "h6": "134140.116205862",
-          "h24": "8762731.81892917"
+          "h1": "1481389.68851229",
+          "h6": "2056740.88008743",
+          "h24": "9983962.97037333"
         },
         "sell": {
-          "h1": "147.3331352757",
-          "h6": "1080775.9848693",
-          "h24": "7065453.37726647"
+          "h1": "194.5222218622",
+          "h6": "4963097.01555527",
+          "h24": "10762395.6740446"
         },
         "volume": {
-          "h1": "198.4729717177",
-          "h6": "1214916.10107516",
-          "h24": "15828185.1961956"
+          "h1": "1481584.21073415",
+          "h6": "7019837.89564268",
+          "h24": "20746358.6444179"
         },
-        "reserve": "90199423.7398"
+        "reserve": "89971464.7236"
       },
       "wrapped": true,
-      "liquidity": 90199423.7398,
+      "liquidity": 89971464.7236,
       "windows": {
         "h1": {
-          "buy": 51.1398364419,
-          "sell": 147.3331352757,
-          "total": 198.4729717176
+          "buy": 1481389.68851229,
+          "sell": 194.5222218622,
+          "total": 1481584.210734152
         },
         "h6": {
-          "buy": 134140.116205862,
-          "sell": 1080775.9848693,
-          "total": 1214916.101075162
+          "buy": 2056740.88008743,
+          "sell": 4963097.01555527,
+          "total": 7019837.8956427
         },
         "h24": {
-          "buy": 8762731.81892917,
-          "sell": 7065453.37726647,
-          "total": 15828185.19619564
+          "buy": 9983962.97037333,
+          "sell": 10762395.6740446,
+          "total": 20746358.64441793
         }
       },
-      "checkedAt": "2026-10-23T21:07:42.733Z",
+      "checkedAt": "2026-10-24T00:04:48.643Z",
       "url": "https://www.geckoterminal.com/eth/pools/0x4e68ccd3e89f51c3074ca5072bbac773960dfa36",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0x4e68ccd3e89f51c3074ca5072bbac773960dfa36?include_volume_breakdown=true"
     },
@@ -617,42 +617,42 @@
         "baseTokenId": "eth_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
         "quoteTokenId": "eth_0xdac17f958d2ee523a2206206994597c13d831ec7",
         "buy": {
-          "h1": "111665.743769141",
-          "h6": "918917.41832807",
-          "h24": "4841032.77329208"
+          "h1": "287225.727656728",
+          "h6": "976875.871768296",
+          "h24": "5198949.37182827"
         },
         "sell": {
-          "h1": "49201.2543965567",
-          "h6": "903560.857807516",
-          "h24": "4775801.86438021"
+          "h1": "185673.516119204",
+          "h6": "1119649.66418342",
+          "h24": "5238516.81668755"
         },
         "volume": {
-          "h1": "160866.998165698",
-          "h6": "1822478.27613559",
-          "h24": "9616834.63767228"
+          "h1": "472899.243775932",
+          "h6": "2096525.53595172",
+          "h24": "10437466.1885158"
         },
-        "reserve": "9574461.3414"
+        "reserve": "9346971.6817"
       },
       "wrapped": true,
-      "liquidity": 9574461.3414,
+      "liquidity": 9346971.6817,
       "windows": {
         "h1": {
-          "buy": 111665.743769141,
-          "sell": 49201.2543965567,
-          "total": 160866.9981656977
+          "buy": 287225.727656728,
+          "sell": 185673.516119204,
+          "total": 472899.243775932
         },
         "h6": {
-          "buy": 918917.41832807,
-          "sell": 903560.857807516,
-          "total": 1822478.276135586
+          "buy": 976875.871768296,
+          "sell": 1119649.66418342,
+          "total": 2096525.535951716
         },
         "h24": {
-          "buy": 4841032.77329208,
-          "sell": 4775801.86438021,
-          "total": 9616834.63767229
+          "buy": 5198949.37182827,
+          "sell": 5238516.81668755,
+          "total": 10437466.18851582
         }
       },
-      "checkedAt": "2026-10-23T21:07:42.733Z",
+      "checkedAt": "2026-10-24T00:04:48.643Z",
       "url": "https://www.geckoterminal.com/eth/pools/0x11b815efb8f581194ae79006d24e0d814b7697f6",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0x11b815efb8f581194ae79006d24e0d814b7697f6?include_volume_breakdown=true"
     },
@@ -672,42 +672,42 @@
         "baseTokenId": "eth_0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
         "quoteTokenId": "eth_0xdac17f958d2ee523a2206206994597c13d831ec7",
         "buy": {
-          "h1": "356862.062466401",
-          "h6": "20784902.1077735",
-          "h24": "67894140.9350167"
+          "h1": "1150860.9614757",
+          "h6": "15268030.3818102",
+          "h24": "72449502.7864067"
         },
         "sell": {
-          "h1": "403554.328764273",
-          "h6": "21172266.0144789",
-          "h24": "69256869.2121634"
+          "h1": "424101.609568475",
+          "h6": "14463157.4061553",
+          "h24": "73086929.9256782"
         },
         "volume": {
-          "h1": "760416.391230674",
-          "h6": "41957168.1222524",
-          "h24": "137151010.14718"
+          "h1": "1574962.57104418",
+          "h6": "29731187.7879655",
+          "h24": "145536432.712085"
         },
-        "reserve": "5553935.9477"
+        "reserve": "5557425.5205"
       },
       "wrapped": false,
-      "liquidity": 5553935.9477,
+      "liquidity": 5557425.5205,
       "windows": {
         "h1": {
-          "buy": 356862.062466401,
-          "sell": 403554.328764273,
-          "total": 760416.391230674
+          "buy": 1150860.9614757,
+          "sell": 424101.609568475,
+          "total": 1574962.571044175
         },
         "h6": {
-          "buy": 20784902.1077735,
-          "sell": 21172266.0144789,
-          "total": 41957168.122252405
+          "buy": 15268030.3818102,
+          "sell": 14463157.4061553,
+          "total": 29731187.7879655
         },
         "h24": {
-          "buy": 67894140.9350167,
-          "sell": 69256869.2121634,
-          "total": 137151010.1471801
+          "buy": 72449502.7864067,
+          "sell": 73086929.9256782,
+          "total": 145536432.7120849
         }
       },
-      "checkedAt": "2026-10-23T21:07:42.733Z",
+      "checkedAt": "2026-10-24T00:04:48.643Z",
       "url": "https://www.geckoterminal.com/eth/pools/0x2b21c65d9a7dc6926ee330a1c6e5a8037fd81774f3dc066536f800128e39f634",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0x2b21c65d9a7dc6926ee330a1c6e5a8037fd81774f3dc066536f800128e39f634?include_volume_breakdown=true"
     },
@@ -727,42 +727,42 @@
         "baseTokenId": "eth_0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
         "quoteTokenId": "eth_0xdac17f958d2ee523a2206206994597c13d831ec7",
         "buy": {
-          "h1": "65710.1067026451",
-          "h6": "10193991.6189405",
-          "h24": "34428047.9948239"
+          "h1": "1788810.83752794",
+          "h6": "8297375.58303831",
+          "h24": "35090493.4126016"
         },
         "sell": {
-          "h1": "133943.77102848",
-          "h6": "10598268.7597152",
-          "h24": "35053020.3339227"
+          "h1": "734324.845696201",
+          "h6": "7194347.52912871",
+          "h24": "35131661.6738589"
         },
         "volume": {
-          "h1": "199653.877731125",
-          "h6": "20792260.3786558",
-          "h24": "69481068.3287466"
+          "h1": "2523135.68322414",
+          "h6": "15491723.112167",
+          "h24": "70222155.0864605"
         },
-        "reserve": "34989879.4953"
+        "reserve": "35207440.1859"
       },
       "wrapped": false,
-      "liquidity": 34989879.4953,
+      "liquidity": 35207440.1859,
       "windows": {
         "h1": {
-          "buy": 65710.1067026451,
-          "sell": 133943.77102848,
-          "total": 199653.8777311251
+          "buy": 1788810.83752794,
+          "sell": 734324.845696201,
+          "total": 2523135.683224141
         },
         "h6": {
-          "buy": 10193991.6189405,
-          "sell": 10598268.7597152,
-          "total": 20792260.378655702
+          "buy": 8297375.58303831,
+          "sell": 7194347.52912871,
+          "total": 15491723.11216702
         },
         "h24": {
-          "buy": 34428047.9948239,
-          "sell": 35053020.3339227,
-          "total": 69481068.3287466
+          "buy": 35090493.4126016,
+          "sell": 35131661.6738589,
+          "total": 70222155.0864605
         }
       },
-      "checkedAt": "2026-10-23T21:07:42.733Z",
+      "checkedAt": "2026-10-24T00:04:48.643Z",
       "url": "https://www.geckoterminal.com/eth/pools/0x667701e51b4d1ca244f17c78f7ab8744b4c99f9b",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0x667701e51b4d1ca244f17c78f7ab8744b4c99f9b?include_volume_breakdown=true"
     },
@@ -782,42 +782,42 @@
         "baseTokenId": "eth_0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
         "quoteTokenId": "eth_0xdac17f958d2ee523a2206206994597c13d831ec7",
         "buy": {
-          "h1": "961510.02913404",
-          "h6": "9689956.93859227",
-          "h24": "28504765.6268519"
+          "h1": "490279.767879994",
+          "h6": "6246141.01216225",
+          "h24": "28174388.4579773"
         },
         "sell": {
-          "h1": "889511.560818799",
-          "h6": "9707956.87219737",
-          "h24": "29027890.7331415"
+          "h1": "243236.943316791",
+          "h6": "5878714.693323",
+          "h24": "28515975.5648523"
         },
         "volume": {
-          "h1": "1851021.58995284",
-          "h6": "19397913.8107896",
-          "h24": "57532656.3599935"
+          "h1": "733516.711196785",
+          "h6": "12124855.7054852",
+          "h24": "56690364.0228296"
         },
-        "reserve": "3396646.7243"
+        "reserve": "3420640.6987"
       },
       "wrapped": false,
-      "liquidity": 3396646.7243,
+      "liquidity": 3420640.6987,
       "windows": {
         "h1": {
-          "buy": 961510.02913404,
-          "sell": 889511.560818799,
-          "total": 1851021.589952839
+          "buy": 490279.767879994,
+          "sell": 243236.943316791,
+          "total": 733516.711196785
         },
         "h6": {
-          "buy": 9689956.93859227,
-          "sell": 9707956.87219737,
-          "total": 19397913.810789637
+          "buy": 6246141.01216225,
+          "sell": 5878714.693323,
+          "total": 12124855.70548525
         },
         "h24": {
-          "buy": 28504765.6268519,
-          "sell": 29027890.7331415,
-          "total": 57532656.3599934
+          "buy": 28174388.4579773,
+          "sell": 28515975.5648523,
+          "total": 56690364.0228296
         }
       },
-      "checkedAt": "2026-10-23T21:07:42.733Z",
+      "checkedAt": "2026-10-24T00:04:48.643Z",
       "url": "https://www.geckoterminal.com/eth/pools/0x0fb0e40cec3bb23e13abc585958a93c796fbea56955e19a23727a716a0423239",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0x0fb0e40cec3bb23e13abc585958a93c796fbea56955e19a23727a716a0423239?include_volume_breakdown=true"
     },
@@ -837,42 +837,42 @@
         "baseTokenId": "eth_0x6b175474e89094c44da98b954eedeac495271d0f",
         "quoteTokenId": "eth_0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
         "buy": {
-          "h1": "0.0",
-          "h6": "24676.4422026938",
-          "h24": "451410.518092414"
+          "h1": "6846.5939372942",
+          "h6": "29044.3312875771",
+          "h24": "458089.344067315"
         },
         "sell": {
-          "h1": "23789.9301631305",
-          "h6": "40530.5521092407",
-          "h24": "156207.5116136517"
+          "h1": "2169.6091231421",
+          "h6": "33821.4721629673",
+          "h24": "161835.5800947457"
         },
         "volume": {
-          "h1": "23789.9301631305",
-          "h6": "65206.9943119346",
-          "h24": "607618.0297060657"
+          "h1": "9016.2030604363",
+          "h6": "62865.8034505444",
+          "h24": "619924.9241620617"
         },
-        "reserve": "159836116.8747"
+        "reserve": "159871401.0749"
       },
       "wrapped": false,
-      "liquidity": 159836116.8747,
+      "liquidity": 159871401.0749,
       "windows": {
         "h1": {
-          "buy": 0,
-          "sell": 23789.9301631305,
-          "total": 23789.9301631305
+          "buy": 6846.5939372942,
+          "sell": 2169.6091231421,
+          "total": 9016.2030604363
         },
         "h6": {
-          "buy": 24676.4422026938,
-          "sell": 40530.5521092407,
-          "total": 65206.9943119345
+          "buy": 29044.3312875771,
+          "sell": 33821.4721629673,
+          "total": 62865.8034505444
         },
         "h24": {
-          "buy": 451410.518092414,
-          "sell": 156207.5116136517,
-          "total": 607618.0297060658
+          "buy": 458089.344067315,
+          "sell": 161835.5800947457,
+          "total": 619924.9241620607
         }
       },
-      "checkedAt": "2026-10-23T21:07:42.733Z",
+      "checkedAt": "2026-10-24T00:04:48.643Z",
       "url": "https://www.geckoterminal.com/eth/pools/0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7?include_volume_breakdown=true"
     },
@@ -892,42 +892,42 @@
         "baseTokenId": "eth_0xdac17f958d2ee523a2206206994597c13d831ec7",
         "quoteTokenId": "eth_0xdc035d45d973e3ec169d2276ddab16f1e407384f",
         "buy": {
-          "h1": "10413.9309260283",
-          "h6": "3525762.43784932",
-          "h24": "3696865.66192411"
+          "h1": "6807.8939242419",
+          "h6": "1711474.35740559",
+          "h24": "4697697.9705965"
         },
         "sell": {
-          "h1": "10874.1097859443",
-          "h6": "3529539.20786796",
-          "h24": "3700298.36009479"
+          "h1": "11888.0161591166",
+          "h6": "1728863.86458342",
+          "h24": "4717371.20643249"
         },
         "volume": {
-          "h1": "21288.0407119726",
-          "h6": "7055301.64571728",
-          "h24": "7397164.02201889"
+          "h1": "18695.9100833585",
+          "h6": "3440338.22198901",
+          "h24": "9415069.17702899"
         },
-        "reserve": "49870298.6337"
+        "reserve": "49925401.794"
       },
       "wrapped": false,
-      "liquidity": 49870298.6337,
+      "liquidity": 49925401.794,
       "windows": {
         "h1": {
-          "buy": 10413.9309260283,
-          "sell": 10874.1097859443,
-          "total": 21288.0407119726
+          "buy": 6807.8939242419,
+          "sell": 11888.0161591166,
+          "total": 18695.9100833585
         },
         "h6": {
-          "buy": 3525762.43784932,
-          "sell": 3529539.20786796,
-          "total": 7055301.64571728
+          "buy": 1711474.35740559,
+          "sell": 1728863.86458342,
+          "total": 3440338.22198901
         },
         "h24": {
-          "buy": 3696865.66192411,
-          "sell": 3700298.36009479,
-          "total": 7397164.0220189
+          "buy": 4697697.9705965,
+          "sell": 4717371.20643249,
+          "total": 9415069.17702899
         }
       },
-      "checkedAt": "2026-10-23T21:07:42.733Z",
+      "checkedAt": "2026-10-24T00:04:48.643Z",
       "url": "https://www.geckoterminal.com/eth/pools/0x3b1b1f2e775a6db1664f8e7d59ad568605ea2406312c11aef03146c0cf89d5b9",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0x3b1b1f2e775a6db1664f8e7d59ad568605ea2406312c11aef03146c0cf89d5b9?include_volume_breakdown=true"
     },
@@ -947,42 +947,42 @@
         "baseTokenId": "eth_0x6b175474e89094c44da98b954eedeac495271d0f",
         "quoteTokenId": "eth_0xdc035d45d973e3ec169d2276ddab16f1e407384f",
         "buy": {
-          "h1": "0.0",
-          "h6": "65.4048384844",
-          "h24": "112.6266257961"
+          "h1": "24.3302234382",
+          "h6": "89.737095511",
+          "h24": "136.9588828227"
         },
         "sell": {
-          "h1": "0.0",
-          "h6": "57.2478540406",
-          "h24": "99.9409810286"
+          "h1": "21.9969101002",
+          "h6": "79.2447641408",
+          "h24": "121.9378911289"
         },
         "volume": {
-          "h1": "0.0",
-          "h6": "122.652692525",
-          "h24": "212.5676068248"
+          "h1": "46.3271335384",
+          "h6": "168.9818596519",
+          "h24": "258.8967739516"
         },
-        "reserve": "208899.1195"
+        "reserve": "208587.2474"
       },
       "wrapped": false,
-      "liquidity": 208899.1195,
+      "liquidity": 208587.2474,
       "windows": {
         "h1": {
-          "buy": 0,
-          "sell": 0,
-          "total": 0
+          "buy": 24.3302234382,
+          "sell": 21.9969101002,
+          "total": 46.327133538400005
         },
         "h6": {
-          "buy": 65.4048384844,
-          "sell": 57.2478540406,
-          "total": 122.65269252499999
+          "buy": 89.737095511,
+          "sell": 79.2447641408,
+          "total": 168.9818596518
         },
         "h24": {
-          "buy": 112.6266257961,
-          "sell": 99.9409810286,
-          "total": 212.56760682470002
+          "buy": 136.9588828227,
+          "sell": 121.9378911289,
+          "total": 258.8967739516
         }
       },
-      "checkedAt": "2026-10-23T21:07:42.733Z",
+      "checkedAt": "2026-10-24T00:04:48.643Z",
       "url": "https://www.geckoterminal.com/eth/pools/0xe9f1e2ef814f5686c30ce6fb7103d0f780836c67",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0xe9f1e2ef814f5686c30ce6fb7103d0f780836c67?include_volume_breakdown=true"
     },
@@ -1002,42 +1002,42 @@
         "baseTokenId": "eth_0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
         "quoteTokenId": "eth_0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
         "buy": {
-          "h1": "185318.080340991",
-          "h6": "2177687.38446904",
-          "h24": "6169010.64754188"
+          "h1": "139794.607877156",
+          "h6": "838062.393454971",
+          "h24": "6270287.38765001"
         },
         "sell": {
-          "h1": "142374.884982003",
-          "h6": "1996220.30818399",
-          "h24": "5778745.29505622"
+          "h1": "144827.523951838",
+          "h6": "703638.279119216",
+          "h24": "5942197.35844643"
         },
         "volume": {
-          "h1": "327692.965322994",
-          "h6": "4173907.69265304",
-          "h24": "11947755.9425981"
+          "h1": "284622.131828993",
+          "h6": "1541700.67257419",
+          "h24": "12212484.7460964"
         },
-        "reserve": "1552864.6359"
+        "reserve": "1552784.1686"
       },
       "wrapped": false,
-      "liquidity": 1552864.6359,
+      "liquidity": 1552784.1686,
       "windows": {
         "h1": {
-          "buy": 185318.080340991,
-          "sell": 142374.884982003,
-          "total": 327692.965322994
+          "buy": 139794.607877156,
+          "sell": 144827.523951838,
+          "total": 284622.131828994
         },
         "h6": {
-          "buy": 2177687.38446904,
-          "sell": 1996220.30818399,
-          "total": 4173907.69265303
+          "buy": 838062.393454971,
+          "sell": 703638.279119216,
+          "total": 1541700.6725741872
         },
         "h24": {
-          "buy": 6169010.64754188,
-          "sell": 5778745.29505622,
-          "total": 11947755.9425981
+          "buy": 6270287.38765001,
+          "sell": 5942197.35844643,
+          "total": 12212484.74609644
         }
       },
-      "checkedAt": "2026-10-23T21:07:51.131Z",
+      "checkedAt": "2026-10-24T00:04:57.195Z",
       "url": "https://www.geckoterminal.com/eth/pools/0x56fc29b86900aa0afa6e20b020429bffba1105cfb45070492c67529b46eb48c1",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0x56fc29b86900aa0afa6e20b020429bffba1105cfb45070492c67529b46eb48c1?include_volume_breakdown=true"
     },
@@ -1057,42 +1057,42 @@
         "baseTokenId": "eth_0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
         "quoteTokenId": "eth_0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
         "buy": {
-          "h1": "22710.638582438",
-          "h6": "167057.768856073",
-          "h24": "968994.838771778"
+          "h1": "119.6618969691",
+          "h6": "163854.001178966",
+          "h24": "896152.768315639"
         },
         "sell": {
-          "h1": "0.0",
-          "h6": "341969.481249879",
-          "h24": "838133.260530405"
+          "h1": "47565.3482656837",
+          "h6": "54717.8451511544",
+          "h24": "892845.12952293"
         },
         "volume": {
-          "h1": "22710.638582438",
-          "h6": "509027.250105952",
-          "h24": "1807128.09930218"
+          "h1": "47685.0101626528",
+          "h6": "218571.84633012",
+          "h24": "1788997.89783857"
         },
-        "reserve": "2412657.2423"
+        "reserve": "2427206.9906"
       },
       "wrapped": false,
-      "liquidity": 2412657.2423,
+      "liquidity": 2427206.9906,
       "windows": {
         "h1": {
-          "buy": 22710.638582438,
-          "sell": 0,
-          "total": 22710.638582438
+          "buy": 119.6618969691,
+          "sell": 47565.3482656837,
+          "total": 47685.0101626528
         },
         "h6": {
-          "buy": 167057.768856073,
-          "sell": 341969.481249879,
-          "total": 509027.25010595203
+          "buy": 163854.001178966,
+          "sell": 54717.8451511544,
+          "total": 218571.8463301204
         },
         "h24": {
-          "buy": 968994.838771778,
-          "sell": 838133.260530405,
-          "total": 1807128.099302183
+          "buy": 896152.768315639,
+          "sell": 892845.12952293,
+          "total": 1788997.897838569
         }
       },
-      "checkedAt": "2026-10-23T21:07:51.131Z",
+      "checkedAt": "2026-10-24T00:04:57.195Z",
       "url": "https://www.geckoterminal.com/eth/pools/0xe6d7ebb9f1a9519dc06d557e03c522d53520e76a",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0xe6d7ebb9f1a9519dc06d557e03c522d53520e76a?include_volume_breakdown=true"
     },
@@ -1112,42 +1112,42 @@
         "baseTokenId": "eth_0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
         "quoteTokenId": "eth_0xdac17f958d2ee523a2206206994597c13d831ec7",
         "buy": {
-          "h1": "0.0",
-          "h6": "92175.0627587442",
-          "h24": "453895.699235083"
+          "h1": "44176.1617952386",
+          "h6": "78850.7398603143",
+          "h24": "473630.255149129"
         },
         "sell": {
           "h1": "0.0",
-          "h6": "183922.869458548",
+          "h6": "99.6693930644",
           "h24": "468608.035855492"
         },
         "volume": {
-          "h1": "0.0",
-          "h6": "276097.932217292",
-          "h24": "922503.735090576"
+          "h1": "44176.1617952386",
+          "h6": "78950.4092533787",
+          "h24": "942238.291004621"
         },
-        "reserve": "1665394.412"
+        "reserve": "1679733.1646"
       },
       "wrapped": false,
-      "liquidity": 1665394.412,
+      "liquidity": 1679733.1646,
       "windows": {
         "h1": {
-          "buy": 0,
+          "buy": 44176.1617952386,
           "sell": 0,
-          "total": 0
+          "total": 44176.1617952386
         },
         "h6": {
-          "buy": 92175.0627587442,
-          "sell": 183922.869458548,
-          "total": 276097.9322172922
+          "buy": 78850.7398603143,
+          "sell": 99.6693930644,
+          "total": 78950.40925337869
         },
         "h24": {
-          "buy": 453895.699235083,
+          "buy": 473630.255149129,
           "sell": 468608.035855492,
-          "total": 922503.735090575
+          "total": 942238.291004621
         }
       },
-      "checkedAt": "2026-10-23T21:07:51.131Z",
+      "checkedAt": "2026-10-24T00:04:57.195Z",
       "url": "https://www.geckoterminal.com/eth/pools/0xf063bd202e45d6b2843102cb4ece339026645d4a",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0xf063bd202e45d6b2843102cb4ece339026645d4a?include_volume_breakdown=true"
     },
@@ -1167,42 +1167,42 @@
         "baseTokenId": "eth_0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
         "quoteTokenId": "eth_0xdac17f958d2ee523a2206206994597c13d831ec7",
         "buy": {
-          "h1": "0.0",
-          "h6": "9593.3200492003",
-          "h24": "343490.499307921"
+          "h1": "2349.2960374145",
+          "h6": "4573.7387979395",
+          "h24": "344934.81717547"
         },
         "sell": {
-          "h1": "0.0",
-          "h6": "15106.066186008",
-          "h24": "343734.052922522"
+          "h1": "582.6331239761",
+          "h6": "1721.135917278",
+          "h24": "345028.28538473"
         },
         "volume": {
-          "h1": "0.0",
-          "h6": "24699.3862352083",
-          "h24": "687224.552230443"
+          "h1": "2931.9291613906",
+          "h6": "6294.8747152175",
+          "h24": "689963.1025602"
         },
-        "reserve": "321039.103"
+        "reserve": "321575.4942"
       },
       "wrapped": false,
-      "liquidity": 321039.103,
+      "liquidity": 321575.4942,
       "windows": {
         "h1": {
-          "buy": 0,
-          "sell": 0,
-          "total": 0
+          "buy": 2349.2960374145,
+          "sell": 582.6331239761,
+          "total": 2931.9291613906
         },
         "h6": {
-          "buy": 9593.3200492003,
-          "sell": 15106.066186008,
-          "total": 24699.3862352083
+          "buy": 4573.7387979395,
+          "sell": 1721.135917278,
+          "total": 6294.8747152175
         },
         "h24": {
-          "buy": 343490.499307921,
-          "sell": 343734.052922522,
-          "total": 687224.552230443
+          "buy": 344934.81717547,
+          "sell": 345028.28538473,
+          "total": 689963.1025602
         }
       },
-      "checkedAt": "2026-10-23T21:07:51.131Z",
+      "checkedAt": "2026-10-24T00:04:57.195Z",
       "url": "https://www.geckoterminal.com/eth/pools/0x63bb22f47c7ede6578a25c873e77eb782ec8e4c19778e36ce64d37877b5bd1e7",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0x63bb22f47c7ede6578a25c873e77eb782ec8e4c19778e36ce64d37877b5bd1e7?include_volume_breakdown=true"
     },
@@ -1222,42 +1222,42 @@
         "baseTokenId": "eth_0x6b175474e89094c44da98b954eedeac495271d0f",
         "quoteTokenId": "eth_0xdac17f958d2ee523a2206206994597c13d831ec7",
         "buy": {
-          "h1": "0.0",
-          "h6": "36666.6866656334",
-          "h24": "372032.158425766"
+          "h1": "163263.51229002",
+          "h6": "198637.547721255",
+          "h24": "562543.217548474"
         },
         "sell": {
-          "h1": "2377.5949126907",
-          "h6": "147092.993554286",
-          "h24": "508879.183783232"
+          "h1": "6.0434047457",
+          "h6": "222887.804259694",
+          "h24": "716684.986048077"
         },
         "volume": {
-          "h1": "2377.5949126907",
-          "h6": "183759.68021992",
-          "h24": "880911.342208998"
+          "h1": "163269.555694766",
+          "h6": "421525.351980949",
+          "h24": "1279228.20359655"
         },
-        "reserve": "1032660.7465"
+        "reserve": "1031795.9816"
       },
       "wrapped": false,
-      "liquidity": 1032660.7465,
+      "liquidity": 1031795.9816,
       "windows": {
         "h1": {
-          "buy": 0,
-          "sell": 2377.5949126907,
-          "total": 2377.5949126907
+          "buy": 163263.51229002,
+          "sell": 6.0434047457,
+          "total": 163269.5556947657
         },
         "h6": {
-          "buy": 36666.6866656334,
-          "sell": 147092.993554286,
-          "total": 183759.6802199194
+          "buy": 198637.547721255,
+          "sell": 222887.804259694,
+          "total": 421525.351980949
         },
         "h24": {
-          "buy": 372032.158425766,
-          "sell": 508879.183783232,
-          "total": 880911.342208998
+          "buy": 562543.217548474,
+          "sell": 716684.986048077,
+          "total": 1279228.203596551
         }
       },
-      "checkedAt": "2026-10-23T21:07:51.131Z",
+      "checkedAt": "2026-10-24T00:04:57.195Z",
       "url": "https://www.geckoterminal.com/eth/pools/0x48da0965ab2d2cbf1c17c09cfb5cbe67ad5b1406",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0x48da0965ab2d2cbf1c17c09cfb5cbe67ad5b1406?include_volume_breakdown=true"
     },
@@ -1278,41 +1278,41 @@
         "quoteTokenId": "eth_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
         "buy": {
           "h1": "0.0",
-          "h6": "32426.0084494178",
-          "h24": "221357.194500955"
+          "h6": "183823.188650685",
+          "h24": "365556.116230433"
         },
         "sell": {
-          "h1": "0.0",
-          "h6": "3895.4798917579",
-          "h24": "285019.384247916"
+          "h1": "64296.7800303223",
+          "h6": "79489.9641701785",
+          "h24": "333962.149130994"
         },
         "volume": {
-          "h1": "0.0",
-          "h6": "36321.4883411757",
-          "h24": "506376.57874887"
+          "h1": "64296.7800303223",
+          "h6": "263313.152820863",
+          "h24": "699518.265361427"
         },
-        "reserve": "8964573.0945"
+        "reserve": "8915643.2054"
       },
       "wrapped": true,
-      "liquidity": 8964573.0945,
+      "liquidity": 8915643.2054,
       "windows": {
         "h1": {
           "buy": 0,
-          "sell": 0,
-          "total": 0
+          "sell": 64296.7800303223,
+          "total": 64296.7800303223
         },
         "h6": {
-          "buy": 32426.0084494178,
-          "sell": 3895.4798917579,
-          "total": 36321.488341175704
+          "buy": 183823.188650685,
+          "sell": 79489.9641701785,
+          "total": 263313.1528208635
         },
         "h24": {
-          "buy": 221357.194500955,
-          "sell": 285019.384247916,
-          "total": 506376.578748871
+          "buy": 365556.116230433,
+          "sell": 333962.149130994,
+          "total": 699518.265361427
         }
       },
-      "checkedAt": "2026-10-23T21:07:51.131Z",
+      "checkedAt": "2026-10-24T00:04:57.195Z",
       "url": "https://www.geckoterminal.com/eth/pools/0x769db46f39c42ee7ad5f71f4167c47edd281e767",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0x769db46f39c42ee7ad5f71f4167c47edd281e767?include_volume_breakdown=true"
     },
@@ -1332,42 +1332,42 @@
         "baseTokenId": "eth_0x6b175474e89094c44da98b954eedeac495271d0f",
         "quoteTokenId": "eth_0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
         "buy": {
-          "h1": "0.0",
-          "h6": "3233.7496542369",
-          "h24": "90224.5886137546"
+          "h1": "63208.7174033982",
+          "h6": "77683.7510439847",
+          "h24": "164616.522224268"
         },
         "sell": {
-          "h1": "3906.0837961372",
-          "h6": "107154.392917808",
-          "h24": "254165.000121374"
+          "h1": "3368.0075896857",
+          "h6": "69811.4371093602",
+          "h24": "206039.143552554"
         },
         "volume": {
-          "h1": "3906.0837961372",
-          "h6": "110388.142572044",
-          "h24": "344389.588735129"
+          "h1": "66576.7249930839",
+          "h6": "147495.188153345",
+          "h24": "370655.665776822"
         },
-        "reserve": "1404015.1573"
+        "reserve": "1404269.4477"
       },
       "wrapped": false,
-      "liquidity": 1404015.1573,
+      "liquidity": 1404269.4477,
       "windows": {
         "h1": {
-          "buy": 0,
-          "sell": 3906.0837961372,
-          "total": 3906.0837961372
+          "buy": 63208.7174033982,
+          "sell": 3368.0075896857,
+          "total": 66576.7249930839
         },
         "h6": {
-          "buy": 3233.7496542369,
-          "sell": 107154.392917808,
-          "total": 110388.1425720449
+          "buy": 77683.7510439847,
+          "sell": 69811.4371093602,
+          "total": 147495.1881533449
         },
         "h24": {
-          "buy": 90224.5886137546,
-          "sell": 254165.000121374,
-          "total": 344389.58873512864
+          "buy": 164616.522224268,
+          "sell": 206039.143552554,
+          "total": 370655.665776822
         }
       },
-      "checkedAt": "2026-10-23T21:07:51.131Z",
+      "checkedAt": "2026-10-24T00:04:57.195Z",
       "url": "https://www.geckoterminal.com/eth/pools/0x5777d92f208679db4b9778590fa3cab3ac9e2168",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/eth/pools/0x5777d92f208679db4b9778590fa3cab3ac9e2168?include_volume_breakdown=true"
     },
@@ -1387,42 +1387,42 @@
         "baseTokenId": "solana_So11111111111111111111111111111111111111112",
         "quoteTokenId": "solana_EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
         "buy": {
-          "h1": "1499440.80160736",
-          "h6": "11041786.7886769",
-          "h24": "46501942.287265"
+          "h1": "2159034.90409583",
+          "h6": "10197079.123451",
+          "h24": "49935888.1447572"
         },
         "sell": {
-          "h1": "925714.497325026",
-          "h6": "11743229.5158992",
-          "h24": "46164103.4593993"
+          "h1": "1886256.44193509",
+          "h6": "12117938.3321763",
+          "h24": "50933031.760083"
         },
         "volume": {
-          "h1": "2425155.29893239",
-          "h6": "22785016.3045762",
-          "h24": "92666045.7466643"
+          "h1": "4045291.34603092",
+          "h6": "22315017.4556273",
+          "h24": "100868919.90484"
         },
-        "reserve": "29956480.1921"
+        "reserve": "29504410.3974"
       },
       "wrapped": true,
-      "liquidity": 29956480.1921,
+      "liquidity": 29504410.3974,
       "windows": {
         "h1": {
-          "buy": 1499440.80160736,
-          "sell": 925714.497325026,
-          "total": 2425155.2989323856
+          "buy": 2159034.90409583,
+          "sell": 1886256.44193509,
+          "total": 4045291.34603092
         },
         "h6": {
-          "buy": 11041786.7886769,
-          "sell": 11743229.5158992,
-          "total": 22785016.3045761
+          "buy": 10197079.123451,
+          "sell": 12117938.3321763,
+          "total": 22315017.4556273
         },
         "h24": {
-          "buy": 46501942.287265,
-          "sell": 46164103.4593993,
-          "total": 92666045.7466643
+          "buy": 49935888.1447572,
+          "sell": 50933031.760083,
+          "total": 100868919.9048402
         }
       },
-      "checkedAt": "2026-10-23T21:07:59.636Z",
+      "checkedAt": "2026-10-24T00:05:05.701Z",
       "url": "https://www.geckoterminal.com/solana/pools/Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/solana/pools/Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE?include_volume_breakdown=true"
     },
@@ -1442,42 +1442,42 @@
         "baseTokenId": "solana_So11111111111111111111111111111111111111112",
         "quoteTokenId": "solana_EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
         "buy": {
-          "h1": "417410.127248355",
-          "h6": "3026632.06436334",
-          "h24": "11591788.6246109"
+          "h1": "519778.896932809",
+          "h6": "2761609.80242851",
+          "h24": "12369806.9208925"
         },
         "sell": {
-          "h1": "299924.821669995",
-          "h6": "3195208.7080512",
-          "h24": "11522222.1546097"
+          "h1": "478389.370690462",
+          "h6": "3193094.68665883",
+          "h24": "12587585.2251035"
         },
         "volume": {
-          "h1": "717334.94891835",
-          "h6": "6221840.77241454",
-          "h24": "23114010.7792206"
+          "h1": "998168.267623271",
+          "h6": "5954704.48908735",
+          "h24": "24957392.145996"
         },
-        "reserve": "8071936.8101"
+        "reserve": "7985565.5063"
       },
       "wrapped": true,
-      "liquidity": 8071936.8101,
+      "liquidity": 7985565.5063,
       "windows": {
         "h1": {
-          "buy": 417410.127248355,
-          "sell": 299924.821669995,
-          "total": 717334.94891835
+          "buy": 519778.896932809,
+          "sell": 478389.370690462,
+          "total": 998168.267623271
         },
         "h6": {
-          "buy": 3026632.06436334,
-          "sell": 3195208.7080512,
-          "total": 6221840.77241454
+          "buy": 2761609.80242851,
+          "sell": 3193094.68665883,
+          "total": 5954704.4890873395
         },
         "h24": {
-          "buy": 11591788.6246109,
-          "sell": 11522222.1546097,
-          "total": 23114010.779220603
+          "buy": 12369806.9208925,
+          "sell": 12587585.2251035,
+          "total": 24957392.145995997
         }
       },
-      "checkedAt": "2026-10-23T21:07:59.636Z",
+      "checkedAt": "2026-10-24T00:05:05.701Z",
       "url": "https://www.geckoterminal.com/solana/pools/3ucNos4NbumPLZNWztqGHNFFgkHeRMBQAVemeeomsUxv",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/solana/pools/3ucNos4NbumPLZNWztqGHNFFgkHeRMBQAVemeeomsUxv?include_volume_breakdown=true"
     },
@@ -1497,42 +1497,42 @@
         "baseTokenId": "solana_So11111111111111111111111111111111111111112",
         "quoteTokenId": "solana_EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
         "buy": {
-          "h1": "242168.607705573",
-          "h6": "2262737.53646797",
-          "h24": "9360833.93620184"
+          "h1": "271015.749725646",
+          "h6": "1446266.81822927",
+          "h24": "9681546.5946015"
         },
         "sell": {
-          "h1": "148789.396953589",
-          "h6": "2424207.15556175",
-          "h24": "9287464.19135486"
+          "h1": "239401.300095189",
+          "h6": "1767065.68173303",
+          "h24": "9784664.9485101"
         },
         "volume": {
-          "h1": "390958.004659162",
-          "h6": "4686944.69202972",
-          "h24": "18648298.1275567"
+          "h1": "510417.049820835",
+          "h6": "3213332.4999623",
+          "h24": "19466211.5431116"
         },
-        "reserve": "4531561.8993"
+        "reserve": "4270120.7472"
       },
       "wrapped": true,
-      "liquidity": 4531561.8993,
+      "liquidity": 4270120.7472,
       "windows": {
         "h1": {
-          "buy": 242168.607705573,
-          "sell": 148789.396953589,
-          "total": 390958.004659162
+          "buy": 271015.749725646,
+          "sell": 239401.300095189,
+          "total": 510417.049820835
         },
         "h6": {
-          "buy": 2262737.53646797,
-          "sell": 2424207.15556175,
-          "total": 4686944.69202972
+          "buy": 1446266.81822927,
+          "sell": 1767065.68173303,
+          "total": 3213332.4999623
         },
         "h24": {
-          "buy": 9360833.93620184,
-          "sell": 9287464.19135486,
-          "total": 18648298.1275567
+          "buy": 9681546.5946015,
+          "sell": 9784664.9485101,
+          "total": 19466211.5431116
         }
       },
-      "checkedAt": "2026-10-23T21:07:59.636Z",
+      "checkedAt": "2026-10-24T00:05:05.701Z",
       "url": "https://www.geckoterminal.com/solana/pools/5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/solana/pools/5rCf1DM8LjKTw4YqhnoLcngyZYeNnQqztScTogYHAS6?include_volume_breakdown=true"
     },
@@ -1552,42 +1552,42 @@
         "baseTokenId": "solana_So11111111111111111111111111111111111111112",
         "quoteTokenId": "solana_EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
         "buy": {
-          "h1": "143286.904192672",
-          "h6": "1164165.67913752",
-          "h24": "4568265.02686826"
+          "h1": "259361.475038419",
+          "h6": "1296632.56247102",
+          "h24": "5046031.48766972"
         },
         "sell": {
-          "h1": "129827.170600209",
-          "h6": "1182980.04070729",
-          "h24": "4561202.10885386"
+          "h1": "252371.345158007",
+          "h6": "1349590.9131992",
+          "h24": "5076112.0685731"
         },
         "volume": {
-          "h1": "273114.074792881",
-          "h6": "2347145.7198448",
-          "h24": "9129467.13572211"
+          "h1": "511732.820196426",
+          "h6": "2646223.47567022",
+          "h24": "10122143.5562428"
         },
-        "reserve": "1744785.2638"
+        "reserve": "1732607.1638"
       },
       "wrapped": true,
-      "liquidity": 1744785.2638,
+      "liquidity": 1732607.1638,
       "windows": {
         "h1": {
-          "buy": 143286.904192672,
-          "sell": 129827.170600209,
-          "total": 273114.07479288103
+          "buy": 259361.475038419,
+          "sell": 252371.345158007,
+          "total": 511732.820196426
         },
         "h6": {
-          "buy": 1164165.67913752,
-          "sell": 1182980.04070729,
-          "total": 2347145.7198448097
+          "buy": 1296632.56247102,
+          "sell": 1349590.9131992,
+          "total": 2646223.4756702203
         },
         "h24": {
-          "buy": 4568265.02686826,
-          "sell": 4561202.10885386,
-          "total": 9129467.13572212
+          "buy": 5046031.48766972,
+          "sell": 5076112.0685731,
+          "total": 10122143.55624282
         }
       },
-      "checkedAt": "2026-10-23T21:07:59.636Z",
+      "checkedAt": "2026-10-24T00:05:05.701Z",
       "url": "https://www.geckoterminal.com/solana/pools/DJNtGuBGEQiUCWE8F981M2C3ZghZt2XLD8f2sQdZ6rsZ",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/solana/pools/DJNtGuBGEQiUCWE8F981M2C3ZghZt2XLD8f2sQdZ6rsZ?include_volume_breakdown=true"
     },
@@ -1607,42 +1607,42 @@
         "baseTokenId": "solana_So11111111111111111111111111111111111111112",
         "quoteTokenId": "solana_Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
         "buy": {
-          "h1": "72641.4816239455",
-          "h6": "623479.975801985",
-          "h24": "2320679.05239684"
+          "h1": "90725.4932064629",
+          "h6": "522686.110827676",
+          "h24": "2456073.57343554"
         },
         "sell": {
-          "h1": "65802.6704048741",
-          "h6": "634096.16036592",
-          "h24": "2316095.13236932"
+          "h1": "86619.6369129679",
+          "h6": "573323.890978151",
+          "h24": "2492756.2210851"
         },
         "volume": {
-          "h1": "138444.152028819",
-          "h6": "1257576.1361679",
-          "h24": "4636774.18476616"
+          "h1": "177345.130119431",
+          "h6": "1096010.00180583",
+          "h24": "4948829.79452065"
         },
-        "reserve": "844692.6855"
+        "reserve": "815932.1912"
       },
       "wrapped": true,
-      "liquidity": 844692.6855,
+      "liquidity": 815932.1912,
       "windows": {
         "h1": {
-          "buy": 72641.4816239455,
-          "sell": 65802.6704048741,
-          "total": 138444.1520288196
+          "buy": 90725.4932064629,
+          "sell": 86619.6369129679,
+          "total": 177345.13011943077
         },
         "h6": {
-          "buy": 623479.975801985,
-          "sell": 634096.16036592,
-          "total": 1257576.136167905
+          "buy": 522686.110827676,
+          "sell": 573323.890978151,
+          "total": 1096010.001805827
         },
         "h24": {
-          "buy": 2320679.05239684,
-          "sell": 2316095.13236932,
-          "total": 4636774.18476616
+          "buy": 2456073.57343554,
+          "sell": 2492756.2210851,
+          "total": 4948829.79452064
         }
       },
-      "checkedAt": "2026-10-23T21:07:59.636Z",
+      "checkedAt": "2026-10-24T00:05:05.701Z",
       "url": "https://www.geckoterminal.com/solana/pools/3nMFwZXwY1s1M5s8vYAHqd4wGs4iSxXE4LRoUMMYqEgF",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/solana/pools/3nMFwZXwY1s1M5s8vYAHqd4wGs4iSxXE4LRoUMMYqEgF?include_volume_breakdown=true"
     },
@@ -1662,42 +1662,42 @@
         "baseTokenId": "solana_Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
         "quoteTokenId": "solana_EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
         "buy": {
-          "h1": "62040.7292741888",
-          "h6": "408634.858437934",
-          "h24": "1887256.38243182"
+          "h1": "70246.1571632242",
+          "h6": "305488.575024799",
+          "h24": "1920102.54000195"
         },
         "sell": {
-          "h1": "63673.8367668256",
-          "h6": "399403.920930515",
-          "h24": "1914663.86024601"
+          "h1": "94375.3601050025",
+          "h6": "360375.19375414",
+          "h24": "1969522.90108042"
         },
         "volume": {
-          "h1": "125714.566041014",
-          "h6": "808038.779368449",
-          "h24": "3801920.24267782"
+          "h1": "164621.517268227",
+          "h6": "665863.768778938",
+          "h24": "3889625.44108237"
         },
-        "reserve": "2514118.4779"
+        "reserve": "2509352.7266"
       },
       "wrapped": false,
-      "liquidity": 2514118.4779,
+      "liquidity": 2509352.7266,
       "windows": {
         "h1": {
-          "buy": 62040.7292741888,
-          "sell": 63673.8367668256,
-          "total": 125714.5660410144
+          "buy": 70246.1571632242,
+          "sell": 94375.3601050025,
+          "total": 164621.51726822671
         },
         "h6": {
-          "buy": 408634.858437934,
-          "sell": 399403.920930515,
-          "total": 808038.779368449
+          "buy": 305488.575024799,
+          "sell": 360375.19375414,
+          "total": 665863.768778939
         },
         "h24": {
-          "buy": 1887256.38243182,
-          "sell": 1914663.86024601,
-          "total": 3801920.24267783
+          "buy": 1920102.54000195,
+          "sell": 1969522.90108042,
+          "total": 3889625.44108237
         }
       },
-      "checkedAt": "2026-10-23T21:07:59.636Z",
+      "checkedAt": "2026-10-24T00:05:05.701Z",
       "url": "https://www.geckoterminal.com/solana/pools/FfEJYz4hLLFe4KyNyKYCjvfhMfbtpLH3CXpcPe8nhmfy",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/solana/pools/FfEJYz4hLLFe4KyNyKYCjvfhMfbtpLH3CXpcPe8nhmfy?include_volume_breakdown=true"
     },
@@ -1717,42 +1717,42 @@
         "baseTokenId": "solana_Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
         "quoteTokenId": "solana_EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
         "buy": {
-          "h1": "19314.1940337701",
-          "h6": "150762.962631088",
-          "h24": "751516.611394527"
+          "h1": "21601.812047776",
+          "h6": "145870.784861384",
+          "h24": "787401.802120168"
         },
         "sell": {
-          "h1": "17404.0003658662",
-          "h6": "149566.744096966",
-          "h24": "753137.530076046"
+          "h1": "26493.3820983676",
+          "h6": "150944.108278872",
+          "h24": "791384.515619308"
         },
         "volume": {
-          "h1": "36718.1943996364",
-          "h6": "300329.706728054",
-          "h24": "1504654.14147057"
+          "h1": "48095.1941461436",
+          "h6": "296814.893140256",
+          "h24": "1578786.31773947"
         },
-        "reserve": "1058006.9271"
+        "reserve": "1055202.6891"
       },
       "wrapped": false,
-      "liquidity": 1058006.9271,
+      "liquidity": 1055202.6891,
       "windows": {
         "h1": {
-          "buy": 19314.1940337701,
-          "sell": 17404.0003658662,
-          "total": 36718.1943996363
+          "buy": 21601.812047776,
+          "sell": 26493.3820983676,
+          "total": 48095.1941461436
         },
         "h6": {
-          "buy": 150762.962631088,
-          "sell": 149566.744096966,
-          "total": 300329.706728054
+          "buy": 145870.784861384,
+          "sell": 150944.108278872,
+          "total": 296814.893140256
         },
         "h24": {
-          "buy": 751516.611394527,
-          "sell": 753137.530076046,
-          "total": 1504654.141470573
+          "buy": 787401.802120168,
+          "sell": 791384.515619308,
+          "total": 1578786.317739476
         }
       },
-      "checkedAt": "2026-10-23T21:07:59.636Z",
+      "checkedAt": "2026-10-24T00:05:05.701Z",
       "url": "https://www.geckoterminal.com/solana/pools/23XoPQqGw9WMsLoqTu8HMzJLD6RnXsufbKyWPLJywsCT",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/solana/pools/23XoPQqGw9WMsLoqTu8HMzJLD6RnXsufbKyWPLJywsCT?include_volume_breakdown=true"
     },
@@ -1772,42 +1772,42 @@
         "baseTokenId": "solana_Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
         "quoteTokenId": "solana_EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
         "buy": {
-          "h1": "18597.553128528",
-          "h6": "215275.687768721",
-          "h24": "729926.572139184"
+          "h1": "26985.5776188923",
+          "h6": "124088.935280152",
+          "h24": "766300.433379211"
         },
         "sell": {
-          "h1": "31769.6613198609",
-          "h6": "208670.329818145",
-          "h24": "758140.68329087"
+          "h1": "17209.7651953304",
+          "h6": "113154.23932576",
+          "h24": "738395.20995548"
         },
         "volume": {
-          "h1": "50367.2144483888",
-          "h6": "423946.017586866",
-          "h24": "1488067.25543005"
+          "h1": "44195.3428142226",
+          "h6": "237243.174605912",
+          "h24": "1504695.64333469"
         },
-        "reserve": "220697.3461"
+        "reserve": "224242.0332"
       },
       "wrapped": false,
-      "liquidity": 220697.3461,
+      "liquidity": 224242.0332,
       "windows": {
         "h1": {
-          "buy": 18597.553128528,
-          "sell": 31769.6613198609,
-          "total": 50367.2144483889
+          "buy": 26985.5776188923,
+          "sell": 17209.7651953304,
+          "total": 44195.342814222706
         },
         "h6": {
-          "buy": 215275.687768721,
-          "sell": 208670.329818145,
-          "total": 423946.017586866
+          "buy": 124088.935280152,
+          "sell": 113154.23932576,
+          "total": 237243.174605912
         },
         "h24": {
-          "buy": 729926.572139184,
-          "sell": 758140.68329087,
-          "total": 1488067.255430054
+          "buy": 766300.433379211,
+          "sell": 738395.20995548,
+          "total": 1504695.643334691
         }
       },
-      "checkedAt": "2026-10-23T21:07:59.636Z",
+      "checkedAt": "2026-10-24T00:05:05.701Z",
       "url": "https://www.geckoterminal.com/solana/pools/FpPP9PDMPSTEwpX1ykS5QEkA5MSrEuWzV55hoWG3pKoN",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/solana/pools/FpPP9PDMPSTEwpX1ykS5QEkA5MSrEuWzV55hoWG3pKoN?include_volume_breakdown=true"
     },
@@ -1827,42 +1827,42 @@
         "baseTokenId": "solana_USDSwr9ApdHk5bvJKMjzff41FfuX8bSxdKcR81vTwcA",
         "quoteTokenId": "solana_EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
         "buy": {
-          "h1": "0.0",
-          "h6": "11767.5718215711",
-          "h24": "15149.5354103927"
+          "h1": "2.0830481619",
+          "h6": "2.0830481619",
+          "h24": "14413.2386372861"
         },
         "sell": {
           "h1": "0.0",
-          "h6": "23462.1578496756",
-          "h24": "23571.9374584582"
+          "h6": "0.0",
+          "h24": "23465.7782795561"
         },
         "volume": {
-          "h1": "0.0",
-          "h6": "35229.7296712467",
-          "h24": "38721.4728688509"
+          "h1": "2.0830481619",
+          "h6": "2.0830481619",
+          "h24": "37879.0169168423"
         },
-        "reserve": "739517.3919"
+        "reserve": "738672.4463"
       },
       "wrapped": false,
-      "liquidity": 739517.3919,
+      "liquidity": 738672.4463,
       "windows": {
         "h1": {
-          "buy": 0,
+          "buy": 2.0830481619,
           "sell": 0,
-          "total": 0
+          "total": 2.0830481619
         },
         "h6": {
-          "buy": 11767.5718215711,
-          "sell": 23462.1578496756,
-          "total": 35229.7296712467
+          "buy": 2.0830481619,
+          "sell": 0,
+          "total": 2.0830481619
         },
         "h24": {
-          "buy": 15149.5354103927,
-          "sell": 23571.9374584582,
-          "total": 38721.4728688509
+          "buy": 14413.2386372861,
+          "sell": 23465.7782795561,
+          "total": 37879.0169168422
         }
       },
-      "checkedAt": "2026-10-23T21:07:59.636Z",
+      "checkedAt": "2026-10-24T00:05:05.701Z",
       "url": "https://www.geckoterminal.com/solana/pools/AS5MV3ear4NZPMWXbCsEz3AdbCaXEnq4ChdaWsvLgkcM",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/solana/pools/AS5MV3ear4NZPMWXbCsEz3AdbCaXEnq4ChdaWsvLgkcM?include_volume_breakdown=true"
     },
@@ -1883,7 +1883,7 @@
         "quoteTokenId": "solana_Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
         "buy": {
           "h1": "0.0",
-          "h6": "0.06708733922",
+          "h6": "0.0",
           "h24": "120.6041598292"
         },
         "sell": {
@@ -1893,13 +1893,13 @@
         },
         "volume": {
           "h1": "0.0",
-          "h6": "0.06708733922",
+          "h6": "0.0",
           "h24": "120.6041598292"
         },
-        "reserve": "2477041.9169"
+        "reserve": "2450807.5529"
       },
       "wrapped": false,
-      "liquidity": 2477041.9169,
+      "liquidity": 2450807.5529,
       "windows": {
         "h1": {
           "buy": 0,
@@ -1907,9 +1907,9 @@
           "total": 0
         },
         "h6": {
-          "buy": 0.06708733922,
+          "buy": 0,
           "sell": 0,
-          "total": 0.06708733922
+          "total": 0
         },
         "h24": {
           "buy": 120.6041598292,
@@ -1917,7 +1917,7 @@
           "total": 120.6041598292
         }
       },
-      "checkedAt": "2026-10-23T21:07:59.636Z",
+      "checkedAt": "2026-10-24T00:05:05.701Z",
       "url": "https://www.geckoterminal.com/solana/pools/Eo9fLk6KzPeyjYLgXyzGfmvBVehKHbpqHpahEe2Casf3",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/solana/pools/Eo9fLk6KzPeyjYLgXyzGfmvBVehKHbpqHpahEe2Casf3?include_volume_breakdown=true"
     },
@@ -1972,7 +1972,7 @@
           "total": 0
         }
       },
-      "checkedAt": "2026-10-23T21:08:08.195Z",
+      "checkedAt": "2026-10-24T00:05:14.092Z",
       "url": "https://www.geckoterminal.com/solana/pools/FkATaYFhZjKoxvrPFAyFQvhHj1WZL2X4QZMTdKMoBcPz",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/solana/pools/FkATaYFhZjKoxvrPFAyFQvhHj1WZL2X4QZMTdKMoBcPz?include_volume_breakdown=true"
     },
@@ -2027,7 +2027,7 @@
           "total": 0
         }
       },
-      "checkedAt": "2026-10-23T21:08:08.195Z",
+      "checkedAt": "2026-10-24T00:05:14.092Z",
       "url": "https://www.geckoterminal.com/solana/pools/CvJ9FUo71fmm7jgNQ751uu9TQGfHmfFEuFmVCjeyhGkc",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/solana/pools/CvJ9FUo71fmm7jgNQ751uu9TQGfHmfFEuFmVCjeyhGkc?include_volume_breakdown=true"
     },
@@ -2047,42 +2047,42 @@
         "baseTokenId": "tron_TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
         "quoteTokenId": "tron_TNUC9Qb1rRpS5CbWLmNMxXBjyFoydXjWFR",
         "buy": {
-          "h1": "6294.4754424589",
-          "h6": "1215077.40265035",
-          "h24": "10304336.9635216"
+          "h1": "2740.8857844281",
+          "h6": "1438200.22698111",
+          "h24": "11383143.5388126"
         },
         "sell": {
-          "h1": "85604.681946554",
-          "h6": "1673080.84643757",
-          "h24": "13281704.8411421"
+          "h1": "641205.71748114",
+          "h6": "1885731.25120067",
+          "h24": "13409921.3317669"
         },
         "volume": {
-          "h1": "91899.1573890129",
-          "h6": "2888158.24908791",
-          "h24": "23586041.8046637"
+          "h1": "643946.603265568",
+          "h6": "3323931.47818178",
+          "h24": "24793064.8705796"
         },
-        "reserve": "186373073.9395"
+        "reserve": "186335654.2643"
       },
       "wrapped": true,
-      "liquidity": 186373073.9395,
+      "liquidity": 186335654.2643,
       "windows": {
         "h1": {
-          "buy": 6294.4754424589,
-          "sell": 85604.681946554,
-          "total": 91899.15738901291
+          "buy": 2740.8857844281,
+          "sell": 641205.71748114,
+          "total": 643946.6032655681
         },
         "h6": {
-          "buy": 1215077.40265035,
-          "sell": 1673080.84643757,
-          "total": 2888158.24908792
+          "buy": 1438200.22698111,
+          "sell": 1885731.25120067,
+          "total": 3323931.47818178
         },
         "h24": {
-          "buy": 10304336.9635216,
-          "sell": 13281704.8411421,
-          "total": 23586041.8046637
+          "buy": 11383143.5388126,
+          "sell": 13409921.3317669,
+          "total": 24793064.8705795
         }
       },
-      "checkedAt": "2026-10-23T21:08:16.628Z",
+      "checkedAt": "2026-10-24T00:05:22.695Z",
       "url": "https://www.geckoterminal.com/tron/pools/TSUUVjysXV8YqHytSNjfkNXnnB49QDvZpx",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/tron/pools/TSUUVjysXV8YqHytSNjfkNXnnB49QDvZpx?include_volume_breakdown=true"
     },
@@ -2102,42 +2102,42 @@
         "baseTokenId": "tron_TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
         "quoteTokenId": "tron_TNUC9Qb1rRpS5CbWLmNMxXBjyFoydXjWFR",
         "buy": {
-          "h1": "28.1554184283",
-          "h6": "34092.9903992457",
-          "h24": "115706.888729338"
+          "h1": "5.2740692249",
+          "h6": "41683.1174594566",
+          "h24": "122057.491633895"
         },
         "sell": {
-          "h1": "19.2467133071",
-          "h6": "28866.2106286008",
-          "h24": "252671.584889551"
+          "h1": "1952.3682332026",
+          "h6": "23730.7917833827",
+          "h24": "204711.877238235"
         },
         "volume": {
-          "h1": "47.4021317355",
-          "h6": "62959.2010278464",
-          "h24": "368378.473618889"
+          "h1": "1957.6423024275",
+          "h6": "65413.9092428393",
+          "h24": "326769.368872131"
         },
-        "reserve": "93388116.645"
+        "reserve": "93322909.9072"
       },
       "wrapped": true,
-      "liquidity": 93388116.645,
+      "liquidity": 93322909.9072,
       "windows": {
         "h1": {
-          "buy": 28.1554184283,
-          "sell": 19.2467133071,
-          "total": 47.4021317354
+          "buy": 5.2740692249,
+          "sell": 1952.3682332026,
+          "total": 1957.6423024275
         },
         "h6": {
-          "buy": 34092.9903992457,
-          "sell": 28866.2106286008,
-          "total": 62959.201027846495
+          "buy": 41683.1174594566,
+          "sell": 23730.7917833827,
+          "total": 65413.9092428393
         },
         "h24": {
-          "buy": 115706.888729338,
-          "sell": 252671.584889551,
-          "total": 368378.473618889
+          "buy": 122057.491633895,
+          "sell": 204711.877238235,
+          "total": 326769.36887213
         }
       },
-      "checkedAt": "2026-10-23T21:08:16.628Z",
+      "checkedAt": "2026-10-24T00:05:22.695Z",
       "url": "https://www.geckoterminal.com/tron/pools/TFGDbUyP8xez44C76fin3bn3Ss6jugoUwJ",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/tron/pools/TFGDbUyP8xez44C76fin3bn3Ss6jugoUwJ?include_volume_breakdown=true"
     },
@@ -2157,42 +2157,42 @@
         "baseTokenId": "hyperevm_0xb88339cb7199b77e23db6e890353e22632ba630f",
         "quoteTokenId": "hyperevm_0x5555555555555555555555555555555555555555",
         "buy": {
-          "h1": "422017.348712207",
-          "h6": "3818639.29391326",
-          "h24": "12873985.7615932"
+          "h1": "580305.18631396",
+          "h6": "4217098.24437585",
+          "h24": "14252976.1091692"
         },
         "sell": {
-          "h1": "592087.29982497",
-          "h6": "3614887.6904627",
-          "h24": "12745983.1657656"
+          "h1": "715035.4069524",
+          "h6": "3750177.92140737",
+          "h24": "14122091.8399263"
         },
         "volume": {
-          "h1": "1014104.64853718",
-          "h6": "7433526.98437596",
-          "h24": "25619968.9273588"
+          "h1": "1295340.59326636",
+          "h6": "7967276.16578322",
+          "h24": "28375067.9490955"
         },
-        "reserve": "13643499.7993"
+        "reserve": "13538153.1327"
       },
       "wrapped": true,
-      "liquidity": 13643499.7993,
+      "liquidity": 13538153.1327,
       "windows": {
         "h1": {
-          "buy": 422017.348712207,
-          "sell": 592087.29982497,
-          "total": 1014104.6485371769
+          "buy": 580305.18631396,
+          "sell": 715035.4069524,
+          "total": 1295340.59326636
         },
         "h6": {
-          "buy": 3818639.29391326,
-          "sell": 3614887.6904627,
-          "total": 7433526.98437596
+          "buy": 4217098.24437585,
+          "sell": 3750177.92140737,
+          "total": 7967276.16578322
         },
         "h24": {
-          "buy": 12873985.7615932,
-          "sell": 12745983.1657656,
-          "total": 25619968.9273588
+          "buy": 14252976.1091692,
+          "sell": 14122091.8399263,
+          "total": 28375067.949095502
         }
       },
-      "checkedAt": "2026-10-23T21:08:25.047Z",
+      "checkedAt": "2026-10-24T00:05:31.091Z",
       "url": "https://www.geckoterminal.com/hyperevm/pools/0x6c9a33e3b592c0d65b3ba59355d5be0d38259285",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/hyperevm/pools/0x6c9a33e3b592c0d65b3ba59355d5be0d38259285?include_volume_breakdown=true"
     },
@@ -2212,42 +2212,42 @@
         "baseTokenId": "hyperevm_0xb88339cb7199b77e23db6e890353e22632ba630f",
         "quoteTokenId": "hyperevm_0x5555555555555555555555555555555555555555",
         "buy": {
-          "h1": "67792.4282491068",
-          "h6": "1007230.98372593",
-          "h24": "3384736.3907854"
+          "h1": "145564.69031353",
+          "h6": "1365916.86620666",
+          "h24": "4008643.36382098"
         },
         "sell": {
-          "h1": "199482.923049979",
-          "h6": "899687.106945152",
-          "h24": "3317332.63606399"
+          "h1": "234075.311772872",
+          "h6": "1037289.70000316",
+          "h24": "3863969.35281607"
         },
         "volume": {
-          "h1": "267275.351299085",
-          "h6": "1906918.09067108",
-          "h24": "6702069.02684939"
+          "h1": "379640.002086402",
+          "h6": "2403206.56620981",
+          "h24": "7872612.71663706"
         },
-        "reserve": "11548365.8307"
+        "reserve": "10857568.9855"
       },
       "wrapped": true,
-      "liquidity": 11548365.8307,
+      "liquidity": 10857568.9855,
       "windows": {
         "h1": {
-          "buy": 67792.4282491068,
-          "sell": 199482.923049979,
-          "total": 267275.35129908577
+          "buy": 145564.69031353,
+          "sell": 234075.311772872,
+          "total": 379640.00208640203
         },
         "h6": {
-          "buy": 1007230.98372593,
-          "sell": 899687.106945152,
-          "total": 1906918.090671082
+          "buy": 1365916.86620666,
+          "sell": 1037289.70000316,
+          "total": 2403206.56620982
         },
         "h24": {
-          "buy": 3384736.3907854,
-          "sell": 3317332.63606399,
-          "total": 6702069.02684939
+          "buy": 4008643.36382098,
+          "sell": 3863969.35281607,
+          "total": 7872612.71663705
         }
       },
-      "checkedAt": "2026-10-23T21:08:25.047Z",
+      "checkedAt": "2026-10-24T00:05:31.091Z",
       "url": "https://www.geckoterminal.com/hyperevm/pools/0xbe512f5881b85c48d9c17bc5bb2be047d156d696",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/hyperevm/pools/0xbe512f5881b85c48d9c17bc5bb2be047d156d696?include_volume_breakdown=true"
     },
@@ -2267,42 +2267,42 @@
         "baseTokenId": "hyperevm_0xb88339cb7199b77e23db6e890353e22632ba630f",
         "quoteTokenId": "hyperevm_0x5555555555555555555555555555555555555555",
         "buy": {
-          "h1": "16333.9395126628",
-          "h6": "247709.399473526",
-          "h24": "859854.592294654"
+          "h1": "16350.3715457063",
+          "h6": "293755.727153764",
+          "h24": "943737.319604267"
         },
         "sell": {
-          "h1": "56733.1854297479",
-          "h6": "202838.773917027",
-          "h24": "829638.343451905"
+          "h1": "50791.5954846506",
+          "h6": "211358.118806015",
+          "h24": "901199.06277012"
         },
         "volume": {
-          "h1": "73067.1249424106",
-          "h6": "450548.173390553",
-          "h24": "1689492.93574656"
+          "h1": "67141.9670303569",
+          "h6": "505113.845959779",
+          "h24": "1844936.38237439"
         },
-        "reserve": "1092011.1803"
+        "reserve": "1084795.7337"
       },
       "wrapped": true,
-      "liquidity": 1092011.1803,
+      "liquidity": 1084795.7337,
       "windows": {
         "h1": {
-          "buy": 16333.9395126628,
-          "sell": 56733.1854297479,
-          "total": 73067.12494241071
+          "buy": 16350.3715457063,
+          "sell": 50791.5954846506,
+          "total": 67141.9670303569
         },
         "h6": {
-          "buy": 247709.399473526,
-          "sell": 202838.773917027,
-          "total": 450548.173390553
+          "buy": 293755.727153764,
+          "sell": 211358.118806015,
+          "total": 505113.845959779
         },
         "h24": {
-          "buy": 859854.592294654,
-          "sell": 829638.343451905,
-          "total": 1689492.935746559
+          "buy": 943737.319604267,
+          "sell": 901199.06277012,
+          "total": 1844936.382374387
         }
       },
-      "checkedAt": "2026-10-23T21:08:25.047Z",
+      "checkedAt": "2026-10-24T00:05:31.091Z",
       "url": "https://www.geckoterminal.com/hyperevm/pools/0x5a177cf0effb7e0e7115d792e587c1a5a9cbc9d4",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/hyperevm/pools/0x5a177cf0effb7e0e7115d792e587c1a5a9cbc9d4?include_volume_breakdown=true"
     },
@@ -2322,42 +2322,42 @@
         "baseTokenId": "hyperevm_0xb88339cb7199b77e23db6e890353e22632ba630f",
         "quoteTokenId": "hyperevm_0x5555555555555555555555555555555555555555",
         "buy": {
-          "h1": "1981.9680953328",
-          "h6": "227489.72604613",
-          "h24": "713234.279802505"
+          "h1": "16922.3761183579",
+          "h6": "397159.504356093",
+          "h24": "867953.872380963"
         },
         "sell": {
-          "h1": "45450.4752566124",
-          "h6": "123967.178769537",
-          "h24": "777364.671397543"
+          "h1": "67859.5991503098",
+          "h6": "169188.155006577",
+          "h24": "807838.135817897"
         },
         "volume": {
-          "h1": "47432.4433519452",
-          "h6": "351456.904815667",
-          "h24": "1490598.95120005"
+          "h1": "84781.9752686676",
+          "h6": "566347.65936267",
+          "h24": "1675792.00819886"
         },
-        "reserve": "4427782.3498"
+        "reserve": "4405686.3693"
       },
       "wrapped": true,
-      "liquidity": 4427782.3498,
+      "liquidity": 4405686.3693,
       "windows": {
         "h1": {
-          "buy": 1981.9680953328,
-          "sell": 45450.4752566124,
-          "total": 47432.4433519452
+          "buy": 16922.3761183579,
+          "sell": 67859.5991503098,
+          "total": 84781.97526866771
         },
         "h6": {
-          "buy": 227489.72604613,
-          "sell": 123967.178769537,
-          "total": 351456.904815667
+          "buy": 397159.504356093,
+          "sell": 169188.155006577,
+          "total": 566347.65936267
         },
         "h24": {
-          "buy": 713234.279802505,
-          "sell": 777364.671397543,
-          "total": 1490598.951200048
+          "buy": 867953.872380963,
+          "sell": 807838.135817897,
+          "total": 1675792.00819886
         }
       },
-      "checkedAt": "2026-10-23T21:08:25.047Z",
+      "checkedAt": "2026-10-24T00:05:31.091Z",
       "url": "https://www.geckoterminal.com/hyperevm/pools/0x422e586c906eb241f784b4f5a633c2c7e59a2f54",
       "sourceEndpoint": "https://api.geckoterminal.com/api/v2/networks/hyperevm/pools/0x422e586c906eb241f784b4f5a633c2c7e59a2f54?include_volume_breakdown=true"
     }
@@ -2489,265 +2489,13 @@
       "id": "binance:BNBUSDT",
       "kind": "exchange",
       "name": "BNB / USDT",
-      "checkedAt": "2026-10-23T21:08:27.703Z",
-      "periodStart": 1792703100000,
-      "periodEnd": 1792789500000,
+      "checkedAt": "2026-10-24T00:05:33.858Z",
+      "periodStart": 1792713900000,
+      "periodEnd": 1792800300000,
       "intervalMs": 300000,
       "pages": 1,
       "sideBasis": "taker",
       "bars": [
-        {
-          "at": 1792703100000,
-          "buy": 65082.52561,
-          "sell": 34828.56856,
-          "total": 99911.09417,
-          "count": 1594
-        },
-        {
-          "at": 1792703400000,
-          "buy": 74323.96913,
-          "sell": 70569.62201,
-          "total": 144893.59114,
-          "count": 1727
-        },
-        {
-          "at": 1792703700000,
-          "buy": 88606.81964,
-          "sell": 17694.84663,
-          "total": 106301.66627,
-          "count": 1714
-        },
-        {
-          "at": 1792704000000,
-          "buy": 48422.22969,
-          "sell": 33966.63435,
-          "total": 82388.86404,
-          "count": 1271
-        },
-        {
-          "at": 1792704300000,
-          "buy": 69012.60198,
-          "sell": 21827.86232,
-          "total": 90840.4643,
-          "count": 1134
-        },
-        {
-          "at": 1792704600000,
-          "buy": 21298.88765,
-          "sell": 27786.75336,
-          "total": 49085.64101,
-          "count": 1098
-        },
-        {
-          "at": 1792704900000,
-          "buy": 61656.15857,
-          "sell": 38053.97655000001,
-          "total": 99710.13512,
-          "count": 723
-        },
-        {
-          "at": 1792705200000,
-          "buy": 25083.13162,
-          "sell": 22955.000939999998,
-          "total": 48038.13256,
-          "count": 809
-        },
-        {
-          "at": 1792705500000,
-          "buy": 35902.58161,
-          "sell": 32499.23524,
-          "total": 68401.81685,
-          "count": 913
-        },
-        {
-          "at": 1792705800000,
-          "buy": 43170.47618,
-          "sell": 16733.626880000003,
-          "total": 59904.10306,
-          "count": 809
-        },
-        {
-          "at": 1792706100000,
-          "buy": 60492.03753,
-          "sell": 38063.46532999999,
-          "total": 98555.50286,
-          "count": 986
-        },
-        {
-          "at": 1792706400000,
-          "buy": 45723.05121,
-          "sell": 31393.31127,
-          "total": 77116.36248,
-          "count": 1345
-        },
-        {
-          "at": 1792706700000,
-          "buy": 44343.82763,
-          "sell": 22699.275949999996,
-          "total": 67043.10358,
-          "count": 910
-        },
-        {
-          "at": 1792707000000,
-          "buy": 97886.95435,
-          "sell": 94248.65972000001,
-          "total": 192135.61407,
-          "count": 1386
-        },
-        {
-          "at": 1792707300000,
-          "buy": 25328.42522,
-          "sell": 18801.068219999997,
-          "total": 44129.49344,
-          "count": 851
-        },
-        {
-          "at": 1792707600000,
-          "buy": 32373.79382,
-          "sell": 53446.5376,
-          "total": 85820.33142,
-          "count": 906
-        },
-        {
-          "at": 1792707900000,
-          "buy": 45924.85244,
-          "sell": 64343.29278999999,
-          "total": 110268.14523,
-          "count": 737
-        },
-        {
-          "at": 1792708200000,
-          "buy": 19978.26962,
-          "sell": 22607.04417,
-          "total": 42585.31379,
-          "count": 974
-        },
-        {
-          "at": 1792708500000,
-          "buy": 25271.96643,
-          "sell": 16373.256099999999,
-          "total": 41645.22253,
-          "count": 624
-        },
-        {
-          "at": 1792708800000,
-          "buy": 18793.15441,
-          "sell": 98276.97602999999,
-          "total": 117070.13044,
-          "count": 746
-        },
-        {
-          "at": 1792709100000,
-          "buy": 29958.26931,
-          "sell": 26912.99133,
-          "total": 56871.26064,
-          "count": 564
-        },
-        {
-          "at": 1792709400000,
-          "buy": 30691.33958,
-          "sell": 36428.857149999996,
-          "total": 67120.19673,
-          "count": 483
-        },
-        {
-          "at": 1792709700000,
-          "buy": 54453.13516,
-          "sell": 32388.10761,
-          "total": 86841.24277,
-          "count": 532
-        },
-        {
-          "at": 1792710000000,
-          "buy": 61293.21247,
-          "sell": 125491.59198,
-          "total": 186784.80445,
-          "count": 877
-        },
-        {
-          "at": 1792710300000,
-          "buy": 22233.73775,
-          "sell": 81841.50327,
-          "total": 104075.24102,
-          "count": 679
-        },
-        {
-          "at": 1792710600000,
-          "buy": 25713.3575,
-          "sell": 23787.64531,
-          "total": 49501.00281,
-          "count": 441
-        },
-        {
-          "at": 1792710900000,
-          "buy": 12168.37569,
-          "sell": 49129.096359999996,
-          "total": 61297.47205,
-          "count": 464
-        },
-        {
-          "at": 1792711200000,
-          "buy": 34226.15907,
-          "sell": 42226.89295,
-          "total": 76453.05202,
-          "count": 665
-        },
-        {
-          "at": 1792711500000,
-          "buy": 159534.93877,
-          "sell": 111699.88987000001,
-          "total": 271234.82864,
-          "count": 878
-        },
-        {
-          "at": 1792711800000,
-          "buy": 50538.2507,
-          "sell": 27310.19225,
-          "total": 77848.44295,
-          "count": 805
-        },
-        {
-          "at": 1792712100000,
-          "buy": 32663.69466,
-          "sell": 34040.93201,
-          "total": 66704.62667,
-          "count": 633
-        },
-        {
-          "at": 1792712400000,
-          "buy": 67722.12135,
-          "sell": 73650.82534000001,
-          "total": 141372.94669,
-          "count": 761
-        },
-        {
-          "at": 1792712700000,
-          "buy": 25336.31501,
-          "sell": 10816.343820000002,
-          "total": 36152.65883,
-          "count": 554
-        },
-        {
-          "at": 1792713000000,
-          "buy": 23790.00542,
-          "sell": 31091.415739999997,
-          "total": 54881.42116,
-          "count": 485
-        },
-        {
-          "at": 1792713300000,
-          "buy": 50325.54521,
-          "sell": 81736.29185,
-          "total": 132061.83706,
-          "count": 453
-        },
-        {
-          "at": 1792713600000,
-          "buy": 68682.74221,
-          "sell": 51186.15673,
-          "total": 119868.89894,
-          "count": 1116
-        },
         {
           "at": 1792713900000,
           "buy": 19292.37236,
@@ -4511,32 +4259,284 @@
           "sell": 10554.035329999999,
           "total": 80819.5332,
           "count": 1069
+        },
+        {
+          "at": 1792789500000,
+          "buy": 58885.13228,
+          "sell": 15681.665620000007,
+          "total": 74566.7979,
+          "count": 667
+        },
+        {
+          "at": 1792789800000,
+          "buy": 33002.86607,
+          "sell": 71789.07250000001,
+          "total": 104791.93857,
+          "count": 865
+        },
+        {
+          "at": 1792790100000,
+          "buy": 22163.94507,
+          "sell": 3068.39473,
+          "total": 25232.3398,
+          "count": 227
+        },
+        {
+          "at": 1792790400000,
+          "buy": 105786.61763,
+          "sell": 39475.43004000001,
+          "total": 145262.04767,
+          "count": 549
+        },
+        {
+          "at": 1792790700000,
+          "buy": 14642.19749,
+          "sell": 15524.70283,
+          "total": 30166.90032,
+          "count": 319
+        },
+        {
+          "at": 1792791000000,
+          "buy": 61480.72793,
+          "sell": 17223.22814,
+          "total": 78703.95607,
+          "count": 583
+        },
+        {
+          "at": 1792791300000,
+          "buy": 47949.90147,
+          "sell": 37111.85282,
+          "total": 85061.75429,
+          "count": 572
+        },
+        {
+          "at": 1792791600000,
+          "buy": 46527.36597,
+          "sell": 36584.23148,
+          "total": 83111.59745,
+          "count": 599
+        },
+        {
+          "at": 1792791900000,
+          "buy": 36774.51873,
+          "sell": 11110.454459999994,
+          "total": 47884.97319,
+          "count": 416
+        },
+        {
+          "at": 1792792200000,
+          "buy": 80153.97687,
+          "sell": 15086.591840000008,
+          "total": 95240.56871,
+          "count": 355
+        },
+        {
+          "at": 1792792500000,
+          "buy": 31611.50044,
+          "sell": 3629.969359999999,
+          "total": 35241.4698,
+          "count": 366
+        },
+        {
+          "at": 1792792800000,
+          "buy": 66305.35945,
+          "sell": 27788.76952999999,
+          "total": 94094.12898,
+          "count": 1404
+        },
+        {
+          "at": 1792793100000,
+          "buy": 38928.56912,
+          "sell": 24358.352120000003,
+          "total": 63286.92124,
+          "count": 400
+        },
+        {
+          "at": 1792793400000,
+          "buy": 83956.86031,
+          "sell": 9471.762369999997,
+          "total": 93428.62268,
+          "count": 529
+        },
+        {
+          "at": 1792793700000,
+          "buy": 36897.4025,
+          "sell": 16024.70852,
+          "total": 52922.11102,
+          "count": 485
+        },
+        {
+          "at": 1792794000000,
+          "buy": 61505.68531,
+          "sell": 35498.274359999996,
+          "total": 97003.95967,
+          "count": 596
+        },
+        {
+          "at": 1792794300000,
+          "buy": 91316.11993,
+          "sell": 20170.651719999994,
+          "total": 111486.77165,
+          "count": 401
+        },
+        {
+          "at": 1792794600000,
+          "buy": 136260.2979,
+          "sell": 1177090.0857000002,
+          "total": 1313350.3836,
+          "count": 3828
+        },
+        {
+          "at": 1792794900000,
+          "buy": 107849.99202,
+          "sell": 251018.21983999998,
+          "total": 358868.21186,
+          "count": 1483
+        },
+        {
+          "at": 1792795200000,
+          "buy": 136269.7843,
+          "sell": 211213.65817,
+          "total": 347483.44247,
+          "count": 1126
+        },
+        {
+          "at": 1792795500000,
+          "buy": 382982.41085,
+          "sell": 2681242.93894,
+          "total": 3064225.34979,
+          "count": 4451
+        },
+        {
+          "at": 1792795800000,
+          "buy": 423639.04069,
+          "sell": 1946503.6441900001,
+          "total": 2370142.68488,
+          "count": 6342
+        },
+        {
+          "at": 1792796100000,
+          "buy": 316357.70164,
+          "sell": 323515.55591,
+          "total": 639873.25755,
+          "count": 4270
+        },
+        {
+          "at": 1792796400000,
+          "buy": 227516.93078,
+          "sell": 261759.27028,
+          "total": 489276.20106,
+          "count": 2693
+        },
+        {
+          "at": 1792796700000,
+          "buy": 123853.66845,
+          "sell": 442844.79299,
+          "total": 566698.46144,
+          "count": 2901
+        },
+        {
+          "at": 1792797000000,
+          "buy": 433161.5965,
+          "sell": 1013975.39588,
+          "total": 1447136.99238,
+          "count": 3808
+        },
+        {
+          "at": 1792797300000,
+          "buy": 251345.49861,
+          "sell": 80302.01412,
+          "total": 331647.51273,
+          "count": 2929
+        },
+        {
+          "at": 1792797600000,
+          "buy": 88039.86055,
+          "sell": 45235.69228999999,
+          "total": 133275.55284,
+          "count": 1488
+        },
+        {
+          "at": 1792797900000,
+          "buy": 118391.21174,
+          "sell": 100491.80955,
+          "total": 218883.02129,
+          "count": 960
+        },
+        {
+          "at": 1792798200000,
+          "buy": 90442.96312,
+          "sell": 86198.01465999999,
+          "total": 176640.97778,
+          "count": 1034
+        },
+        {
+          "at": 1792798500000,
+          "buy": 46079.45528,
+          "sell": 41290.595429999994,
+          "total": 87370.05071,
+          "count": 963
+        },
+        {
+          "at": 1792798800000,
+          "buy": 137951.07385,
+          "sell": 71778.79294000001,
+          "total": 209729.86679,
+          "count": 588
+        },
+        {
+          "at": 1792799100000,
+          "buy": 1240517.46552,
+          "sell": 191962.0879899999,
+          "total": 1432479.55351,
+          "count": 1807
+        },
+        {
+          "at": 1792799400000,
+          "buy": 45674.36639,
+          "sell": 46760.847480000004,
+          "total": 92435.21387,
+          "count": 1316
+        },
+        {
+          "at": 1792799700000,
+          "buy": 57984.32132,
+          "sell": 125601.653,
+          "total": 183585.97432,
+          "count": 811
+        },
+        {
+          "at": 1792800000000,
+          "buy": 48724.80031,
+          "sell": 578632.53142,
+          "total": 627357.33173,
+          "count": 2749
         }
       ],
       "windows": {
         "h1": {
-          "buy": 1009569.1613299999,
-          "sell": 1450513.86194,
-          "total": 2460083.02327,
-          "count": 12327,
-          "start": 1792785900000,
-          "end": 1792789500000
+          "buy": 2682166.28164,
+          "sell": 2825074.2277499996,
+          "total": 5507240.50939,
+          "count": 21354,
+          "start": 1792796700000,
+          "end": 1792800300000
         },
         "h6": {
-          "buy": 6706790.00709,
-          "sell": 13850174.608790003,
-          "total": 20556964.615880005,
-          "count": 133718,
-          "start": 1792767900000,
-          "end": 1792789500000
+          "buy": 8567885.429840002,
+          "sell": 18103621.0193,
+          "total": 26671506.44914,
+          "count": 118933,
+          "start": 1792778700000,
+          "end": 1792800300000
         },
         "h24": {
-          "buy": 35981133.80073001,
-          "sell": 58053825.57625,
-          "total": 94034959.37698,
-          "count": 491616,
-          "start": 1792703100000,
-          "end": 1792789500000
+          "buy": 39614058.072919995,
+          "sell": 66513933.54188,
+          "total": 106127991.61479999,
+          "count": 514849,
+          "start": 1792713900000,
+          "end": 1792800300000
         }
       }
     },
@@ -4551,265 +4551,13 @@
       "id": "binance:XRPUSDT",
       "kind": "exchange",
       "name": "XRP / USDT",
-      "checkedAt": "2026-10-23T21:08:28.614Z",
-      "periodStart": 1792703100000,
-      "periodEnd": 1792789500000,
+      "checkedAt": "2026-10-24T00:05:35.906Z",
+      "periodStart": 1792713900000,
+      "periodEnd": 1792800300000,
       "intervalMs": 300000,
       "pages": 1,
       "sideBasis": "taker",
       "bars": [
-        {
-          "at": 1792703100000,
-          "buy": 130135.92344,
-          "sell": 114284.45012000001,
-          "total": 244420.37356,
-          "count": 1581
-        },
-        {
-          "at": 1792703400000,
-          "buy": 83403.58013,
-          "sell": 52886.5469,
-          "total": 136290.12703,
-          "count": 809
-        },
-        {
-          "at": 1792703700000,
-          "buy": 339769.97829,
-          "sell": 235829.51829000004,
-          "total": 575599.49658,
-          "count": 1751
-        },
-        {
-          "at": 1792704000000,
-          "buy": 219864.4452,
-          "sell": 179206.64950000003,
-          "total": 399071.0947,
-          "count": 1114
-        },
-        {
-          "at": 1792704300000,
-          "buy": 156632.86918,
-          "sell": 283926.27446,
-          "total": 440559.14364,
-          "count": 1337
-        },
-        {
-          "at": 1792704600000,
-          "buy": 139052.72084,
-          "sell": 105690.05095,
-          "total": 244742.77179,
-          "count": 754
-        },
-        {
-          "at": 1792704900000,
-          "buy": 241566.15244,
-          "sell": 32574.349190000008,
-          "total": 274140.50163,
-          "count": 770
-        },
-        {
-          "at": 1792705200000,
-          "buy": 133947.1093,
-          "sell": 38555.15550999998,
-          "total": 172502.26481,
-          "count": 741
-        },
-        {
-          "at": 1792705500000,
-          "buy": 33037.23818,
-          "sell": 52833.89302,
-          "total": 85871.1312,
-          "count": 732
-        },
-        {
-          "at": 1792705800000,
-          "buy": 88096.83639,
-          "sell": 71657.70401999999,
-          "total": 159754.54041,
-          "count": 495
-        },
-        {
-          "at": 1792706100000,
-          "buy": 41502.58612,
-          "sell": 51777.59205,
-          "total": 93280.17817,
-          "count": 404
-        },
-        {
-          "at": 1792706400000,
-          "buy": 140608.08814,
-          "sell": 128862.64198999997,
-          "total": 269470.73013,
-          "count": 2184
-        },
-        {
-          "at": 1792706700000,
-          "buy": 111343.16696,
-          "sell": 67357.59086,
-          "total": 178700.75782,
-          "count": 1267
-        },
-        {
-          "at": 1792707000000,
-          "buy": 149703.05381,
-          "sell": 58595.69683999999,
-          "total": 208298.75065,
-          "count": 918
-        },
-        {
-          "at": 1792707300000,
-          "buy": 125717.37394,
-          "sell": 162119.87513,
-          "total": 287837.24907,
-          "count": 1230
-        },
-        {
-          "at": 1792707600000,
-          "buy": 105781.02138,
-          "sell": 191456.07014000003,
-          "total": 297237.09152,
-          "count": 909
-        },
-        {
-          "at": 1792707900000,
-          "buy": 74894.7858,
-          "sell": 74820.03611999999,
-          "total": 149714.82192,
-          "count": 676
-        },
-        {
-          "at": 1792708200000,
-          "buy": 38945.1295,
-          "sell": 104875.08072,
-          "total": 143820.21022,
-          "count": 954
-        },
-        {
-          "at": 1792708500000,
-          "buy": 53594.97098,
-          "sell": 126296.89757000002,
-          "total": 179891.86855,
-          "count": 1103
-        },
-        {
-          "at": 1792708800000,
-          "buy": 33948.97222,
-          "sell": 139872.62908,
-          "total": 173821.6013,
-          "count": 1208
-        },
-        {
-          "at": 1792709100000,
-          "buy": 222927.56212,
-          "sell": 211624.37477999998,
-          "total": 434551.9369,
-          "count": 980
-        },
-        {
-          "at": 1792709400000,
-          "buy": 69477.10855,
-          "sell": 115818.41725,
-          "total": 185295.5258,
-          "count": 522
-        },
-        {
-          "at": 1792709700000,
-          "buy": 62667.61828,
-          "sell": 49490.07611999999,
-          "total": 112157.6944,
-          "count": 501
-        },
-        {
-          "at": 1792710000000,
-          "buy": 217584.39343,
-          "sell": 53909.20082999999,
-          "total": 271493.59426,
-          "count": 1076
-        },
-        {
-          "at": 1792710300000,
-          "buy": 135575.5445,
-          "sell": 75915.35894,
-          "total": 211490.90344,
-          "count": 954
-        },
-        {
-          "at": 1792710600000,
-          "buy": 141941.8129,
-          "sell": 55222.05345000001,
-          "total": 197163.86635,
-          "count": 1030
-        },
-        {
-          "at": 1792710900000,
-          "buy": 140746.56148,
-          "sell": 95517.16762,
-          "total": 236263.7291,
-          "count": 668
-        },
-        {
-          "at": 1792711200000,
-          "buy": 28220.32028,
-          "sell": 67908.55826,
-          "total": 96128.87854,
-          "count": 747
-        },
-        {
-          "at": 1792711500000,
-          "buy": 133480.85362,
-          "sell": 139401.84265,
-          "total": 272882.69627,
-          "count": 748
-        },
-        {
-          "at": 1792711800000,
-          "buy": 46205.6757,
-          "sell": 139901.89672000002,
-          "total": 186107.57242,
-          "count": 1023
-        },
-        {
-          "at": 1792712100000,
-          "buy": 87221.49468,
-          "sell": 123816.68635999999,
-          "total": 211038.18104,
-          "count": 985
-        },
-        {
-          "at": 1792712400000,
-          "buy": 22899.80964,
-          "sell": 39712.49089,
-          "total": 62612.30053,
-          "count": 413
-        },
-        {
-          "at": 1792712700000,
-          "buy": 203525.4055,
-          "sell": 71711.64512,
-          "total": 275237.05062,
-          "count": 691
-        },
-        {
-          "at": 1792713000000,
-          "buy": 130324.04542,
-          "sell": 59526.01785000002,
-          "total": 189850.06327,
-          "count": 673
-        },
-        {
-          "at": 1792713300000,
-          "buy": 178483.67492,
-          "sell": 58293.685,
-          "total": 236777.35992,
-          "count": 621
-        },
-        {
-          "at": 1792713600000,
-          "buy": 151914.71578,
-          "sell": 156287.4638,
-          "total": 308202.17958,
-          "count": 1345
-        },
         {
           "at": 1792713900000,
           "buy": 37024.57589,
@@ -6573,32 +6321,284 @@
           "sell": 197558.79381,
           "total": 305162.22186,
           "count": 1483
+        },
+        {
+          "at": 1792789500000,
+          "buy": 83282.51781,
+          "sell": 88423.64406,
+          "total": 171706.16187,
+          "count": 955
+        },
+        {
+          "at": 1792789800000,
+          "buy": 59630.89766,
+          "sell": 59123.01956,
+          "total": 118753.91722,
+          "count": 972
+        },
+        {
+          "at": 1792790100000,
+          "buy": 62241.87687,
+          "sell": 32140.471209999996,
+          "total": 94382.34808,
+          "count": 701
+        },
+        {
+          "at": 1792790400000,
+          "buy": 81672.60871,
+          "sell": 56296.48418,
+          "total": 137969.09289,
+          "count": 865
+        },
+        {
+          "at": 1792790700000,
+          "buy": 25053.61231,
+          "sell": 58525.13227,
+          "total": 83578.74458,
+          "count": 605
+        },
+        {
+          "at": 1792791000000,
+          "buy": 94381.70156,
+          "sell": 60634.57802999999,
+          "total": 155016.27959,
+          "count": 1370
+        },
+        {
+          "at": 1792791300000,
+          "buy": 132283.58004,
+          "sell": 114857.73357000001,
+          "total": 247141.31361,
+          "count": 967
+        },
+        {
+          "at": 1792791600000,
+          "buy": 58601.60837,
+          "sell": 93124.59093,
+          "total": 151726.1993,
+          "count": 932
+        },
+        {
+          "at": 1792791900000,
+          "buy": 81124.13781,
+          "sell": 284612.8592,
+          "total": 365736.99701,
+          "count": 1043
+        },
+        {
+          "at": 1792792200000,
+          "buy": 69419.67991,
+          "sell": 118055.22482,
+          "total": 187474.90473,
+          "count": 1135
+        },
+        {
+          "at": 1792792500000,
+          "buy": 64320.05351,
+          "sell": 97542.86377,
+          "total": 161862.91728,
+          "count": 905
+        },
+        {
+          "at": 1792792800000,
+          "buy": 92933.99624,
+          "sell": 54073.89816,
+          "total": 147007.8944,
+          "count": 1704
+        },
+        {
+          "at": 1792793100000,
+          "buy": 43600.95016,
+          "sell": 38616.70995,
+          "total": 82217.66011,
+          "count": 662
+        },
+        {
+          "at": 1792793400000,
+          "buy": 84422.08788,
+          "sell": 114568.87203999999,
+          "total": 198990.95992,
+          "count": 915
+        },
+        {
+          "at": 1792793700000,
+          "buy": 123862.93117,
+          "sell": 50092.514330000005,
+          "total": 173955.4455,
+          "count": 1156
+        },
+        {
+          "at": 1792794000000,
+          "buy": 44792.09763,
+          "sell": 112869.84161,
+          "total": 157661.93924,
+          "count": 1031
+        },
+        {
+          "at": 1792794300000,
+          "buy": 214199.15783,
+          "sell": 152773.65926000001,
+          "total": 366972.81709,
+          "count": 1461
+        },
+        {
+          "at": 1792794600000,
+          "buy": 634574.60751,
+          "sell": 1104187.10174,
+          "total": 1738761.70925,
+          "count": 4702
+        },
+        {
+          "at": 1792794900000,
+          "buy": 372498.25443,
+          "sell": 247646.43347000005,
+          "total": 620144.6879,
+          "count": 2534
+        },
+        {
+          "at": 1792795200000,
+          "buy": 170282.26902,
+          "sell": 146885.83149,
+          "total": 317168.10051,
+          "count": 1768
+        },
+        {
+          "at": 1792795500000,
+          "buy": 897294.39817,
+          "sell": 944310.12653,
+          "total": 1841604.5247,
+          "count": 6154
+        },
+        {
+          "at": 1792795800000,
+          "buy": 1300946.69213,
+          "sell": 1187072.6227499999,
+          "total": 2488019.31488,
+          "count": 8201
+        },
+        {
+          "at": 1792796100000,
+          "buy": 1227888.53601,
+          "sell": 822513.75905,
+          "total": 2050402.29506,
+          "count": 6195
+        },
+        {
+          "at": 1792796400000,
+          "buy": 535018.43892,
+          "sell": 182982.66613000003,
+          "total": 718001.10505,
+          "count": 2690
+        },
+        {
+          "at": 1792796700000,
+          "buy": 442056.48571,
+          "sell": 236417.92829999997,
+          "total": 678474.41401,
+          "count": 2859
+        },
+        {
+          "at": 1792797000000,
+          "buy": 404672.29921,
+          "sell": 300954.65696,
+          "total": 705626.95617,
+          "count": 3471
+        },
+        {
+          "at": 1792797300000,
+          "buy": 228282.72624,
+          "sell": 146419.21997000003,
+          "total": 374701.94621,
+          "count": 2424
+        },
+        {
+          "at": 1792797600000,
+          "buy": 151008.45593,
+          "sell": 120871.94001000002,
+          "total": 271880.39594,
+          "count": 1069
+        },
+        {
+          "at": 1792797900000,
+          "buy": 74082.41415,
+          "sell": 103681.33294,
+          "total": 177763.74709,
+          "count": 862
+        },
+        {
+          "at": 1792798200000,
+          "buy": 129632.81809,
+          "sell": 143527.99948999996,
+          "total": 273160.81758,
+          "count": 1539
+        },
+        {
+          "at": 1792798500000,
+          "buy": 100785.98902,
+          "sell": 112901.27635000001,
+          "total": 213687.26537,
+          "count": 1444
+        },
+        {
+          "at": 1792798800000,
+          "buy": 190299.88073,
+          "sell": 169699.55477999998,
+          "total": 359999.43551,
+          "count": 1062
+        },
+        {
+          "at": 1792799100000,
+          "buy": 201873.36354,
+          "sell": 76450.63993,
+          "total": 278324.00347,
+          "count": 1475
+        },
+        {
+          "at": 1792799400000,
+          "buy": 78866.40294,
+          "sell": 105109.40989000001,
+          "total": 183975.81283,
+          "count": 870
+        },
+        {
+          "at": 1792799700000,
+          "buy": 25820.43825,
+          "sell": 339041.75729,
+          "total": 364862.19554,
+          "count": 834
+        },
+        {
+          "at": 1792800000000,
+          "buy": 166385.29456,
+          "sell": 238099.80719999998,
+          "total": 404485.10176,
+          "count": 2103
         }
       ],
       "windows": {
         "h1": {
-          "buy": 1737406.61452,
-          "sell": 1196087.2704399999,
-          "total": 2933493.88496,
-          "count": 13794,
-          "start": 1792785900000,
-          "end": 1792789500000
+          "buy": 2193766.56837,
+          "sell": 2093175.5231099997,
+          "total": 4286942.09148,
+          "count": 20012,
+          "start": 1792796700000,
+          "end": 1792800300000
         },
         "h6": {
-          "buy": 10207657.440939998,
-          "sell": 9228227.570830004,
-          "total": 19435885.011770003,
-          "count": 117911,
-          "start": 1792767900000,
-          "end": 1792789500000
+          "buy": 13070331.506609999,
+          "sell": 11911394.038960002,
+          "total": 24981725.54557,
+          "count": 109954,
+          "start": 1792778700000,
+          "end": 1792800300000
         },
         "h24": {
-          "buy": 44767301.267479986,
-          "sell": 44771698.33305998,
-          "total": 89538999.60053997,
-          "count": 463247,
-          "start": 1792703100000,
-          "end": 1792789500000
+          "buy": 49100651.928470016,
+          "sell": 49299268.85618,
+          "total": 98399920.78465001,
+          "count": 498968,
+          "start": 1792713900000,
+          "end": 1792800300000
         }
       }
     },
@@ -6613,265 +6613,13 @@
       "id": "binance:DOGEUSDT",
       "kind": "exchange",
       "name": "DOGE / USDT",
-      "checkedAt": "2026-10-23T21:08:29.720Z",
-      "periodStart": 1792703100000,
-      "periodEnd": 1792789500000,
+      "checkedAt": "2026-10-24T00:05:38.056Z",
+      "periodStart": 1792713900000,
+      "periodEnd": 1792800300000,
       "intervalMs": 300000,
       "pages": 1,
       "sideBasis": "taker",
       "bars": [
-        {
-          "at": 1792703100000,
-          "buy": 55661.34031,
-          "sell": 34899.795360000004,
-          "total": 90561.13567,
-          "count": 660
-        },
-        {
-          "at": 1792703400000,
-          "buy": 29724.66237,
-          "sell": 16552.86903,
-          "total": 46277.5314,
-          "count": 449
-        },
-        {
-          "at": 1792703700000,
-          "buy": 31716.28015,
-          "sell": 9199.412830000001,
-          "total": 40915.69298,
-          "count": 741
-        },
-        {
-          "at": 1792704000000,
-          "buy": 22024.1258,
-          "sell": 8222.268549999997,
-          "total": 30246.39435,
-          "count": 450
-        },
-        {
-          "at": 1792704300000,
-          "buy": 6644.16239,
-          "sell": 13770.099479999997,
-          "total": 20414.26187,
-          "count": 326
-        },
-        {
-          "at": 1792704600000,
-          "buy": 8710.77667,
-          "sell": 29385.947959999998,
-          "total": 38096.72463,
-          "count": 572
-        },
-        {
-          "at": 1792704900000,
-          "buy": 45324.6344,
-          "sell": 14594.08683,
-          "total": 59918.72123,
-          "count": 563
-        },
-        {
-          "at": 1792705200000,
-          "buy": 28955.99996,
-          "sell": 14857.30274,
-          "total": 43813.3027,
-          "count": 530
-        },
-        {
-          "at": 1792705500000,
-          "buy": 6070.17175,
-          "sell": 7201.167349999999,
-          "total": 13271.3391,
-          "count": 365
-        },
-        {
-          "at": 1792705800000,
-          "buy": 38868.50291,
-          "sell": 1854.8664599999975,
-          "total": 40723.36937,
-          "count": 334
-        },
-        {
-          "at": 1792706100000,
-          "buy": 65229.76831,
-          "sell": 10819.386159999995,
-          "total": 76049.15447,
-          "count": 760
-        },
-        {
-          "at": 1792706400000,
-          "buy": 112169.65929,
-          "sell": 45169.3158,
-          "total": 157338.97509,
-          "count": 1379
-        },
-        {
-          "at": 1792706700000,
-          "buy": 111061.04389,
-          "sell": 119622.57681,
-          "total": 230683.6207,
-          "count": 1646
-        },
-        {
-          "at": 1792707000000,
-          "buy": 11391.64627,
-          "sell": 38228.61967,
-          "total": 49620.26594,
-          "count": 567
-        },
-        {
-          "at": 1792707300000,
-          "buy": 9407.28651,
-          "sell": 52302.561480000004,
-          "total": 61709.84799,
-          "count": 455
-        },
-        {
-          "at": 1792707600000,
-          "buy": 6067.01124,
-          "sell": 77465.53088,
-          "total": 83532.54212,
-          "count": 849
-        },
-        {
-          "at": 1792707900000,
-          "buy": 41240.60072,
-          "sell": 83337.16039,
-          "total": 124577.76111,
-          "count": 1077
-        },
-        {
-          "at": 1792708200000,
-          "buy": 5003.89995,
-          "sell": 23215.07129,
-          "total": 28218.97124,
-          "count": 433
-        },
-        {
-          "at": 1792708500000,
-          "buy": 46781.71553,
-          "sell": 3204.97711,
-          "total": 49986.69264,
-          "count": 536
-        },
-        {
-          "at": 1792708800000,
-          "buy": 51642.06257,
-          "sell": 64172.42678,
-          "total": 115814.48935,
-          "count": 701
-        },
-        {
-          "at": 1792709100000,
-          "buy": 72799.31221,
-          "sell": 6477.231899999999,
-          "total": 79276.54411,
-          "count": 742
-        },
-        {
-          "at": 1792709400000,
-          "buy": 110767.89087,
-          "sell": 23751.367769999983,
-          "total": 134519.25864,
-          "count": 1081
-        },
-        {
-          "at": 1792709700000,
-          "buy": 36993.1422,
-          "sell": 106938.02672,
-          "total": 143931.16892,
-          "count": 844
-        },
-        {
-          "at": 1792710000000,
-          "buy": 40415.31313,
-          "sell": 32635.41706,
-          "total": 73050.73019,
-          "count": 782
-        },
-        {
-          "at": 1792710300000,
-          "buy": 17953.60306,
-          "sell": 45904.55261,
-          "total": 63858.15567,
-          "count": 612
-        },
-        {
-          "at": 1792710600000,
-          "buy": 40118.06446,
-          "sell": 73827.43333999999,
-          "total": 113945.4978,
-          "count": 611
-        },
-        {
-          "at": 1792710900000,
-          "buy": 71852.75439,
-          "sell": 120546.34214000001,
-          "total": 192399.09653,
-          "count": 951
-        },
-        {
-          "at": 1792711200000,
-          "buy": 16495.11787,
-          "sell": 4383.704800000003,
-          "total": 20878.82267,
-          "count": 217
-        },
-        {
-          "at": 1792711500000,
-          "buy": 62712.09415,
-          "sell": 10923.216030000003,
-          "total": 73635.31018,
-          "count": 529
-        },
-        {
-          "at": 1792711800000,
-          "buy": 54976.37199,
-          "sell": 29167.904120000007,
-          "total": 84144.27611,
-          "count": 729
-        },
-        {
-          "at": 1792712100000,
-          "buy": 137185.24069,
-          "sell": 66978.83111999999,
-          "total": 204164.07181,
-          "count": 1052
-        },
-        {
-          "at": 1792712400000,
-          "buy": 33173.83201,
-          "sell": 41603.76247,
-          "total": 74777.59448,
-          "count": 577
-        },
-        {
-          "at": 1792712700000,
-          "buy": 9823.33935,
-          "sell": 37672.926419999996,
-          "total": 47496.26577,
-          "count": 454
-        },
-        {
-          "at": 1792713000000,
-          "buy": 20791.0894,
-          "sell": 63169.55101000001,
-          "total": 83960.64041,
-          "count": 527
-        },
-        {
-          "at": 1792713300000,
-          "buy": 37263.07,
-          "sell": 111524.00868999999,
-          "total": 148787.07869,
-          "count": 761
-        },
-        {
-          "at": 1792713600000,
-          "buy": 52390.19112,
-          "sell": 14628.88158999999,
-          "total": 67019.07271,
-          "count": 741
-        },
         {
           "at": 1792713900000,
           "buy": 51943.7658,
@@ -8635,32 +8383,284 @@
           "sell": 20039.84283,
           "total": 25565.14848,
           "count": 536
+        },
+        {
+          "at": 1792789500000,
+          "buy": 12755.2233,
+          "sell": 15518.8621,
+          "total": 28274.0854,
+          "count": 374
+        },
+        {
+          "at": 1792789800000,
+          "buy": 14757.44828,
+          "sell": 26074.72027,
+          "total": 40832.16855,
+          "count": 521
+        },
+        {
+          "at": 1792790100000,
+          "buy": 8164.27743,
+          "sell": 6390.769469999999,
+          "total": 14555.0469,
+          "count": 281
+        },
+        {
+          "at": 1792790400000,
+          "buy": 255185.61124,
+          "sell": 160395.04090999998,
+          "total": 415580.65215,
+          "count": 2592
+        },
+        {
+          "at": 1792790700000,
+          "buy": 7986.62922,
+          "sell": 13677.761140000002,
+          "total": 21664.39036,
+          "count": 545
+        },
+        {
+          "at": 1792791000000,
+          "buy": 20710.83223,
+          "sell": 40183.91452,
+          "total": 60894.74675,
+          "count": 609
+        },
+        {
+          "at": 1792791300000,
+          "buy": 20905.16855,
+          "sell": 35149.543359999996,
+          "total": 56054.71191,
+          "count": 520
+        },
+        {
+          "at": 1792791600000,
+          "buy": 38861.23879,
+          "sell": 111741.10128,
+          "total": 150602.34007,
+          "count": 641
+        },
+        {
+          "at": 1792791900000,
+          "buy": 5344.33604,
+          "sell": 965.4126299999998,
+          "total": 6309.74867,
+          "count": 367
+        },
+        {
+          "at": 1792792200000,
+          "buy": 7567.96588,
+          "sell": 24303.67404,
+          "total": 31871.63992,
+          "count": 590
+        },
+        {
+          "at": 1792792500000,
+          "buy": 3822.18626,
+          "sell": 8173.04055,
+          "total": 11995.22681,
+          "count": 571
+        },
+        {
+          "at": 1792792800000,
+          "buy": 15084.74797,
+          "sell": 29301.358969999997,
+          "total": 44386.10694,
+          "count": 919
+        },
+        {
+          "at": 1792793100000,
+          "buy": 26340.14704,
+          "sell": 2317.647369999999,
+          "total": 28657.79441,
+          "count": 541
+        },
+        {
+          "at": 1792793400000,
+          "buy": 7591.17257,
+          "sell": 3725.05282,
+          "total": 11316.22539,
+          "count": 289
+        },
+        {
+          "at": 1792793700000,
+          "buy": 4909.97356,
+          "sell": 7628.20112,
+          "total": 12538.17468,
+          "count": 407
+        },
+        {
+          "at": 1792794000000,
+          "buy": 3150.49928,
+          "sell": 51796.96502,
+          "total": 54947.4643,
+          "count": 521
+        },
+        {
+          "at": 1792794300000,
+          "buy": 83095.92437,
+          "sell": 19172.10695,
+          "total": 102268.03132,
+          "count": 624
+        },
+        {
+          "at": 1792794600000,
+          "buy": 174055.30345,
+          "sell": 292838.5474,
+          "total": 466893.85085,
+          "count": 4238
+        },
+        {
+          "at": 1792794900000,
+          "buy": 38835.399,
+          "sell": 43275.89606000001,
+          "total": 82111.29506,
+          "count": 1638
+        },
+        {
+          "at": 1792795200000,
+          "buy": 340249.49179,
+          "sell": 24062.55606999999,
+          "total": 364312.04786,
+          "count": 947
+        },
+        {
+          "at": 1792795500000,
+          "buy": 497271.18077,
+          "sell": 612124.54381,
+          "total": 1109395.72458,
+          "count": 4785
+        },
+        {
+          "at": 1792795800000,
+          "buy": 275110.73576,
+          "sell": 1404355.66013,
+          "total": 1679466.39589,
+          "count": 8138
+        },
+        {
+          "at": 1792796100000,
+          "buy": 165989.38228,
+          "sell": 130554.98263000001,
+          "total": 296544.36491,
+          "count": 3347
+        },
+        {
+          "at": 1792796400000,
+          "buy": 201569.10273,
+          "sell": 50019.72310999999,
+          "total": 251588.82584,
+          "count": 1767
+        },
+        {
+          "at": 1792796700000,
+          "buy": 84244.18736,
+          "sell": 116805.01033,
+          "total": 201049.19769,
+          "count": 2012
+        },
+        {
+          "at": 1792797000000,
+          "buy": 147863.77807,
+          "sell": 102544.27534,
+          "total": 250408.05341,
+          "count": 2542
+        },
+        {
+          "at": 1792797300000,
+          "buy": 48657.81079,
+          "sell": 24406.45401,
+          "total": 73064.2648,
+          "count": 1453
+        },
+        {
+          "at": 1792797600000,
+          "buy": 36040.08721,
+          "sell": 35391.54325,
+          "total": 71431.63046,
+          "count": 781
+        },
+        {
+          "at": 1792797900000,
+          "buy": 27879.11797,
+          "sell": 52811.71778,
+          "total": 80690.83575,
+          "count": 543
+        },
+        {
+          "at": 1792798200000,
+          "buy": 29760.55182,
+          "sell": 12300.539519999998,
+          "total": 42061.09134,
+          "count": 887
+        },
+        {
+          "at": 1792798500000,
+          "buy": 19848.36209,
+          "sell": 45857.48584000001,
+          "total": 65705.84793,
+          "count": 535
+        },
+        {
+          "at": 1792798800000,
+          "buy": 41918.08728,
+          "sell": 22960.59405,
+          "total": 64878.68133,
+          "count": 741
+        },
+        {
+          "at": 1792799100000,
+          "buy": 36276.44545,
+          "sell": 13492.66721,
+          "total": 49769.11266,
+          "count": 1073
+        },
+        {
+          "at": 1792799400000,
+          "buy": 31277.39132,
+          "sell": 20332.82607,
+          "total": 51610.21739,
+          "count": 460
+        },
+        {
+          "at": 1792799700000,
+          "buy": 55944.55829,
+          "sell": 129950.59499,
+          "total": 185895.15328,
+          "count": 491
+        },
+        {
+          "at": 1792800000000,
+          "buy": 18210.41647,
+          "sell": 13122.386610000001,
+          "total": 31332.80308,
+          "count": 779
         }
       ],
       "windows": {
         "h1": {
-          "buy": 319470.47557,
-          "sell": 385341.13758,
-          "total": 704811.61315,
-          "count": 7708,
-          "start": 1792785900000,
-          "end": 1792789500000
+          "buy": 577920.7941200001,
+          "sell": 589976.0950000001,
+          "total": 1167896.8891200002,
+          "count": 12297,
+          "start": 1792796700000,
+          "end": 1792800300000
         },
         "h6": {
-          "buy": 2471722.378410001,
-          "sell": 3007971.11786,
-          "total": 5479693.496270001,
-          "count": 59645,
-          "start": 1792767900000,
-          "end": 1792789500000
+          "buy": 3819764.5922800004,
+          "sell": 4971146.193690001,
+          "total": 8790910.785970002,
+          "count": 74799,
+          "start": 1792778700000,
+          "end": 1792800300000
         },
         "h24": {
-          "buy": 16614674.575520005,
-          "sell": 18575236.707709998,
-          "total": 35189911.28323001,
-          "count": 283260,
-          "start": 1792703100000,
-          "end": 1792789500000
+          "buy": 17872503.569539998,
+          "sell": 20820751.283690013,
+          "total": 38693254.853230014,
+          "count": 306726,
+          "start": 1792713900000,
+          "end": 1792800300000
         }
       }
     },
@@ -8675,265 +8675,13 @@
       "id": "binance:ZECUSDT",
       "kind": "exchange",
       "name": "ZEC / USDT",
-      "checkedAt": "2026-10-23T21:08:30.861Z",
-      "periodStart": 1792703100000,
-      "periodEnd": 1792789500000,
+      "checkedAt": "2026-10-24T00:05:40.309Z",
+      "periodStart": 1792713900000,
+      "periodEnd": 1792800300000,
       "intervalMs": 300000,
       "pages": 1,
       "sideBasis": "taker",
       "bars": [
-        {
-          "at": 1792703100000,
-          "buy": 260848.16537,
-          "sell": 142702.34712,
-          "total": 403550.51249,
-          "count": 1668
-        },
-        {
-          "at": 1792703400000,
-          "buy": 274958.43142,
-          "sell": 89168.48124,
-          "total": 364126.91266,
-          "count": 1259
-        },
-        {
-          "at": 1792703700000,
-          "buy": 487731.11151,
-          "sell": 292792.90199,
-          "total": 780524.0135,
-          "count": 1905
-        },
-        {
-          "at": 1792704000000,
-          "buy": 223259.54964,
-          "sell": 82212.55737999998,
-          "total": 305472.10702,
-          "count": 1058
-        },
-        {
-          "at": 1792704300000,
-          "buy": 203971.81519,
-          "sell": 245908.14158,
-          "total": 449879.95677,
-          "count": 1151
-        },
-        {
-          "at": 1792704600000,
-          "buy": 111680.27997,
-          "sell": 141027.59068,
-          "total": 252707.87065,
-          "count": 1107
-        },
-        {
-          "at": 1792704900000,
-          "buy": 59407.34738,
-          "sell": 85250.74163,
-          "total": 144658.08901,
-          "count": 753
-        },
-        {
-          "at": 1792705200000,
-          "buy": 57353.94444,
-          "sell": 117330.70779000001,
-          "total": 174684.65223,
-          "count": 608
-        },
-        {
-          "at": 1792705500000,
-          "buy": 163383.64288,
-          "sell": 157217.80588,
-          "total": 320601.44876,
-          "count": 619
-        },
-        {
-          "at": 1792705800000,
-          "buy": 41249.83744,
-          "sell": 24942.30292999999,
-          "total": 66192.14037,
-          "count": 326
-        },
-        {
-          "at": 1792706100000,
-          "buy": 113710.71861,
-          "sell": 63825.38754000001,
-          "total": 177536.10615,
-          "count": 655
-        },
-        {
-          "at": 1792706400000,
-          "buy": 177719.61685,
-          "sell": 182167.86447000003,
-          "total": 359887.48132,
-          "count": 1591
-        },
-        {
-          "at": 1792706700000,
-          "buy": 94332.51011,
-          "sell": 109283.89163999999,
-          "total": 203616.40175,
-          "count": 1087
-        },
-        {
-          "at": 1792707000000,
-          "buy": 53920.76101,
-          "sell": 87103.43061,
-          "total": 141024.19162,
-          "count": 770
-        },
-        {
-          "at": 1792707300000,
-          "buy": 102057.30169,
-          "sell": 47056.05929999999,
-          "total": 149113.36099,
-          "count": 780
-        },
-        {
-          "at": 1792707600000,
-          "buy": 297930.45197,
-          "sell": 481724.63276,
-          "total": 779655.08473,
-          "count": 1733
-        },
-        {
-          "at": 1792707900000,
-          "buy": 49342.49729,
-          "sell": 62366.24467,
-          "total": 111708.74196,
-          "count": 624
-        },
-        {
-          "at": 1792708200000,
-          "buy": 157340.72505,
-          "sell": 155498.63066999998,
-          "total": 312839.35572,
-          "count": 1038
-        },
-        {
-          "at": 1792708500000,
-          "buy": 132613.56042,
-          "sell": 50343.426470000006,
-          "total": 182956.98689,
-          "count": 746
-        },
-        {
-          "at": 1792708800000,
-          "buy": 163235.12093,
-          "sell": 203125.25551000002,
-          "total": 366360.37644,
-          "count": 1289
-        },
-        {
-          "at": 1792709100000,
-          "buy": 97527.12097,
-          "sell": 82387.27135000001,
-          "total": 179914.39232,
-          "count": 763
-        },
-        {
-          "at": 1792709400000,
-          "buy": 113558.19906,
-          "sell": 67472.94804,
-          "total": 181031.1471,
-          "count": 661
-        },
-        {
-          "at": 1792709700000,
-          "buy": 176775.06314,
-          "sell": 168901.91763,
-          "total": 345676.98077,
-          "count": 1148
-        },
-        {
-          "at": 1792710000000,
-          "buy": 135460.71262,
-          "sell": 61169.73978,
-          "total": 196630.4524,
-          "count": 908
-        },
-        {
-          "at": 1792710300000,
-          "buy": 140851.37573,
-          "sell": 71603.51285999999,
-          "total": 212454.88859,
-          "count": 1029
-        },
-        {
-          "at": 1792710600000,
-          "buy": 55093.1914,
-          "sell": 44712.22286,
-          "total": 99805.41426,
-          "count": 555
-        },
-        {
-          "at": 1792710900000,
-          "buy": 188365.56119,
-          "sell": 93561.83401000002,
-          "total": 281927.3952,
-          "count": 876
-        },
-        {
-          "at": 1792711200000,
-          "buy": 115662.80661,
-          "sell": 90736.2078,
-          "total": 206399.01441,
-          "count": 745
-        },
-        {
-          "at": 1792711500000,
-          "buy": 81290.85495,
-          "sell": 50836.87187000002,
-          "total": 132127.72682,
-          "count": 670
-        },
-        {
-          "at": 1792711800000,
-          "buy": 97047.60511,
-          "sell": 65056.31416000001,
-          "total": 162103.91927,
-          "count": 759
-        },
-        {
-          "at": 1792712100000,
-          "buy": 183828.47728,
-          "sell": 84895.74677000003,
-          "total": 268724.22405,
-          "count": 1067
-        },
-        {
-          "at": 1792712400000,
-          "buy": 165905.04373,
-          "sell": 49430.668009999994,
-          "total": 215335.71174,
-          "count": 802
-        },
-        {
-          "at": 1792712700000,
-          "buy": 70508.60719,
-          "sell": 53517.308090000006,
-          "total": 124025.91528,
-          "count": 703
-        },
-        {
-          "at": 1792713000000,
-          "buy": 44665.49806,
-          "sell": 54599.51666000001,
-          "total": 99265.01472,
-          "count": 543
-        },
-        {
-          "at": 1792713300000,
-          "buy": 162804.6114,
-          "sell": 40991.88784000001,
-          "total": 203796.49924,
-          "count": 603
-        },
-        {
-          "at": 1792713600000,
-          "buy": 633537.66192,
-          "sell": 802522.84318,
-          "total": 1436060.5051,
-          "count": 2225
-        },
         {
           "at": 1792713900000,
           "buy": 244853.86434,
@@ -10697,32 +10445,284 @@
           "sell": 558327.69425,
           "total": 660036.61633,
           "count": 1079
+        },
+        {
+          "at": 1792789500000,
+          "buy": 149810.32448,
+          "sell": 91179.38582,
+          "total": 240989.7103,
+          "count": 825
+        },
+        {
+          "at": 1792789800000,
+          "buy": 61509.40708,
+          "sell": 154634.45236999998,
+          "total": 216143.85945,
+          "count": 799
+        },
+        {
+          "at": 1792790100000,
+          "buy": 132820.63265,
+          "sell": 112721.41132999997,
+          "total": 245542.04398,
+          "count": 775
+        },
+        {
+          "at": 1792790400000,
+          "buy": 118034.482,
+          "sell": 102258.50398999998,
+          "total": 220292.98599,
+          "count": 819
+        },
+        {
+          "at": 1792790700000,
+          "buy": 80369.21738,
+          "sell": 76314.98232999998,
+          "total": 156684.19971,
+          "count": 869
+        },
+        {
+          "at": 1792791000000,
+          "buy": 111929.28548,
+          "sell": 117828.18860000001,
+          "total": 229757.47408,
+          "count": 920
+        },
+        {
+          "at": 1792791300000,
+          "buy": 139799.58682,
+          "sell": 32848.70592000001,
+          "total": 172648.29274,
+          "count": 627
+        },
+        {
+          "at": 1792791600000,
+          "buy": 99940.83744,
+          "sell": 74258.56541000001,
+          "total": 174199.40285,
+          "count": 775
+        },
+        {
+          "at": 1792791900000,
+          "buy": 45706.49437,
+          "sell": 36135.11625000001,
+          "total": 81841.61062,
+          "count": 320
+        },
+        {
+          "at": 1792792200000,
+          "buy": 55233.11667,
+          "sell": 71048.06662,
+          "total": 126281.18329,
+          "count": 760
+        },
+        {
+          "at": 1792792500000,
+          "buy": 48771.56643,
+          "sell": 68194.38271,
+          "total": 116965.94914,
+          "count": 619
+        },
+        {
+          "at": 1792792800000,
+          "buy": 252669.04588,
+          "sell": 98044.15606000001,
+          "total": 350713.20194,
+          "count": 1893
+        },
+        {
+          "at": 1792793100000,
+          "buy": 127787.90489,
+          "sell": 76295.66569,
+          "total": 204083.57058,
+          "count": 1098
+        },
+        {
+          "at": 1792793400000,
+          "buy": 83539.83527,
+          "sell": 68099.40785,
+          "total": 151639.24312,
+          "count": 691
+        },
+        {
+          "at": 1792793700000,
+          "buy": 86793.01064,
+          "sell": 36560.46097,
+          "total": 123353.47161,
+          "count": 743
+        },
+        {
+          "at": 1792794000000,
+          "buy": 172437.65946,
+          "sell": 151632.29192,
+          "total": 324069.95138,
+          "count": 1324
+        },
+        {
+          "at": 1792794300000,
+          "buy": 113486.80523,
+          "sell": 259036.03577000002,
+          "total": 372522.841,
+          "count": 1322
+        },
+        {
+          "at": 1792794600000,
+          "buy": 2118090.88358,
+          "sell": 2270275.4445199994,
+          "total": 4388366.3281,
+          "count": 11287
+        },
+        {
+          "at": 1792794900000,
+          "buy": 1088246.68366,
+          "sell": 2078980.5672299997,
+          "total": 3167227.25089,
+          "count": 8959
+        },
+        {
+          "at": 1792795200000,
+          "buy": 680121.43103,
+          "sell": 418600.1373800001,
+          "total": 1098721.56841,
+          "count": 5599
+        },
+        {
+          "at": 1792795500000,
+          "buy": 1160552.83162,
+          "sell": 1742273.04169,
+          "total": 2902825.87331,
+          "count": 10544
+        },
+        {
+          "at": 1792795800000,
+          "buy": 522617.4168,
+          "sell": 700605.8264299999,
+          "total": 1223223.24323,
+          "count": 6007
+        },
+        {
+          "at": 1792796100000,
+          "buy": 767394.70065,
+          "sell": 607164.6355699999,
+          "total": 1374559.33622,
+          "count": 5614
+        },
+        {
+          "at": 1792796400000,
+          "buy": 490109.50022,
+          "sell": 417630.46628,
+          "total": 907739.9665,
+          "count": 4901
+        },
+        {
+          "at": 1792796700000,
+          "buy": 416781.39657,
+          "sell": 715622.9794500001,
+          "total": 1132404.37602,
+          "count": 5916
+        },
+        {
+          "at": 1792797000000,
+          "buy": 218169.90345,
+          "sell": 341841.02382999996,
+          "total": 560010.92728,
+          "count": 3932
+        },
+        {
+          "at": 1792797300000,
+          "buy": 261966.66666,
+          "sell": 230375.56758000003,
+          "total": 492342.23424,
+          "count": 2574
+        },
+        {
+          "at": 1792797600000,
+          "buy": 189021.66929,
+          "sell": 228020.79272000003,
+          "total": 417042.46201,
+          "count": 1928
+        },
+        {
+          "at": 1792797900000,
+          "buy": 191642.24347,
+          "sell": 166537.5845,
+          "total": 358179.82797,
+          "count": 1555
+        },
+        {
+          "at": 1792798200000,
+          "buy": 159354.49962,
+          "sell": 202027.51504,
+          "total": 361382.01466,
+          "count": 1878
+        },
+        {
+          "at": 1792798500000,
+          "buy": 125127.97639,
+          "sell": 194892.04348000002,
+          "total": 320020.01987,
+          "count": 1527
+        },
+        {
+          "at": 1792798800000,
+          "buy": 265490.93708,
+          "sell": 181725.89188,
+          "total": 447216.82896,
+          "count": 1262
+        },
+        {
+          "at": 1792799100000,
+          "buy": 349161.09043,
+          "sell": 237686.89204000006,
+          "total": 586847.98247,
+          "count": 2301
+        },
+        {
+          "at": 1792799400000,
+          "buy": 564965.01271,
+          "sell": 455379.21601,
+          "total": 1020344.22872,
+          "count": 1946
+        },
+        {
+          "at": 1792799700000,
+          "buy": 109268.33842,
+          "sell": 86712.35398,
+          "total": 195980.6924,
+          "count": 1043
+        },
+        {
+          "at": 1792800000000,
+          "buy": 192735.61114,
+          "sell": 208504.16477000003,
+          "total": 401239.77591,
+          "count": 1822
         }
       ],
       "windows": {
         "h1": {
-          "buy": 2104485.02655,
-          "sell": 3597613.1434500003,
-          "total": 5702098.17,
-          "count": 18300,
-          "start": 1792785900000,
-          "end": 1792789500000
+          "buy": 3043685.3452299996,
+          "sell": 3249326.0252800006,
+          "total": 6293011.370510001,
+          "count": 27684,
+          "start": 1792796700000,
+          "end": 1792800300000
         },
         "h6": {
-          "buy": 18103202.935810003,
-          "sell": 22836684.637950003,
-          "total": 40939887.57376,
-          "count": 122087,
-          "start": 1792767900000,
-          "end": 1792789500000
+          "buy": 19267293.813470002,
+          "sell": 26233265.320889995,
+          "total": 45500559.13436,
+          "count": 152626,
+          "start": 1792778700000,
+          "end": 1792800300000
         },
         "h24": {
-          "buy": 80564892.08937997,
-          "sell": 85836611.81077003,
-          "total": 166401503.90015,
-          "count": 505933,
-          "start": 1792703100000,
-          "end": 1792789500000
+          "buy": 86627420.31481002,
+          "sell": 94245112.52199006,
+          "total": 180872532.8368001,
+          "count": 566883,
+          "start": 1792713900000,
+          "end": 1792800300000
         }
       }
     },
@@ -10738,265 +10738,13 @@
       "id": "kraken:XMRUSDT",
       "kind": "exchange",
       "name": "XMR / USDT",
-      "checkedAt": "2026-10-23T21:08:41.103Z",
-      "periodStart": 1792703100000,
-      "periodEnd": 1792789500000,
+      "checkedAt": "2026-10-24T00:05:50.498Z",
+      "periodStart": 1792713900000,
+      "periodEnd": 1792800300000,
       "intervalMs": 300000,
       "pages": 8,
       "sideBasis": "provider-reported",
       "bars": [
-        {
-          "at": 1792703100000,
-          "buy": 13084.480942542898,
-          "sell": 22597.895460017604,
-          "total": 35682.376402560505,
-          "count": 72
-        },
-        {
-          "at": 1792703400000,
-          "buy": 5595.1795897169995,
-          "sell": 3585.203066704,
-          "total": 9180.382656421,
-          "count": 40
-        },
-        {
-          "at": 1792703700000,
-          "buy": 16238.2821591727,
-          "sell": 728.4482143283001,
-          "total": 16966.730373501,
-          "count": 34
-        },
-        {
-          "at": 1792704000000,
-          "buy": 33091.8445609336,
-          "sell": 9328.199910766401,
-          "total": 42420.0444717,
-          "count": 48
-        },
-        {
-          "at": 1792704300000,
-          "buy": 16034.7733803972,
-          "sell": 500.5867320209,
-          "total": 16535.3601124181,
-          "count": 5
-        },
-        {
-          "at": 1792704600000,
-          "buy": 49690.7787299658,
-          "sell": 14119.7556659095,
-          "total": 63810.5343958753,
-          "count": 55
-        },
-        {
-          "at": 1792704900000,
-          "buy": 16395.853941521702,
-          "sell": 24082.5381263779,
-          "total": 40478.39206789961,
-          "count": 31
-        },
-        {
-          "at": 1792705200000,
-          "buy": 0,
-          "sell": 355.0843053579,
-          "total": 355.0843053579,
-          "count": 3
-        },
-        {
-          "at": 1792705500000,
-          "buy": 23527.0081708414,
-          "sell": 1000.7137353968,
-          "total": 24527.7219062382,
-          "count": 15
-        },
-        {
-          "at": 1792705800000,
-          "buy": 36505.507000163496,
-          "sell": 1000.7542646084,
-          "total": 37506.26126477189,
-          "count": 19
-        },
-        {
-          "at": 1792706100000,
-          "buy": 16102.364623182,
-          "sell": 2479.6855255588002,
-          "total": 18582.0501487408,
-          "count": 4
-        },
-        {
-          "at": 1792706400000,
-          "buy": 0,
-          "sell": 19.6316549696,
-          "total": 19.6316549696,
-          "count": 2
-        },
-        {
-          "at": 1792706700000,
-          "buy": 0,
-          "sell": 1614.4942493777999,
-          "total": 1614.4942493777999,
-          "count": 6
-        },
-        {
-          "at": 1792707000000,
-          "buy": 36.211749000000005,
-          "sell": 1054.1298081235,
-          "total": 1090.3415571235,
-          "count": 5
-        },
-        {
-          "at": 1792707300000,
-          "buy": 46381.4761176074,
-          "sell": 38.1104705098,
-          "total": 46419.5865881172,
-          "count": 47
-        },
-        {
-          "at": 1792707600000,
-          "buy": 163561.7588606826,
-          "sell": 1664.1735242263999,
-          "total": 165225.932384909,
-          "count": 72
-        },
-        {
-          "at": 1792707900000,
-          "buy": 0,
-          "sell": 0,
-          "total": 0,
-          "count": 0
-        },
-        {
-          "at": 1792708200000,
-          "buy": 0,
-          "sell": 793.4967961995999,
-          "total": 793.4967961995999,
-          "count": 7
-        },
-        {
-          "at": 1792708500000,
-          "buy": 0,
-          "sell": 0,
-          "total": 0,
-          "count": 0
-        },
-        {
-          "at": 1792708800000,
-          "buy": 78.93455795239998,
-          "sell": 1417.7428891214001,
-          "total": 1496.6774470738,
-          "count": 9
-        },
-        {
-          "at": 1792709100000,
-          "buy": 0,
-          "sell": 1181.2627983476,
-          "total": 1181.2627983476,
-          "count": 4
-        },
-        {
-          "at": 1792709400000,
-          "buy": 0,
-          "sell": 500.50412137440003,
-          "total": 500.50412137440003,
-          "count": 2
-        },
-        {
-          "at": 1792709700000,
-          "buy": 0,
-          "sell": 1147.7978678688,
-          "total": 1147.7978678688,
-          "count": 5
-        },
-        {
-          "at": 1792710000000,
-          "buy": 0,
-          "sell": 1000.7000893358002,
-          "total": 1000.7000893358002,
-          "count": 2
-        },
-        {
-          "at": 1792710300000,
-          "buy": 1788.0000000000002,
-          "sell": 0,
-          "total": 1788.0000000000002,
-          "count": 4
-        },
-        {
-          "at": 1792710600000,
-          "buy": 32041.346276775002,
-          "sell": 512.7407799462,
-          "total": 32554.087056721204,
-          "count": 31
-        },
-        {
-          "at": 1792710900000,
-          "buy": 14975.428672925802,
-          "sell": 0,
-          "total": 14975.428672925802,
-          "count": 16
-        },
-        {
-          "at": 1792711200000,
-          "buy": 0,
-          "sell": 0,
-          "total": 0,
-          "count": 0
-        },
-        {
-          "at": 1792711500000,
-          "buy": 0,
-          "sell": 0,
-          "total": 0,
-          "count": 0
-        },
-        {
-          "at": 1792711800000,
-          "buy": 0,
-          "sell": 0,
-          "total": 0,
-          "count": 0
-        },
-        {
-          "at": 1792712100000,
-          "buy": 0,
-          "sell": 8354.1469600842,
-          "total": 8354.1469600842,
-          "count": 8
-        },
-        {
-          "at": 1792712400000,
-          "buy": 0,
-          "sell": 0,
-          "total": 0,
-          "count": 0
-        },
-        {
-          "at": 1792712700000,
-          "buy": 0,
-          "sell": 924.3254420989001,
-          "total": 924.3254420989001,
-          "count": 3
-        },
-        {
-          "at": 1792713000000,
-          "buy": 21362.147755326998,
-          "sell": 7930.7645012596,
-          "total": 29292.9122565866,
-          "count": 36
-        },
-        {
-          "at": 1792713300000,
-          "buy": 20106.153335085706,
-          "sell": 13306.2071380302,
-          "total": 33412.36047311591,
-          "count": 43
-        },
-        {
-          "at": 1792713600000,
-          "buy": 0,
-          "sell": 18425.1753258521,
-          "total": 18425.1753258521,
-          "count": 20
-        },
         {
           "at": 1792713900000,
           "buy": 739.8759523667999,
@@ -12760,32 +12508,284 @@
           "sell": 2400.3403171095997,
           "total": 4441.3209042611,
           "count": 18
+        },
+        {
+          "at": 1792789500000,
+          "buy": 526.2482374732,
+          "sell": 1467.0380977630998,
+          "total": 1993.2863352362997,
+          "count": 9
+        },
+        {
+          "at": 1792789800000,
+          "buy": 1439.5018508796,
+          "sell": 2783.9069957635998,
+          "total": 4223.4088466431995,
+          "count": 17
+        },
+        {
+          "at": 1792790100000,
+          "buy": 781.3581048333,
+          "sell": 2260.9867859831,
+          "total": 3042.3448908164,
+          "count": 19
+        },
+        {
+          "at": 1792790400000,
+          "buy": 712.475131014,
+          "sell": 1519.5675375443998,
+          "total": 2232.0426685584,
+          "count": 13
+        },
+        {
+          "at": 1792790700000,
+          "buy": 971.8627789735999,
+          "sell": 3723.9131010544006,
+          "total": 4695.775880028001,
+          "count": 20
+        },
+        {
+          "at": 1792791000000,
+          "buy": 1909.9496083719996,
+          "sell": 1275.0591417143999,
+          "total": 3185.0087500863992,
+          "count": 20
+        },
+        {
+          "at": 1792791300000,
+          "buy": 504.710490708,
+          "sell": 8971.5773540389,
+          "total": 9476.2878447469,
+          "count": 8
+        },
+        {
+          "at": 1792791600000,
+          "buy": 42.216632983400004,
+          "sell": 0,
+          "total": 42.216632983400004,
+          "count": 2
+        },
+        {
+          "at": 1792791900000,
+          "buy": 1789.5683436085,
+          "sell": 3684.4897131876,
+          "total": 5474.058056796101,
+          "count": 9
+        },
+        {
+          "at": 1792792200000,
+          "buy": 380.5940077157,
+          "sell": 5806.639879165401,
+          "total": 6187.233886881101,
+          "count": 7
+        },
+        {
+          "at": 1792792500000,
+          "buy": 506.5309512005,
+          "sell": 0,
+          "total": 506.5309512005,
+          "count": 5
+        },
+        {
+          "at": 1792792800000,
+          "buy": 21.1395016023,
+          "sell": 0,
+          "total": 21.1395016023,
+          "count": 2
+        },
+        {
+          "at": 1792793100000,
+          "buy": 41.7245222768,
+          "sell": 0,
+          "total": 41.7245222768,
+          "count": 2
+        },
+        {
+          "at": 1792793400000,
+          "buy": 4577.3436319855,
+          "sell": 3606.10091834,
+          "total": 8183.4445503255,
+          "count": 28
+        },
+        {
+          "at": 1792793700000,
+          "buy": 6967.905378423,
+          "sell": 1915.4681328799998,
+          "total": 8883.373511303,
+          "count": 39
+        },
+        {
+          "at": 1792794000000,
+          "buy": 627.43268668,
+          "sell": 547.604594,
+          "total": 1175.03728068,
+          "count": 8
+        },
+        {
+          "at": 1792794300000,
+          "buy": 949.4593045036,
+          "sell": 0,
+          "total": 949.4593045036,
+          "count": 7
+        },
+        {
+          "at": 1792794600000,
+          "buy": 3700.9437772947012,
+          "sell": 3203.687836074,
+          "total": 6904.631613368701,
+          "count": 29
+        },
+        {
+          "at": 1792794900000,
+          "buy": 3529.1289172344004,
+          "sell": 4547.329538054099,
+          "total": 8076.4584552885,
+          "count": 46
+        },
+        {
+          "at": 1792795200000,
+          "buy": 1080.0359919448,
+          "sell": 14418.571898465298,
+          "total": 15498.607890410098,
+          "count": 48
+        },
+        {
+          "at": 1792795500000,
+          "buy": 6604.5455308635,
+          "sell": 1780.2032027448001,
+          "total": 8384.7487336083,
+          "count": 40
+        },
+        {
+          "at": 1792795800000,
+          "buy": 11220.7890021412,
+          "sell": 23781.288952626586,
+          "total": 35002.07795476779,
+          "count": 124
+        },
+        {
+          "at": 1792796100000,
+          "buy": 11795.759955342899,
+          "sell": 23515.158402348996,
+          "total": 35310.918357691895,
+          "count": 106
+        },
+        {
+          "at": 1792796400000,
+          "buy": 9425.649576378202,
+          "sell": 27683.667694108102,
+          "total": 37109.3172704863,
+          "count": 104
+        },
+        {
+          "at": 1792796700000,
+          "buy": 6532.477966688999,
+          "sell": 18268.625044242,
+          "total": 24801.103010930998,
+          "count": 59
+        },
+        {
+          "at": 1792797000000,
+          "buy": 9524.1609785712,
+          "sell": 9008.2734669789,
+          "total": 18532.4344455501,
+          "count": 43
+        },
+        {
+          "at": 1792797300000,
+          "buy": 11055.0397722505,
+          "sell": 13014.170010832304,
+          "total": 24069.209783082806,
+          "count": 62
+        },
+        {
+          "at": 1792797600000,
+          "buy": 4099.3962147309,
+          "sell": 5564.354595528201,
+          "total": 9663.750810259102,
+          "count": 19
+        },
+        {
+          "at": 1792797900000,
+          "buy": 4035.9117015231996,
+          "sell": 0,
+          "total": 4035.9117015231996,
+          "count": 6
+        },
+        {
+          "at": 1792798200000,
+          "buy": 9435.1422127791,
+          "sell": 11880.068493379002,
+          "total": 21315.2107061581,
+          "count": 55
+        },
+        {
+          "at": 1792798500000,
+          "buy": 4541.187774679401,
+          "sell": 512.9477062667,
+          "total": 5054.135480946101,
+          "count": 16
+        },
+        {
+          "at": 1792798800000,
+          "buy": 2038.9206257079998,
+          "sell": 513.1732990928,
+          "total": 2552.0939248008,
+          "count": 9
+        },
+        {
+          "at": 1792799100000,
+          "buy": 1402.9601827876,
+          "sell": 0,
+          "total": 1402.9601827876,
+          "count": 5
+        },
+        {
+          "at": 1792799400000,
+          "buy": 6350.6595935529,
+          "sell": 1491.3832107872,
+          "total": 7842.042804340101,
+          "count": 44
+        },
+        {
+          "at": 1792799700000,
+          "buy": 9094.153587326102,
+          "sell": 3993.3499620044,
+          "total": 13087.503549330502,
+          "count": 33
+        },
+        {
+          "at": 1792800000000,
+          "buy": 11755.064918262702,
+          "sell": 4937.934199999999,
+          "total": 16692.9991182627,
+          "count": 82
         }
       ],
       "windows": {
         "h1": {
-          "buy": 44573.908426954804,
-          "sell": 35178.0815984505,
-          "total": 79751.9900254053,
-          "count": 332,
-          "start": 1792785900000,
-          "end": 1792789500000
+          "buy": 79865.07552886062,
+          "sell": 69184.27998911151,
+          "total": 149049.35551797214,
+          "count": 433,
+          "start": 1792796700000,
+          "end": 1792800300000
         },
         "h6": {
-          "buy": 431964.56336573674,
-          "sell": 356354.09579729487,
-          "total": 788318.6591630316,
-          "count": 2551,
-          "start": 1792767900000,
-          "end": 1792789500000
+          "buy": 324315.31417543726,
+          "sell": 416157.1233958223,
+          "total": 740472.4375712596,
+          "count": 2475,
+          "start": 1792778700000,
+          "end": 1792800300000
         },
         "h24": {
-          "buy": 1928210.8755585495,
-          "sell": 1023294.4236928733,
-          "total": 2951505.2992514228,
-          "count": 7132,
-          "start": 1792703100000,
-          "end": 1792789500000
+          "buy": 1551585.2945780512,
+          "sell": 1089306.6940340695,
+          "total": 2640891.988612121,
+          "count": 7629,
+          "start": 1792713900000,
+          "end": 1792800300000
         }
       }
     }
@@ -12797,7 +12797,7 @@
       "venue": "binance",
       "status": "ok",
       "pages": 1,
-      "checkedAt": "2026-10-23T21:08:27.703Z"
+      "checkedAt": "2026-10-24T00:05:33.858Z"
     },
     {
       "id": "binance:XRPUSDT",
@@ -12805,7 +12805,7 @@
       "venue": "binance",
       "status": "ok",
       "pages": 1,
-      "checkedAt": "2026-10-23T21:08:28.614Z"
+      "checkedAt": "2026-10-24T00:05:35.906Z"
     },
     {
       "id": "binance:DOGEUSDT",
@@ -12813,7 +12813,7 @@
       "venue": "binance",
       "status": "ok",
       "pages": 1,
-      "checkedAt": "2026-10-23T21:08:29.720Z"
+      "checkedAt": "2026-10-24T00:05:38.056Z"
     },
     {
       "id": "binance:ZECUSDT",
@@ -12821,7 +12821,7 @@
       "venue": "binance",
       "status": "ok",
       "pages": 1,
-      "checkedAt": "2026-10-23T21:08:30.861Z"
+      "checkedAt": "2026-10-24T00:05:40.309Z"
     },
     {
       "id": "kraken:XMRUSDT",
@@ -12829,7 +12829,7 @@
       "venue": "kraken",
       "status": "ok",
       "pages": 8,
-      "checkedAt": "2026-10-23T21:08:41.103Z"
+      "checkedAt": "2026-10-24T00:05:50.498Z"
     }
   ],
   "membershipChanged": false,

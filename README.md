@@ -32,13 +32,15 @@ The checked-in snapshot contains real provider data normalized for this interfac
 
 The UI provides the coverage table, market links, retrieval times, source attribution, stale/offline notices, keyboard controls, reduced-motion support, mobile details access, and shareable source/coin/window/network/route state. Overview coverage counts coins with a sample across both source types and all networks, not a share of worldwide trading.
 
-## Market Temperature
+## Market temperature and daily journal
 
-The opening calculator turns the top-ten altcoin sample into an **experimental** 0–100 reading: 40% price participation, 30% relative strength versus BTC, and 30% reported buy-side activity. Each component uses 24h evidence and needs at least seven fresh coins. Missing coverage never becomes fear. Click a coin inside a component to inspect its actual trading sample.
+A compact header monitor opens the dedicated temperature page. V2 continuously scores price strength and requires every input in its fixed, reviewed sample. Missing coverage pauses the number instead of shrinking its denominator. The 40/30/30 weights remain provisional.
 
-An expandable chart records our own model's history from launch; it does not reuse another index's past. Changes in included coins or markets break comparisons. A separate, attributed Alternative.me daily Bitcoin Fear & Greed reading provides context and is never used in our calculation. A browser-local last-visit comparison adds continuity without accounts.
+The Journal publishes one factual note per UTC day and freezes its evidence and price scenarios. A separate current 30-day / one-year explorer uses historical volatility with visible assumptions; these are not fair-value estimates or buy/sell calls.
 
-See [the versioned formula, admission rules and limitations](docs/market-temperature.md). The weights are transparent design choices, not validated predictions. Run `node scripts/collect-temperature.mjs` for the reference and `node scripts/collect-risk-temperature.mjs` after collecting a fresh market snapshot. Both collectors run in the publishing workflow; its cache preserves the derived history.
+Underlying inputs and daily price histories are preserved in an encrypted research branch before deployment. The owner recovery key is backed up in ignored .env.history and stored as the HISTORY_KEY Actions secret. Keep the backup secure. Source updates and cache loss do not erase the archive.
+
+See [the model, coverage, recovery and scenario methods](docs/market-temperature.md). Run node scripts/collect-prices.mjs for historical inputs and node scripts/collect-risk-temperature.mjs after a fresh snapshot.
 
 ## Investigate a selection
 
@@ -74,19 +76,19 @@ DEX discovery is cached for six hours; contract identities for one day. Current 
 
 The collector spreads pool requests, honors rate-limit cooldowns, times out failed requests, and stores diagnostics. Provider limits and data freshness can change. Retrieval time is not a guarantee of upstream event freshness. DefiLlama's circulating value is denominated in USD, so price changes can affect it as well as issuance.
 
-No paid feed or reverse-engineered private endpoint is used. Attribution is visible. These checks establish technical access, not an unrestricted license. Commercial use, reusable exports and expanded historical retention need an explicit rights decision under the applicable provider terms. The new public data-download feature is withheld; source links and on-screen calculation checks remain available. See the licensing findings in [the expert review](docs/expert-review.md).
+No paid feed or reverse-engineered private endpoint is used. Attribution is visible. These checks establish technical access, not an unrestricted license. Commercial use, reusable exports and retention beyond the documented research use still need a rights decision under the applicable provider terms. The replay archive is encrypted and raw historical exports remain withheld; source links and on-screen calculation checks remain available. See the licensing findings in [the expert review](docs/expert-review.md).
 
 ## GitHub Pages
 
 `.github/workflows/refresh-and-deploy.yml` collects data on pushes to main, manual runs, and a schedule targeting every 15 minutes. It caches the last valid dataset and discovery results, validates the snapshot, then publishes only public files through the official GitHub Pages actions.
 
-Use GitHub Actions as the Pages publishing source, with the existing `bitcoinsidequest.com` custom domain. The workflow needs normal `pages: write` and `id-token: write` permissions and approval if the repository's Pages environment requires it. It does not write source commits or need a personal access token. A feature branch/PR does not activate scheduled production updates.
+Use GitHub Actions as the Pages publishing source, with the existing `bitcoinsidequest.com` custom domain. The workflow needs normal `pages: write` and `id-token: write` permissions and approval if the repository's Pages environment requires it. It also needs contents: write to preserve the encrypted market-history branch and the HISTORY_KEY Actions secret. It does not write source commits or need a personal access token. A feature branch/PR does not activate scheduled production updates.
 
 Schedules are best-effort and can be delayed or disabled after prolonged repository inactivity. The page displays the snapshot age and warns after 30 minutes. A failed refresh republishes the last valid snapshot with its original timestamp. If no valid snapshot exists, validation fails and prevents deployment.
 
 ## First-version limits
 
-Untracked venues and counterparties, exchange deposits/withdrawals, complete cross-chain journeys, historical replay, alerts, and news-based explanations are outside this version. BTC is a market-price benchmark only. Comparing different coins' sampled net amounts is not a market-wide ranking of inflows.
+Untracked venues and counterparties, exchange deposits/withdrawals, complete cross-chain journeys, predictive validation, alerts, and news-based explanations are outside this version. BTC is a market-price benchmark only. Comparing different coins' sampled net amounts is not a market-wide ranking of inflows.
 
 See [the initial coverage audit](docs/coverage.md). Current coverage is always available in the running page and `data/snapshot.json`.
 

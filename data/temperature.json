@@ -1,10 +1,15 @@
 {
   "schemaVersion": 1,
   "source": "alternative.me",
-  "checkedAt": "2026-10-23T22:15:32.794Z",
-  "attemptedAt": "2026-10-23T22:15:32.794Z",
+  "checkedAt": "2026-10-24T00:03:55.351Z",
+  "attemptedAt": "2026-10-24T00:03:55.351Z",
   "status": "ok",
   "points": [
+    {
+      "at": 1792800000000,
+      "value": 51,
+      "classification": "Neutral"
+    },
     {
       "at": 1792713600000,
       "value": 50,
@@ -448,11 +453,6 @@
     {
       "at": 1785110400000,
       "value": 30,
-      "classification": "Fear"
-    },
-    {
-      "at": 1785024000000,
-      "value": 26,
       "classification": "Fear"
     }
   ]
