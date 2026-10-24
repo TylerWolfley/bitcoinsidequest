@@ -16,6 +16,7 @@ jobs:
       - run: node --test
       - run: node --check app.js
       - run: node --check market-map.js
+      - run: node --check map-preview.js
       - run: node --check token.js
       - run: node --check activity-detail.js
       - run: node --check live-data.js

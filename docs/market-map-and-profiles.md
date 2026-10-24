@@ -23,6 +23,12 @@ The navigation is Activity / Market Map / Temperature / Journal. Profiles are de
 7. Rectangular labels have equal size and show both the signed price return and activity ratio. Size is not market cap or confidence. Displaced labels keep a leader and original coordinate marker, and cannot cross the zero-return or 1× activity boundary. Plot height expands to make room for crowded quadrants. Motion only transitions measured positions and respects the site preference/reduced motion.
 8. On narrow screens, the same readings become aligned price bars and explicit pace values. Reading and opening a coin does not require hover, dragging or interpreting a crowded plot.
 
+## Map quick previews
+
+Hovering or keyboard-focusing any map token opens a compact preview; the token itself remains a normal profile link. The preview shows the current quote, the selected 24-hour price comparison, activity pace and two bars comparing the preceding five-hour hourly average with the last hour. Both bars use the same scale and selected-market units. On touch screens, a separate information button opens the card so tapping a token still opens its profile. Escape, Close and clicking outside dismiss the card; a touch/keyboard dismissal returns focus to its trigger. The card stays open while moving the pointer into it and is refreshed from the same reading when the data or filters change.
+
+`lib/map-preview.js` supplies the testable explanation rules. Pace at least 1.5× or at most two-thirds is highlighted first. Otherwise, a buying-share change of at least 10 percentage points is highlighted only with at least 10,000 current source units. Other readings explicitly say there is no standout trading shift. These are the existing descriptive highlight thresholds, not statistical confidence. Price direction follows the selected dollar/BTC benchmark. The text does not attribute a price move to trading activity, news or investor intent. Missing/stale data, measured zero, stablecoins and the Bitcoin reference retain their distinct meanings.
+
 ## Profile vibe
 
 Vibe is a short description of measured conditions, not a proprietary sentiment score. Price direction uses the 24-hour return. Activity at least 1.5× is described as having picked up; at most two-thirds is described as slowed. The intermediate band is near its recent pace. These are provisional descriptive thresholds, not optimized predictions. An expandable receipt shows the underlying values and scope.

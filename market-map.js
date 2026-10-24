@@ -1,11 +1,14 @@
 import { startLivePage } from './live-data.js?v=20261023-map1';
-import { marketReading,profileURL,shortSymbol,placeLabels,placeMarketLabels } from './lib/market-map.js?v=20261023-map2';
+import { marketReading,profileURL,shortSymbol,placeLabels,placeMarketLabels,tokenById } from './lib/market-map.js?v=20261023-map2';
 import { esc,money,percent,direction,tokenIcon,pageStatus,retainFocus } from './market-ui.js?v=20261023-map1';
+import { createMapPreview } from './map-preview.js?v=20261023-hover1';
 let snapshot=null,offline=false,benchmark='usd',source='auto',readings=[];
 const plot=document.querySelector('#market-plot');
 function readURL(){const q=new URLSearchParams(location.search);benchmark=q.get('vs')==='btc'?'btc':'usd';source=['dex','exchange'].includes(q.get('source'))?q.get('source'):'auto';}
 function saveURL(){const q=new URLSearchParams({vs:benchmark});if(source!=='auto')q.set('source',source);history.replaceState(null,'',location.pathname+'?'+q);}
 const href=id=>profileURL(id,{from:location.pathname+location.search,source});
+const peek=id=>'<button type="button" class="map-peek-button" id="peek-'+esc(id)+'" data-preview-toggle data-preview-coin="'+esc(id)+'" aria-expanded="false" aria-controls="map-preview" aria-label="Preview '+esc(shortSymbol(tokenById(snapshot,id)))+' changes"><span aria-hidden="true">i</span></button>';
+const preview=createMapPreview({root:document.querySelector('main'),getReading:id=>{const a=tokenById(snapshot,id);return a?marketReading(snapshot,a,{offline,source}):null;},getBenchmark:()=>benchmark,getHref:href});
 function rows(){return readings.map(r=>({...r,x:benchmark==='btc'?r.relative:r.return24h}));}
 function drawPlot(){
  const previous=new Map([...plot.querySelectorAll('a')].map(a=>[a.dataset.coin,{left:a.style.left,top:a.style.top}]));
@@ -36,8 +39,8 @@ function drawPlot(){
  if(zero.length)svg+='<text x="'+(left-12)+'" y="'+(zeroY+4)+'" text-anchor="end" class="plot-axis">0×</text>';
  let links='';
  for(const p of labels){const r=p.reading,ax=p.anchorX+left,ay=p.anchorY+top,lx=p.x+left,ly=p.y+top;
-  svg+='<line x1="'+ax+'" x2="'+lx+'" y1="'+ay+'" y2="'+ly+'" class="plot-leader"/><rect x="'+(ax-3)+'" y="'+(ay-3)+'" width="6" height="6" class="plot-anchor '+direction(r.x)+'"/>';
-  links+='<a data-coin="'+esc(r.asset.id)+'" class="market-token '+direction(r.x)+'" href="'+esc(href(r.asset.id))+'" style="left:'+lx+'px;top:'+ly+'px" aria-label="'+esc(r.asset.name)+': '+percent(r.x)+' '+(benchmark==='btc'?'against Bitcoin':'in dollars')+' over 24 hours; '+r.pace.toFixed(2)+' times activity. Open profile."><b>'+esc(shortSymbol(r.asset))+'</b><span>'+percent(r.x)+'</span><small>'+r.pace.toFixed(2)+'× pace</small></a>';
+  svg+='<line data-point-coin="'+esc(r.asset.id)+'" x1="'+ax+'" x2="'+lx+'" y1="'+ay+'" y2="'+ly+'" class="plot-leader"/><rect x="'+(ax-3)+'" y="'+(ay-3)+'" width="6" height="6" data-point-coin="'+esc(r.asset.id)+'" class="plot-anchor '+direction(r.x)+'"/>';
+  links+='<a data-preview-coin="'+esc(r.asset.id)+'" data-coin="'+esc(r.asset.id)+'" class="market-token '+direction(r.x)+'" href="'+esc(href(r.asset.id))+'" style="left:'+lx+'px;top:'+ly+'px" aria-label="'+esc(r.asset.name)+': '+percent(r.x)+' '+(benchmark==='btc'?'against Bitcoin':'in dollars')+' over 24 hours; '+r.pace.toFixed(2)+' times activity. Open profile."><b>'+esc(shortSymbol(r.asset))+'</b><span>'+percent(r.x)+'</span><small>'+r.pace.toFixed(2)+'× pace</small></a>';
  }
  plot.innerHTML=svg+'</svg>'+links;plot.style.height=(plotHeight)+'px';
  if(document.documentElement.dataset.motion==='on')plot.querySelectorAll('a').forEach(a=>{const p=previous.get(a.dataset.coin);if(p&&(p.left!==a.style.left||p.top!==a.style.top))a.animate([p,{left:a.style.left,top:a.style.top}],{duration:350,easing:'ease-out'});});
@@ -52,15 +55,16 @@ function render(){
  retainFocus(()=>{
  drawPlot();
  const largest=Math.max(1,...eligible.map(r=>Math.abs(r.x)));
- document.querySelector('#map-mobile').innerHTML=eligible.map(r=>'<a class="mobile-market-row" href="'+esc(href(r.asset.id))+'"><span class="mobile-market-name">'+tokenIcon(r.asset)+'<b>'+esc(shortSymbol(r.asset))+'</b></span><span class="mobile-market-price '+direction(r.x)+'"><b>'+percent(r.x)+'</b><span class="mini-return"><i style="width:'+Math.abs(r.x)/largest*100+'%"></i></span></span><span class="mobile-market-pace"><b>'+r.pace.toFixed(2)+'×</b><small>'+(r.pace>=1.005?'Busier':r.pace<.995?'Quieter':'Same pace')+'</small></span><span aria-hidden="true">↗</span></a>').join('')||'<div class="chart-empty">No fresh, comparable positions.</div>';
- document.querySelector('#map-unavailable').innerHTML=data.some(r=>r.pace===null||r.x===null)?'<span class="subtle">Outside the plot · still available to explore</span><div>'+data.filter(r=>r.pace===null||r.x===null).map(r=>'<a href="'+esc(href(r.asset.id))+'">'+tokenIcon(r.asset)+'<b>'+esc(shortSymbol(r.asset))+'</b><span>'+esc(!r.priceReady?'Price needs refreshing':r.x===null?'BTC comparison unavailable':r.reason)+'</span><span aria-hidden="true">↗</span></a>').join('')+'</div>':'';
- document.querySelector('#map-stables').innerHTML=snapshot.assets.filter(a=>a.kind==='stable').map(a=>'<a class="stable-card" href="'+esc(href(a.id))+'"><span>'+tokenIcon(a)+'<b>'+esc(shortSymbol(a))+'</b><i aria-hidden="true">↗</i></span><strong>'+money(a.price)+'</strong><small>'+percent(Number.isFinite(a.price)?(a.price-1)*100:null)+' from $1</small><span class="stable-supply">Circulating value · 24h <b>'+percent(a.supplyChange24h)+'</b></span></a>').join('');
- const b=snapshot.bitcoin;document.querySelector('#map-bitcoin').innerHTML=b?'<a class="bitcoin-reference" href="'+esc(href(b.id))+'">'+tokenIcon(b)+'<b>Bitcoin</b><span>'+money(b.price)+'</span><span class="'+direction(b.priceChange24h)+'">'+percent(b.priceChange24h)+' · 24h</span><span>Open reference profile ↗</span></a>':'';
+ document.querySelector('#map-mobile').innerHTML=eligible.map(r=>'<div class="mobile-market-item"><a data-preview-coin="'+esc(r.asset.id)+'" class="mobile-market-row" href="'+esc(href(r.asset.id))+'"><span class="mobile-market-name">'+tokenIcon(r.asset)+'<b>'+esc(shortSymbol(r.asset))+'</b></span><span class="mobile-market-price '+direction(r.x)+'"><b>'+percent(r.x)+'</b><span class="mini-return"><i style="width:'+Math.abs(r.x)/largest*100+'%"></i></span></span><span class="mobile-market-pace"><b>'+r.pace.toFixed(2)+'×</b><small>'+(r.pace>=1.005?'Busier':r.pace<.995?'Quieter':'Same pace')+'</small></span><span aria-hidden="true">↗</span></a>'+peek(r.asset.id)+'</div>').join('')||'<div class="chart-empty">No fresh, comparable positions.</div>';
+ document.querySelector('#map-unavailable').innerHTML=data.some(r=>r.pace===null||r.x===null)?'<span class="subtle">Outside the plot · still available to explore</span><div>'+data.filter(r=>r.pace===null||r.x===null).map(r=>'<span class="map-preview-item"><a data-preview-coin="'+esc(r.asset.id)+'" href="'+esc(href(r.asset.id))+'">'+tokenIcon(r.asset)+'<b>'+esc(shortSymbol(r.asset))+'</b><span>'+esc(!r.priceReady?'Price needs refreshing':r.x===null?'BTC comparison unavailable':r.reason)+'</span><span aria-hidden="true">↗</span></a>'+peek(r.asset.id)+'</span>').join('')+'</div>':'';
+ document.querySelector('#map-stables').innerHTML=snapshot.assets.filter(a=>a.kind==='stable').map(a=>'<div class="map-preview-item"><a data-preview-coin="'+esc(a.id)+'" class="stable-card" href="'+esc(href(a.id))+'"><span>'+tokenIcon(a)+'<b>'+esc(shortSymbol(a))+'</b><i aria-hidden="true">↗</i></span><strong>'+money(a.price)+'</strong><small>'+percent(Number.isFinite(a.price)?(a.price-1)*100:null)+' from $1</small><span class="stable-supply">Circulating value · 24h <b>'+percent(a.supplyChange24h)+'</b></span></a>'+peek(a.id)+'</div>').join('');
+ const b=snapshot.bitcoin;document.querySelector('#map-bitcoin').innerHTML=b?'<div class="map-preview-item"><a data-preview-coin="'+esc(b.id)+'" class="bitcoin-reference" href="'+esc(href(b.id))+'">'+tokenIcon(b)+'<b>Bitcoin</b><span>'+money(b.price)+'</span><span class="'+direction(b.priceChange24h)+'">'+percent(b.priceChange24h)+' · 24h</span><span>Open reference profile ↗</span></a>'+peek(b.id)+'</div>':'';
  });
+ preview.sync();
 }
 readURL();const feed=startLivePage(state=>{snapshot=state.snapshot;offline=state.offline;render();});
 document.querySelectorAll('[data-benchmark]').forEach(b=>b.onclick=()=>{benchmark=b.dataset.benchmark;saveURL();render();});
 document.querySelector('#map-source').onchange=e=>{source=e.target.value;saveURL();render();};
 document.querySelector('#refresh-data').onclick=()=>feed.refresh();
 window.addEventListener('popstate',()=>{readURL();render();});
-new ResizeObserver(()=>{if(snapshot)drawPlot();}).observe(plot);
+new ResizeObserver(()=>{if(snapshot){drawPlot();preview.sync();}}).observe(plot);
